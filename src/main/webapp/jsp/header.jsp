@@ -27,6 +27,10 @@
 </head>
 
 <body>
+
+<fmt:setLocale value="en_US" scope="session" />
+<fmt:setBundle basename="text" var="value" />
+
 <div class="container">
     <h1>Мой сайт</h1>
     <div class="navbar navbar-inverse">
@@ -41,18 +45,18 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
             <ul class="nav navbar-nav">
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Цены</a></li>
-                <li><a href="#">Покрытие</a></li>
-                <li><a href="#">Загрузки</a></li>
+                <li><a href="#"><fmt:message key="nav.service" bundle="${ value }" /></a></li>
+                <li><a href="#"><fmt:message key="nav.price" bundle="${ value }" /></a></li>
+                <li><a href="#"><fmt:message key="nav.coverage" bundle="${ value }" /></a></li>
+                <li><a href="#"><fmt:message key="nav.downloads" bundle="${ value }" /></a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#login-modal">Войти</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in" bundle="${ value }" /></a></li>
 
-                <li><a href="#"><img class="icon-lang" src="../resource/img/ru.svg"/></a></li>
-                <li><a href="#"><img class="icon-lang" src="../resource/img/by.svg"/></a></li>
-                <li><a href="#"><img class="icon-lang" src="../resource/img/us.svg"/></a></li>
+                <li><a href="controller?command=language&lang=ru"><img class="icon-lang" src="../resource/img/ru.svg"/></a></li>
+                <li><a href="controller?command=language&lang=by"><img class="icon-lang" src="../resource/img/by.svg"/></a></li>
+                <li><a href="controller?command=language&lang=us"><img class="icon-lang" src="../resource/img/us.svg"/></a></li>
 
             </ul>
         </div>

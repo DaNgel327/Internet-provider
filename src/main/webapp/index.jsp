@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link href="resource/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="resource/css/style.css" rel="stylesheet">
@@ -18,6 +20,8 @@
 
 <c:import url="jsp/login.jsp"/>
 <c:import url="jsp/header.jsp"/>
+
+
 <div class="container">
     <div>
     <img class="pull-left img-responsive main-image" src="resource/img/cabels.png"/>
@@ -28,7 +32,12 @@
         Donec dui orci, auctor sit amet efficitur congue, efficitur non nulla. Pellentesque ultrices fringilla nibh, vehicula pretium nisl pulvinar sit amet. Nam vel erat nunc. Ut imperdiet velit vitae leo suscipit, sit amet feugiat odio eleifend. Cras maximus mauris nec nisl blandit tempor. Suspendisse molestie odio eget leo accumsan, at sagittis tortor blandit. In vel odio ac nulla mollis semper. Proin vehicula urna sit amet dui mollis cursus sit amet dictum ligula. Duis vitae sollicitudin sem. Aenean semper metus nec augue consectetur malesuada. Vivamus vel purus iaculis, tempus est et, eleifend nisl. Aliquam erat volutpat. Quisque a nulla sed neque consequat feugiat et non nunc. Donec erat nisi, luctus eget dolor nec, maximus posuere mauris.</p>
         </div>
 </div>
+
 <c:import url="jsp/footer.jsp"/>
+
+
+
+
 
 </body>
 </html>
