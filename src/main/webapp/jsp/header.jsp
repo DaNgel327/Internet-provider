@@ -1,0 +1,70 @@
+<%@page contentType="text/html; charset = utf-8" pageEncoding="UTF-8" session="true" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap Template</title>
+
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../resource/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/font-awesome.css">
+
+    <link rel="stylesheet" type="text/css" href="../resource/css/form.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+    <h1>Мой сайт</h1>
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                <span class="sr-only">Открыть навигацию</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" hreaf="#">Логотип</a>
+        </div>
+        <div class="collapse navbar-collapse" id="responsive-menu">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Цены</a></li>
+                <li><a href="#">Покрытие</a></li>
+                <li><a href="#">Загрузки</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="modal" data-target="#login-modal">Войти</a></li>
+
+                <li><a href="#"><img class="icon-lang" src="../resource/img/ru.svg"/></a></li>
+                <li><a href="#"><img class="icon-lang" src="../resource/img/by.svg"/></a></li>
+                <li><a href="#"><img class="icon-lang" src="../resource/img/us.svg"/></a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../resource/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>
+
