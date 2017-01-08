@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Enumeration;
 
 
@@ -19,8 +20,16 @@ public class Controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            LOGGER.info("doGet method");
+            String lang = request.getParameter("lang");
+            LOGGER.info("language - " + lang.toUpperCase());
 
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/");
+
+            request.setAttribute("locale", lang+"_"+lang.toUpperCase());
+            dispatcher.forward(request, response);
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

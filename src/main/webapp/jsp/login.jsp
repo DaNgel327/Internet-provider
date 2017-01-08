@@ -17,6 +17,9 @@
      style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
             <h1>Login to Your Account</h1><br>
             <form>
                 <input type="text" name="user" placeholder="Username">
@@ -30,5 +33,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

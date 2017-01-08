@@ -1,0 +1,149 @@
+11:33:32.730 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:14:58.003 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:14:58.029 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:15:02.819 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:15:02.821 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+12:15:05.755 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:15:05.756 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:22:36.073 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:22:36.085 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:22:49.969 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:22:49.970 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+12:22:58.166 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:22:58.167 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:27:02.360 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:27:02.369 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:27:06.819 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:27:06.820 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+12:27:10.395 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:27:10.396 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:36:11.730 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:36:11.738 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:36:15.919 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:36:15.920 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:36:18.222 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:36:18.225 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:36:19.699 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:36:19.700 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:36:27.654 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:36:27.655 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:42:45.370 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:42:45.383 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:42:46.992 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:42:46.996 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:42:48.912 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:42:48.913 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:42:50.060 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:42:50.061 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:42:51.524 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:42:51.525 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+12:42:52.911 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:42:52.912 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:42:54.069 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:42:54.070 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:44:29.883 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:44:29.893 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:44:31.809 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:44:31.812 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+12:44:33.838 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:44:33.839 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+12:44:36.023 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+12:44:36.023 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+14:16:19.725 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:16:19.737 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:28:39.537 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:28:39.549 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+14:28:42.037 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:28:42.038 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:28:43.628 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:28:43.629 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+14:28:45.661 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:28:45.662 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+14:28:48.526 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:28:48.527 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:28:50.303 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:28:50.304 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - language - US
+14:30:50.953 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:30:50.967 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:30:54.527 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:30:54.528 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:30:56.334 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:30:56.335 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:30:57.983 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:30:57.985 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:30:59.549 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:30:59.550 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:01.319 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:01.320 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:02.779 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:02.779 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:04.319 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:04.320 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:06.050 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:06.050 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+14:31:07.549 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:07.550 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:09.432 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:09.433 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:10.834 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:10.835 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:11.743 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:11.744 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:12.915 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:12.916 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:13.793 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:13.793 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:14.776 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:14.777 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:15.792 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:15.792 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:17.112 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:17.112 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:18.472 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:18.473 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:19.686 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:19.687 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:31:21.040 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:21.041 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:31:22.611 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:31:22.612 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:37:22.678 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:22.698 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:37:24.922 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:24.922 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+14:37:27.446 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:27.447 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:37:29.289 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:29.290 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:37:30.601 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:30.602 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+14:37:31.276 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:31.277 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+14:37:32.838 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:32.839 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+14:37:33.859 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:33.860 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+14:37:35.004 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:35.004 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+14:37:36.058 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+14:37:36.059 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+21:32:41.147 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:41.166 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+21:32:42.449 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:42.450 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+21:32:46.946 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:46.946 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+21:32:49.212 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:49.213 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+21:32:50.414 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:50.415 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+21:32:52.094 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:52.095 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+21:32:52.856 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:52.857 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU
+21:32:54.359 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:54.359 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.Controller doGet - language - BY
+21:32:54.997 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+21:32:54.997 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.Controller doGet - language - EN
+22:15:56.155 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - doGet method
+22:15:56.164 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.Controller doGet - language - RU

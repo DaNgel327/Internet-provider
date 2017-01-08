@@ -28,8 +28,15 @@
 
 <body>
 
-<fmt:setLocale value="en_US" scope="session" />
-<fmt:setBundle basename="text" var="value" />
+<h1>${locale==null? 'en_EN':locale}</h1>
+
+<fmt:setLocale
+        value="${locale==null
+         ? 'en_EN' : locale}"
+        scope="session"/>
+
+
+<fmt:setBundle basename="text" var="value"/>
 
 <div class="container">
     <h1>Мой сайт</h1>
@@ -45,24 +52,34 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
             <ul class="nav navbar-nav">
-                <li><a href="#"><fmt:message key="nav.service" bundle="${ value }" /></a></li>
-                <li><a href="#"><fmt:message key="nav.price" bundle="${ value }" /></a></li>
-                <li><a href="#"><fmt:message key="nav.coverage" bundle="${ value }" /></a></li>
-                <li><a href="#"><fmt:message key="nav.downloads" bundle="${ value }" /></a></li>
+                <li><a href="#"><fmt:message key="nav.service" bundle="${ value }"/></a></li>
+                <li><a href="#"><fmt:message key="nav.price" bundle="${ value }"/></a></li>
+                <li><a href="#"><fmt:message key="nav.coverage" bundle="${ value }"/></a></li>
+                <li><a href="#"><fmt:message key="nav.downloads" bundle="${ value }"/></a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in" bundle="${ value }" /></a></li>
 
-                <li><a href="controller?command=language&lang=ru"><img class="icon-lang" src="../resource/img/ru.svg"/></a></li>
-                <li><a href="controller?command=language&lang=by"><img class="icon-lang" src="../resource/img/by.svg"/></a></li>
-                <li><a href="controller?command=language&lang=us"><img class="icon-lang" src="../resource/img/us.svg"/></a></li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in"
+                                                                                            bundle="${ value }"/></a>
+                </li>
+
+                <li>
+                    <a href="controller?command=language&lang=ru"><img class="icon-lang" src="../resource/img/ru.svg"/></a>
+                </li>
+                <li>
+                    <a href="controller?command=language&lang=by"><img class="icon-lang" src="../resource/img/by.svg"/></a>
+                </li>
+                <li>
+                    <a href="controller?command=language&lang=en"><img class="icon-lang" src="../resource/img/us.svg"/></a>
+                </li>
 
             </ul>
+
         </div>
     </div>
 </div>
-
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

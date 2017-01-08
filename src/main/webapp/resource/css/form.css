@@ -13,6 +13,18 @@
   font-family: roboto;
 }
 
+a:focus {
+  outline:none;
+}
+
+
+ .close {
+   color: #aaaaaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+ }
+
 .loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
