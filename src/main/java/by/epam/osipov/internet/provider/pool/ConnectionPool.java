@@ -1,15 +1,16 @@
 package by.epam.osipov.internet.provider.pool;
 
+import by.epam.osipov.internet.provider.command.factory.CommandFactory;
+import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DatabaseConnectorException;
+import org.apache.log4j.Logger;
+
 import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-/**
- * Created by DaryaKolyadko on 13.07.2016.
- */
 
 /**
  * Threadsafe connection pool
@@ -24,6 +25,10 @@ public class ConnectionPool {
     private BlockingQueue<ConnectionProxy> connectionsInUse;
     private static ConnectionPool pool;
 
+
+    private static final Logger LOGGER = Logger.getLogger(ConnectionPool.class);
+
+
     private ConnectionPool() {
         connectionsAvailable = new ArrayBlockingQueue<>(POOL_SIZE);
         connectionsInUse = new ArrayBlockingQueue<>(POOL_SIZE);
@@ -32,7 +37,7 @@ public class ConnectionPool {
             init();
 
             if (connectionsAvailable.isEmpty()) {
-                System.out.println("Pool wasn't initialized");
+                LOGGER.fatal("Pool wasn't initialized");
                 throw new RuntimeException("Pool wasn't initialized");
             }
         }
@@ -47,8 +52,8 @@ public class ConnectionPool {
                 ConnectionProxy connectionProxy = new ConnectionProxy(DatabaseConnector.getConnection());
                 connectionProxy.setAutoCommit(true);
                 connectionsAvailable.put(connectionProxy);
-            } catch ( InterruptedException | SQLException e) {
-                System.out.println(e);
+            } catch (DatabaseConnectorException | InterruptedException | SQLException e) {
+                LOGGER.error(e);
             }
         }
     }
@@ -84,22 +89,32 @@ public class ConnectionPool {
         return pool;
     }
 
-
-    public ConnectionProxy getConnection() {
-        ConnectionProxy connectionProxy = null;
+    /**
+     * Get connection from pool
+     *
+     * @return ConnectionProxy object
+     * @throws ConnectionPoolException if some exception occurred inside
+     */
+    public ConnectionProxy getConnection() throws ConnectionPoolException {
+        ConnectionProxy connectionProxy;
 
         try {
             connectionProxy = connectionsAvailable.take();
             connectionsInUse.put(connectionProxy);
         } catch (InterruptedException e) {
-            System.out.println("Exception in ConnectionPool while trying to get connection");
+            throw new ConnectionPoolException("Exception in ConnectionPool while trying to get connection", e);
         }
 
         return connectionProxy;
     }
 
-
-    public void closeConnection(ConnectionProxy connectionProxy) {
+    /**
+     * Return connection into pool (or recreate it if there are soe problems with it)
+     *
+     * @param connectionProxy ConnectionProxy object
+     * @throws ConnectionPoolException if some exception occurred inside
+     */
+    public void closeConnection(ConnectionProxy connectionProxy) throws ConnectionPoolException {
         boolean success = connectionsInUse.remove(connectionProxy);
 
         try {
@@ -110,9 +125,9 @@ public class ConnectionPool {
                 newConnection.setAutoCommit(true);
                 connectionsAvailable.put(newConnection);
             }
-        } catch (SQLException | InterruptedException e) {
-            System.out.println("Exception in ConnectionPool while returning " +
-                    "a connection to pool");
+        } catch (SQLException | DatabaseConnectorException | InterruptedException e) {
+            throw new ConnectionPoolException("Exception in ConnectionPool while returning " +
+                    "a connection to pool", e);
         }
     }
 
@@ -132,9 +147,9 @@ public class ConnectionPool {
                     }
 
                     connectionProxy.finallyClose();
-                    System.out.println(String.format("closed successfully (#%d)", i));
+                    LOGGER.info(String.format("closed successfully (#%d)", i));
                 } catch (SQLException | InterruptedException e) {
-                    System.out.println("problem with connection closing (#%d)");
+                    LOGGER.warn("problem with connection closing (#%d)");
                 }
             }
         }

@@ -1,19 +1,18 @@
 package by.epam.osipov.internet.provider.pool;
 
 
+
+import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import org.apache.log4j.Logger;
+
 import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
-/**
- * Created by DaryaKolyadko on 13.07.2016.
- */
-
-/**
- * Connection proxy object
- */
 public class ConnectionProxy implements Connection {
+
+    private static final Logger LOGGER = org.apache.log4j.Logger.getLogger(ConnectionPool.class);
 
     private Connection connection;
 
@@ -21,23 +20,15 @@ public class ConnectionProxy implements Connection {
         this.connection = connection;
     }
 
-    /**
-     * Return connection into pool on calling this method
-     */
     @Override
     public void close() {
         try {
             ConnectionPool.getInstance().closeConnection(this);
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (ConnectionPoolException e) {
+            LOGGER.error(e);
         }
     }
 
-    /**
-     * Package level access method for real connection lose
-     *
-     * @throws SQLException if some errors occurred inside
-     */
     void finallyClose() throws SQLException {
         connection.close();
     }

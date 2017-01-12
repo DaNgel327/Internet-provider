@@ -41,14 +41,9 @@
 
 <div class="container">
     <h1>Мой сайт</h1>
+
     <div class="navbar navbar-inverse">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                <span class="sr-only">Открыть навигацию</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" hreaf="#">Логотип</a>
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
@@ -60,6 +55,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+
 
                 <c:choose>
                     <c:when test="${sessionScope.user==null}">
@@ -73,15 +69,27 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, ${sessionScope.user}!<b
                                     class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Профиль</a>
-                                </li>
-                                <li>
-                                    <a href="#">Настройки</a>
-                                </li>
-                                <li>
-                                    <a href="#">Счета</a>
-                                </li>
+
+                                <c:choose>
+                                    <c:when test="${sessionScope.role==0}">
+                                        <li>
+                                            <a href="#">Пользователи</a>
+                                        </li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li>
+                                            <a href="#">Профиль</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Настройки</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Счета</a>
+                                        </li>
+                                    </c:otherwise>
+                                </c:choose>
+
+
                                 <li>
                                     <a href="/controller?command=logout">Выйти</a>
                                 </li>

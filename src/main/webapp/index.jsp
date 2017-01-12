@@ -36,8 +36,5 @@
 <c:import url="jsp/footer.jsp"/>
 
 
-
-
-
 </body>
 </html>
