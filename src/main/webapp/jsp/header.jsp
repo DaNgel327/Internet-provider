@@ -61,17 +61,35 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li>
                 <c:choose>
                     <c:when test="${sessionScope.user==null}">
-                        <a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in"
-                                                                                                bundle="${ value }"/></a>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in"
+                                                                                                    bundle="${ value }"/></a>
+                        </li>
                     </c:when>
                     <c:otherwise>
-                        <h1>Hello, ${sessionScope.user}!</h1>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, ${sessionScope.user}!<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Профиль</a>
+                                </li>
+                                <li>
+                                    <a href="#">Настройки</a>
+                                </li>
+                                <li>
+                                    <a href="#">Счета</a>
+                                </li>
+                                <li>
+                                    <a href="/controller?command=logout">Выйти</a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </c:otherwise>
                 </c:choose>
-                </li>
 
                 <li>
                     <a href="controller?command=locale&lang=ru"><img class="icon-lang"
