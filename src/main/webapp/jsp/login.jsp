@@ -21,10 +21,11 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
             <h1>Login to Your Account</h1><br>
-            <form>
+            <form action="${pageContext.request.contextPath}/controller">
+                <input name="command" type="hidden" value="login">
                 <input type="text" name="user" placeholder="Username">
-                <input type="password" name="pass" placeholder="Password">
-                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" class="login loginmodal-submit" value="login">
             </form>
 
             <div class="login-help">

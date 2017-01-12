@@ -28,11 +28,12 @@
 
 <body>
 
-<h1>${locale==null? 'en_EN':locale}</h1>
+<h1>${lang==null? 'en_EN':lang}</h1>
+<h1>${sessionScope.user==null ? 'unknown' : sessionScope.user}</h1>
 
 <fmt:setLocale
-        value="${locale==null
-         ? 'en_EN' : locale}"
+        value="${lang==null
+         ? 'en_EN' : lang}"
         scope="session"/>
 
 
@@ -66,13 +67,16 @@
                 </li>
 
                 <li>
-                    <a href="controller?command=language&lang=ru"><img class="icon-lang" src="../resource/img/ru.svg"/></a>
+                    <a href="controller?command=locale&lang=ru"><img class="icon-lang"
+                                                                     src="../resource/img/ru.svg"/></a>
                 </li>
                 <li>
-                    <a href="controller?command=language&lang=by"><img class="icon-lang" src="../resource/img/by.svg"/></a>
+                    <a href="controller?command=locale&lang=by"><img class="icon-lang"
+                                                                     src="../resource/img/by.svg"/></a>
                 </li>
                 <li>
-                    <a href="controller?command=language&lang=en"><img class="icon-lang" src="../resource/img/us.svg"/></a>
+                    <a href="controller?command=locale&lang=en"><img class="icon-lang"
+                                                                     src="../resource/img/us.svg"/></a>
                 </li>
 
             </ul>
