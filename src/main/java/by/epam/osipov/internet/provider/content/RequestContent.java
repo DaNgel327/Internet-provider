@@ -101,5 +101,8 @@ public class RequestContent {
         sessionAttributes.put(attributeName, attributeValue);
     }
 
+    public void setSessionInvalidateFlag(boolean sessionInvalidateFlag) {
+        this.sessionInvalidateFlag = sessionInvalidateFlag;
+    }
 
 }

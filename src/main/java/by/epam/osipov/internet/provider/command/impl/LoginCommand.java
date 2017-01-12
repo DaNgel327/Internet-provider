@@ -22,9 +22,6 @@ public class LoginCommand implements Command {
         try {
             String login = content.getParameter("user");
             String password = content.getParameter("password");
-
-
-
             ConnectionProxy connection = null;
 
             try {

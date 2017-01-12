@@ -9,6 +9,7 @@ import by.epam.osipov.internet.provider.content.RequestContent;
 public class LogoutCommand implements Command {
     @Override
     public String execute(RequestContent content) {
-        return null;
+        content.setSessionInvalidateFlag(true);
+        return "/";
     }
 }

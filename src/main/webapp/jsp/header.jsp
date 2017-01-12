@@ -62,8 +62,15 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in"
-                                                                                            bundle="${ value }"/></a>
+                <c:choose>
+                    <c:when test="${sessionScope.user==null}">
+                        <a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in"
+                                                                                                bundle="${ value }"/></a>
+                    </c:when>
+                    <c:otherwise>
+                        <h1>Hello, ${sessionScope.user}!</h1>
+                    </c:otherwise>
+                </c:choose>
                 </li>
 
                 <li>
