@@ -73,7 +73,7 @@
                                 <c:choose>
                                     <c:when test="${sessionScope.role==0}">
                                         <li>
-                                            <a href="#">Пользователи</a>
+                                            <a href="controller?command=show_users">Пользователи</a>
                                         </li>
                                     </c:when>
                                     <c:otherwise>

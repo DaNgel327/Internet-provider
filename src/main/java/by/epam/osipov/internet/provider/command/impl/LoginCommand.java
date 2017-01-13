@@ -27,6 +27,8 @@ public class LoginCommand implements Command {
             if (verifyAccess(access, password)) {
                 content.setSessionAttribute("user", login);
                 content.setSessionAttribute("role", access.getRole());
+                //change from session to normal attr
+                content.setSessionAttribute("loginError", null);
             }else{
                 //change from session to normal attr
                 content.setSessionAttribute("loginError", "Ошибка авторизации.\nНеверное имя пользователя или пароль");
