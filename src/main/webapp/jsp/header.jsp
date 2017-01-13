@@ -89,7 +89,6 @@
                                     </c:otherwise>
                                 </c:choose>
 
-
                                 <li>
                                     <a href="/controller?command=logout">Выйти</a>
                                 </li>

@@ -9,54 +9,46 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/bootstrap.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="../resource/js/admin-content.js"></script>
-
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <form action="#" method="get">
-                <div class="input-group">
-                    <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
-                    <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i
-                                class="glyphicon glyphicon-search"></i></button>
-                    </span>
-                </div>
-            </form>
-        </div>
-        <div class="col-md-9">
-            <table class="table table-list-search">
-                <thead>
-                <tr>
-                    <th>Entry</th>
-                    <th>Entry</th>
-                    <th>Entry</th>
-                    <th>Entry</th>
-                    <th>Entry</th>
-                    <th>Entry</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="user" items="${sessionScope.users}">
-                    <tr>
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+        </tr>
+        </thead>
 
-                        <td>${user.getName()}</td>
-                        <td>${user.getPassport()}</td>
-                        <td>${user.getPhone()}</td>
-                        <td>${user.getBalance()}</td>
+        <tbody>
+        <c:forEach var="user" items="${sessionScope.users}">
+            <tr>
+                <th>${user.getName()}</th>
+                <th>${user.getPassport()}</th>
+                <th>${user.getPhone()}</th>
+                <th>${user.getBalance()}</th>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 
-                    </tr>
-                </c:forEach>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
 
-                </tbody>
-            </table>
-        </div>
-    </div>
+        $('#example').DataTable({
+            "ordering": false
+        });
+    </script>
 </div>
 </body>
-
-
