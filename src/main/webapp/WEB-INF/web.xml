@@ -20,23 +20,6 @@
         <servlet-name>controller</servlet-name>
         <url-pattern>/controller</url-pattern>
         <url-pattern>/BelNet</url-pattern>
-        <url-pattern>/Login</url-pattern>
-        <url-pattern>/SignUp</url-pattern>
-        <url-pattern>/About</url-pattern>
-        <url-pattern>/Users</url-pattern>
-        <url-pattern>/Profile</url-pattern>
-        <url-pattern>/TOP</url-pattern>
-        <url-pattern>/Recent</url-pattern>
-        <url-pattern>/Questions</url-pattern>
-        <url-pattern>/Question</url-pattern>
-        <url-pattern>/CreateQuestion</url-pattern>
-        <url-pattern>/CreateSection</url-pattern>
-        <url-pattern>/EditSection</url-pattern>
-        <url-pattern>/EditComment</url-pattern>
-        <url-pattern>/EditQuestion</url-pattern>
-        <url-pattern>/EditProfile</url-pattern>
-        <url-pattern>/Error500</url-pattern>
-        <url-pattern>/Error404</url-pattern>
     </servlet-mapping>
 
     <!--

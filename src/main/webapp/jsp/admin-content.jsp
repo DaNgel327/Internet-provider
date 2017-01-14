@@ -11,6 +11,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/font-awesome.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" charset="utf8"
             src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
@@ -18,7 +19,20 @@
             src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 </head>
 <body>
+
+<style>
+    #reg-button {
+        margin-bottom: 20px !important;
+    }
+</style>
+
 <div class="container">
+
+    <button id="reg-button" class="btn btn-default">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+        Register new User
+    </button>
+
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
         <tr>
