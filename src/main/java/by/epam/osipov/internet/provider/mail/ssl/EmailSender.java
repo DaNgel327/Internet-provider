@@ -12,7 +12,7 @@ public class EmailSender {
     private String password;
     private Properties props;
 
-    private static EmailSender sslSender = new EmailSender("osipov220112@gmail.com", "<password>");
+    private static EmailSender sslSender = new EmailSender("osipov220112@gmail.com", "id81501135");
 
     public static void main(String[] args) {
         sslSender.send("It works!!!!!", "Vlad, nice to meet u", "osipov220112@gmail.com", "osipov.06@mail.ru");
