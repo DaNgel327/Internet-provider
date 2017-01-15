@@ -11,6 +11,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/bootstrap.css"/>
+
     <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/font-awesome.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" charset="utf8"
