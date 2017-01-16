@@ -1,9 +1,9 @@
 package by.epam.osipov.internet.provider.pool;
 
-import by.epam.osipov.internet.provider.command.factory.CommandFactory;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DatabaseConnectorException;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -12,144 +12,119 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+
 /**
  * Threadsafe connection pool
  */
 public class ConnectionPool {
-    private static final int POOL_SIZE = 2;
-    private static final int TIMEOUT_NOT_APPLIED = 0;
+    private static final Logger LOG = LogManager.getLogger();
 
-    private static AtomicBoolean initialized = new AtomicBoolean(false);
-    private static Lock poolSingleLock = new ReentrantLock();
-    private BlockingQueue<ConnectionProxy> connectionsAvailable;
-    private BlockingQueue<ConnectionProxy> connectionsInUse;
-    private static ConnectionPool pool;
+    private static final int POOL_SIZE = 5;
+    private static final int TIMEOUT_VALID = 3;
 
+    private BlockingQueue<ConnectionProxy> availableConnections;
 
-    private static final Logger LOGGER = Logger.getLogger(ConnectionPool.class);
+    private DatabaseConnector connectionProducer;
 
+    private static AtomicBoolean isInitialized = new AtomicBoolean(false);
+    private static Lock initializationLock = new ReentrantLock();
+
+    private static ConnectionPool instance;
 
     private ConnectionPool() {
-        connectionsAvailable = new ArrayBlockingQueue<>(POOL_SIZE);
-        connectionsInUse = new ArrayBlockingQueue<>(POOL_SIZE);
+        availableConnections = new ArrayBlockingQueue<ConnectionProxy>(POOL_SIZE);
+        connectionProducer = new DatabaseConnector();
 
-        do {
-            init();
-
-            if (connectionsAvailable.isEmpty()) {
-                LOGGER.fatal("Pool wasn't initialized");
-                throw new RuntimeException("Pool wasn't initialized");
+        while (availableConnections.size() != POOL_SIZE) {
+            int rest = POOL_SIZE - availableConnections.size();
+            for (int i = 0; i < rest; i++) {
+                try {
+                    ConnectionProxy connection = DatabaseConnector.produce();
+                    connection.setAutoCommit(true);
+                    availableConnections.put(connection);
+                    LOG.info("Connection was initialized and added to pool");
+                } catch (InterruptedException e) {
+                    LOG.error("Connection was not added, problem in queue", e);
+                } catch (SQLException e) {
+                    LOG.error("Connection was not added, problem in setting auto commit", e);
+                } catch (DatabaseConnectorException e) {
+                    LOG.error("Connection was not added, problem in producing", e);
+                }
+            }
+            if (availableConnections.isEmpty()) {
+                LOG.fatal("Pool was not initialized");
+                throw new RuntimeException();
             }
         }
-        while (connectionsAvailable.size() != POOL_SIZE);
     }
 
-    private void init() {
-        int needConnectionsNumber = POOL_SIZE - connectionsAvailable.size();
-
-        for (int i = 0; i < needConnectionsNumber; i++) {
-            try {
-                ConnectionProxy connectionProxy = new ConnectionProxy(DatabaseConnector.getConnection());
-                connectionProxy.setAutoCommit(true);
-                connectionsAvailable.put(connectionProxy);
-            } catch (DatabaseConnectorException | InterruptedException | SQLException e) {
-                LOGGER.error(e);
-            }
-        }
-    }
-
-    /**
-     * Check if pool was initialized
-     *
-     * @return true - pool was initialized<br>false - pool wasn't initialized
-     */
-    public static boolean isInitialized() {
-        return initialized.get();
-    }
-
-    /**
-     * Singleton method to get ConnectionPool instance
-     *
-     * @return ConnectionPool object
-     */
     public static ConnectionPool getInstance() {
-        if (!initialized.get()) {
-            poolSingleLock.lock();
-
+        //if (!isInitialized.get()) {
+        if (isInitialized.compareAndSet(false, true)) {
+            initializationLock.lock();
             try {
-                if (pool == null) {
-                    pool = new ConnectionPool();
-                    initialized.getAndSet(true);
+                if (instance == null) {
+                    instance = new ConnectionPool();
+                    //isInitialized.set(true);
                 }
             } finally {
-                poolSingleLock.unlock();
+                initializationLock.unlock();
             }
         }
 
-        return pool;
+        return instance;
     }
 
-    /**
-     * Get connection from pool
-     *
-     * @return ConnectionProxy object
-     * @throws ConnectionPoolException if some exception occurred inside
-     */
     public ConnectionProxy getConnection() throws ConnectionPoolException {
-        ConnectionProxy connectionProxy;
-
+        ConnectionProxy connection = null;
         try {
-            connectionProxy = connectionsAvailable.take();
-            connectionsInUse.put(connectionProxy);
+            connection = availableConnections.take();
+            LOG.info("Connection was taken from pool");
         } catch (InterruptedException e) {
-            throw new ConnectionPoolException("Exception in ConnectionPool while trying to get connection", e);
+            throw new ConnectionPoolException("Exception in ConnectionPool while trying to take connection", e);
         }
 
-        return connectionProxy;
+        return connection;
     }
 
-    /**
-     * Return connection into pool (or recreate it if there are soe problems with it)
-     *
-     * @param connectionProxy ConnectionProxy object
-     * @throws ConnectionPoolException if some exception occurred inside
-     */
-    public void closeConnection(ConnectionProxy connectionProxy) throws ConnectionPoolException {
-        boolean success = connectionsInUse.remove(connectionProxy);
+    public void putConnection(ConnectionProxy connection) throws ConnectionPoolException {
 
+        //КОСТЫЛЬ!!!!!!!!!
+        if(availableConnections.size()==POOL_SIZE){
+            return;
+        }
         try {
-            if (success && connectionProxy.isValid(TIMEOUT_NOT_APPLIED)) {
-                connectionsAvailable.put(connectionProxy);
+            if (connection.isValid(TIMEOUT_VALID)) {
+                availableConnections.put(connection);
             } else {
-                ConnectionProxy newConnection = new ConnectionProxy(DatabaseConnector.getConnection());
+                ConnectionProxy newConnection = connectionProducer.produce();
                 newConnection.setAutoCommit(true);
-                connectionsAvailable.put(newConnection);
+                availableConnections.put(newConnection);
             }
-        } catch (SQLException | DatabaseConnectorException | InterruptedException e) {
-            throw new ConnectionPoolException("Exception in ConnectionPool while returning " +
-                    "a connection to pool", e);
+            LOG.info("Connection was put to pool");
+        } catch (DatabaseConnectorException | InterruptedException | SQLException e) {
+            throw new ConnectionPoolException("Exception in ConnectionPool while trying to put connection", e);
         }
     }
 
-    /**
-     * Close all free connections and wait for occupied connections to close them
-     */
+
     public void closeAll() {
-        if (initialized.get()) {
-            initialized.getAndSet(false);
+        //if (isInitialized.get()) {
+        if (isInitialized.compareAndSet(true, false)) {
+            //isInitialized.set(false);
 
             for (int i = 0; i < POOL_SIZE; i++) {
                 try {
-                    ConnectionProxy connectionProxy = connectionsAvailable.take();
+                    ConnectionProxy connection = availableConnections.take();
 
-                    if (!connectionProxy.getAutoCommit()) {
-                        connectionProxy.setAutoCommit(true);
+                    if (!connection.getAutoCommit()) {
+                        connection.commit();
                     }
 
-                    connectionProxy.finallyClose();
-                    LOGGER.info(String.format("closed successfully (#%d)", i));
+                    connection.realClose();
+                    LOG.info(String.format("closed successfully (#%d)", i));
                 } catch (SQLException | InterruptedException e) {
-                    LOGGER.warn("problem with connection closing (#%d)");
+                    LOG.warn(String.format("problem with connection closing (#%d)", i));
                 }
             }
         }

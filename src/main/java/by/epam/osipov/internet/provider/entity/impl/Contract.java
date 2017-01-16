@@ -2,7 +2,9 @@ package by.epam.osipov.internet.provider.entity.impl;
 
 import by.epam.osipov.internet.provider.entity.Entity;
 
-import java.util.GregorianCalendar;
+import java.sql.Date;
+import java.sql.Timestamp;
+
 
 /**
  * Created by Lenovo on 11.01.2017.
@@ -14,10 +16,9 @@ public class Contract extends Entity {
     private int apartmentNumber;
     private int idService;
     private int idAccess;
-    private GregorianCalendar serviceProvisionDate;
+    private Timestamp serviceProvisionDate;
 
-    public Contract(int id, int idUser, int idCoverage, int apartmentNumber, int idService, int idAccess, GregorianCalendar serviceProvisionDate) {
-        super(id);
+    public Contract(int idUser, int idCoverage, int apartmentNumber, int idService, int idAccess, Timestamp serviceProvisionDate) {
         this.idUser = idUser;
         this.idCoverage = idCoverage;
         this.apartmentNumber = apartmentNumber;
@@ -26,8 +27,14 @@ public class Contract extends Entity {
         this.serviceProvisionDate = serviceProvisionDate;
     }
 
-    public Contract(int id) {
+    public Contract(int id, int idUser, int idCoverage, int apartmentNumber, int idService, int idAccess, Timestamp serviceProvisionDate) {
         super(id);
+        this.idUser = idUser;
+        this.idCoverage = idCoverage;
+        this.apartmentNumber = apartmentNumber;
+        this.idService = idService;
+        this.idAccess = idAccess;
+        this.serviceProvisionDate = serviceProvisionDate;
     }
 
     public int getIdUser() {
@@ -70,11 +77,11 @@ public class Contract extends Entity {
         this.idAccess = idAccess;
     }
 
-    public GregorianCalendar getServiceProvisionDate() {
+    public Timestamp getServiceProvisionDate() {
         return serviceProvisionDate;
     }
 
-    public void setServiceProvisionDate(GregorianCalendar serviceProvisionDate) {
+    public void setServiceProvisionDate(Timestamp serviceProvisionDate) {
         this.serviceProvisionDate = serviceProvisionDate;
     }
 }

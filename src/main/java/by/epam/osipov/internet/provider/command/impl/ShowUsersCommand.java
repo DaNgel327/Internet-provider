@@ -20,13 +20,8 @@ import java.util.List;
 public class ShowUsersCommand implements Command {
     @Override
     public String execute(RequestContent content) throws CommandException {
-        try {
-            ConnectionProxy connection = null;
-            try {
-                connection = ConnectionPool.getInstance().getConnection();
-            } catch (Exception e) {
-                System.out.println("Exception while trying to get connection in service");
-            }
+        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()){
+
             UserDAO userDAO = new UserDAO(connection);
             List<User> users = userDAO.findAll();
 

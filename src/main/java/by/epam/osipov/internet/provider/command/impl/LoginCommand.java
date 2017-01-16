@@ -13,15 +13,10 @@ import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 public class LoginCommand implements Command {
 
     public String execute(RequestContent content) {
-        try {
+        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
             String login = content.getParameter("user");
             String password = content.getParameter("password");
-            ConnectionProxy connection = null;
-            try {
-                connection = ConnectionPool.getInstance().getConnection();
-            } catch (Exception e) {
-                System.out.println("Exception while trying to get connection in service");
-            }
+
             AccessDAO accessDAO = new AccessDAO(connection);
             Access access = accessDAO.findByLogin(login);
             if (verifyAccess(access, password)) {

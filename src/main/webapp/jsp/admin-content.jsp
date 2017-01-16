@@ -29,10 +29,11 @@
 
 <div class="container">
 
-    <button id="reg-button" class="btn btn-default">
+    <a class="btn btn-default" href="/jsp/registration-page.jsp" role="button" id="reg-button">
         <i class="fa fa-user-plus" aria-hidden="true"></i>
         Register new User
-    </button>
+    </a>
+
 
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>

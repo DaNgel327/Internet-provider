@@ -1,22 +1,124 @@
 package by.epam.osipov.internet.provider.dao.impl;
 
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
-import by.epam.osipov.internet.provider.entity.Entity;
+import by.epam.osipov.internet.provider.entity.impl.Contract;
+import by.epam.osipov.internet.provider.entity.impl.User;
+import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
  * Created by Lenovo on 11.01.2017.
  */
-public class ContractDAO{
+public class ContractDAO extends AbstractDAO {
 
-    private final static String SELECT_PASSWORD_BY_LOGIN = "SELECT user.password FROM internet_provider.user" +
-            " WHERE login = ?";
-    private final static String INSERT_NEW_USER = "INSERT INTO internet_provider.account (login, password, email, id_role, firstname, secondname, lastname, address, city, datebirth) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    private final static String SELECT_USER_BY_LOGIN = "SELECT * FROM `internet_provider`.`account` WHERE login = ?";
-    private final static String SELECT_ALL = "SELECT * FROM `internet_provider`.`account`";
-    private final static String UPDATE_PASS = "UPDATE account SET password= ? WHERE id_account = ?";
+    private static final String SELECT_ALL = "SELECT * FROM contract";
+
+    private static final String SELECT_BY_ID = "SELECT * FROM contract WHERE user.id = ?";
+
+    private static final String INSERT_NEW ="INSERT INTO contract (idUser, idCoverage, apartmentNumber, idService, " +
+            "idAccess, serviceProvisionDate) " +
+            "VALUES (?, ?, ?, ?, ?, ?)";
+
+    public ContractDAO(ConnectionProxy connection) {
+        super(connection);
+    }
 
 
+    @Override
+    public List<Contract> findAll() {
+        List<Contract> contracts = new ArrayList<>();
+
+        try (Statement st = connection.createStatement();) {
+
+            ResultSet rs = st.executeQuery(SELECT_ALL);
+            while (rs.next()) {
+
+                int idContract = rs.getInt(1);
+                int idUser = rs.getInt(2);
+                int idCoverage = rs.getInt(3);
+                int apartmentNumber = rs.getInt(4);
+                int idService = rs.getInt(5);
+                int idAccess = rs.getInt(6);
+                java.sql.Timestamp serviceProvisionDate = rs.getTimestamp(7);
+
+                contracts.add(new Contract(idContract, idUser, idCoverage, apartmentNumber, idService, idAccess,
+                        serviceProvisionDate));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("error");
+            }
+        }
+        return contracts;
+    }
+
+    public Contract findById(int id) {
+
+        Contract contract = null;
+
+        try (Statement st = connection.createStatement();) {
+
+            ResultSet rs = st.executeQuery(SELECT_BY_ID);
+                int idContract = rs.getInt(1);
+                int idUser = rs.getInt(2);
+                int idCoverage = rs.getInt(3);
+                int apartmentNumber = rs.getInt(4);
+                int idService = rs.getInt(5);
+                int idAccess = rs.getInt(6);
+                java.sql.Timestamp serviceProvisionDate = rs.getTimestamp(7);
+
+                contract = new Contract(idContract, idUser, idCoverage, apartmentNumber, idService, idAccess,
+                        serviceProvisionDate);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("error");
+            }
+        }
+        return contract;
+    }
+
+    public boolean create(Contract contract) {
+
+        try (PreparedStatement ps = this.connection.prepareCall(INSERT_NEW)) {
+
+            ps.setInt(1, contract.getIdUser());
+            ps.setInt(2, contract.getIdCoverage());
+            ps.setInt(3, contract.getApartmentNumber());
+            ps.setInt(4, contract.getIdService());
+            ps.setInt(5, contract.getIdAccess());
+
+            ps.setTimestamp(6, contract.getServiceProvisionDate());
+
+            ps.executeUpdate();
+            if (ps.getUpdateCount() != 1) {
+                System.out.println("user was not added");
+            }
+        } catch (SQLException e) {
+            System.out.println("Sql exception with inserting new user" + e);
+            return false;
+        }
+
+        return true;
+
+    }
 
 }

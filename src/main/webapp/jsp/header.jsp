@@ -90,7 +90,7 @@
                                 </c:choose>
 
                                 <li>
-                                    <a href="/controller?command=logout">Выйти</a>
+                                    <a href="controller?command=logout">Выйти</a>
                                 </li>
                             </ul>
                         </li>

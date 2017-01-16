@@ -5,7 +5,11 @@ package by.epam.osipov.internet.provider.entity;
  */
 public abstract class Entity {
 
-    int id;
+    private int id;
+
+    public Entity(){
+
+    }
 
     public Entity(int id) {
         this.id = id;

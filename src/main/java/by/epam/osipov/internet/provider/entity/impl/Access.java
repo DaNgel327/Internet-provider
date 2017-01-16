@@ -15,6 +15,13 @@ public class Access extends Entity {
         super(id);
     }
 
+    public Access(String login, String password, byte role) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
+
+
     public Access(int id, String login, String password, byte role) {
         super(id);
         this.login = login;

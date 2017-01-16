@@ -7,33 +7,41 @@ import by.epam.osipov.internet.provider.entity.Entity;
  */
 public class User extends Entity {
 
-    private String sName;
+    private String surname;
     private String name;
-    private String pName;
+    private String patronymic;
     private String passport;
     private String phone;
     private double balance;
+    private String email;
 
-    public User(int id) {
-        super(id);
-    }
-
-    public User(int id, String sName, String name, String pName, String passport, String phone, double balance) {
-        super(id);
-        this.sName = sName;
+    public User(String surname, String name, String patronymic, String passport, String phone, double balance, String email) {
+        this.surname = surname;
         this.name = name;
-        this.pName = pName;
+        this.patronymic = patronymic;
         this.passport = passport;
         this.phone = phone;
         this.balance = balance;
+        this.email = email;
     }
 
-    public String getsName() {
-        return sName;
+    public User(int id, String surname, String name, String patronymic, String passport, String phone, double balance, String email) {
+        super(id);
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.passport = passport;
+        this.phone = phone;
+        this.balance = balance;
+        this.email = email;
     }
 
-    public void setsName(String sName) {
-        this.sName = sName;
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getName() {
@@ -44,12 +52,12 @@ public class User extends Entity {
         this.name = name;
     }
 
-    public String getpName() {
-        return pName;
+    public String getPatronymic() {
+        return patronymic;
     }
 
-    public void setpName(String pName) {
-        this.pName = pName;
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
     }
 
     public String getPassport() {
@@ -74,5 +82,13 @@ public class User extends Entity {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
