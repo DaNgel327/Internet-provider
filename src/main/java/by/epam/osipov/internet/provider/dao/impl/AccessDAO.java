@@ -27,6 +27,10 @@ public class AccessDAO extends AbstractDAO {
 
     private final static String SELECT_BY_LOGIN = "SELECT * FROM access WHERE login = ?";
 
+    private final static String DELETE_BY_USER_ID = "DELETE FROM access\n" +
+            "where idAccess = (select idAccess FROM contract\n" +
+            "where idUser = ?)";
+
     public AccessDAO(ConnectionProxy connection) {
         super(connection);
     }
@@ -37,8 +41,23 @@ public class AccessDAO extends AbstractDAO {
     }
 
     @Override
-    public boolean deleteByKey(Object id) {
-        throw new UnsupportedOperationException();
+    //delete by userID
+    public boolean deleteByKey(Object key) {
+        try (PreparedStatement ps = connection.prepareStatement(DELETE_BY_USER_ID)) {
+            ps.setInt(1, (Integer)key);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("bad close connection");
+            }
+        }
+        return true;
     }
 
     @Override

@@ -2013,3 +2013,124 @@ Caused by: java.sql.SQLException: No suitable driver found for url=jdbc:mysql://
 03:22:10.591 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
 03:22:10.612 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
 03:22:10.646 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:43:38.634 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:43:38.657 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:43:38.713 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:43:38.747 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:43:38.786 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:43:38.786 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:43:38.813 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:43:43.172 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:43:43.187 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.443 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.451 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.452 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.547 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.549 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.554 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.554 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.560 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.563 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.568 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.569 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.596 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.597 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.618 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:09.619 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:09.659 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:14.413 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:14.417 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:25.757 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:25.759 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:25.765 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:25.813 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:44:25.814 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:44:25.830 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:45:57.632 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:45:57.654 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:45:57.662 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:45:57.716 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:45:57.759 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:45:57.759 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:45:57.783 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:45:59.938 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:45:59.946 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.739 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.756 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.756 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.787 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.789 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.792 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.793 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.826 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.829 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.832 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.835 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.842 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.843 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.857 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:20.858 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:20.865 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:26.206 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:26.209 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:32.361 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:32.363 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:32.369 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:32.395 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:32.395 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:32.404 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:37.797 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:37.798 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:37.800 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:37.803 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:37.803 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:37.806 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:44.190 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:44.214 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:46:49.404 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:46:49.406 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:49:23.372 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:49:23.387 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:49:23.394 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:49:23.413 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:49:23.422 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+03:49:23.423 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:49:23.449 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:49:25.812 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:49:25.819 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:49:51.957 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:49:51.961 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.122 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.124 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.125 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.154 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.157 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.163 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.165 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.175 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.178 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.182 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.183 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.230 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.231 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.246 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:50:25.247 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:50:25.249 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:29.236 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:29.237 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:33.126 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:33.128 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:33.146 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:33.165 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:33.166 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:33.170 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:33.170 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:33.171 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:37.437 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:37.438 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:37.456 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:37.457 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:37.457 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:37.461 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+03:51:37.462 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+03:51:37.463 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
