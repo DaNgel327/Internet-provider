@@ -33,7 +33,7 @@ public class UserDAO extends AbstractDAO {
                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     private final static String DELETE_BY_ID = "DELETE FROM user\n" +
-            "WHERE passport = ?\n";
+            "WHERE passport = ?";
 
     @Override
     public int getIdByKey(Object key) {

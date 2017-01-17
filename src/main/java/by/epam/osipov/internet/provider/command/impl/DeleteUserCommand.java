@@ -2,6 +2,7 @@ package by.epam.osipov.internet.provider.command.impl;
 
 import by.epam.osipov.internet.provider.command.Command;
 import by.epam.osipov.internet.provider.content.RequestContent;
+import by.epam.osipov.internet.provider.dao.impl.ContractDAO;
 import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.exception.CommandException;
@@ -15,6 +16,7 @@ public class DeleteUserCommand implements Command {
     @Override
     public String execute(RequestContent content) throws CommandException {
         int idUser = deleteUser(content);
+        deleteContract(idUser);
         return "jsp/admin-page.jsp";
     }
 
@@ -35,18 +37,18 @@ public class DeleteUserCommand implements Command {
         return idUser;
     }
 
-    private boolean deleteContract(RequestContent content) {
-        /*String passport = content.getParameter("passport");
+    private boolean deleteContract(int idUser) {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
-            UserDAO userDAO = new UserDAO(connection);
-            if (!userDAO.deleteByPassport(passport)) {
+
+            ContractDAO contractDAO = new ContractDAO(connection);
+
+            if (!contractDAO.deleteByKey(idUser)) {
                 System.out.println("exception");
                 return false;
             }
         } catch (Exception e) {
             System.out.println("ex");
         }
-        */
         return true;
     }
 }
