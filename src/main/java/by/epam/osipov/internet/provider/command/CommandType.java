@@ -13,7 +13,8 @@ public enum CommandType {
     LOCALE(new LocaleCommand()),
     SHOW_USERS(new ShowUsersCommand()),
     REGISTER_USER(new RegisterCommand()),
-    DELETE_USER(new DeleteUserCommand());
+    DELETE_USER(new DeleteUserCommand()),
+    BAN_USER(new BanUserCommand());
 
     private Command command;
 

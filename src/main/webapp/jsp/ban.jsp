@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="../resource/css/registration-form.css"/>
 </head>
 <body>
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
 <style>
     textarea {
@@ -46,7 +44,10 @@
                 <textarea placeholder="Write a discription"></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Ban user</button>
+                <a class="btn btn-default"
+                   href="controller?command=ban_user&passport=${sessionScope.get("passport")}" role="button">
+                    Ban user
+                </a>
             </div>
         </div>
 

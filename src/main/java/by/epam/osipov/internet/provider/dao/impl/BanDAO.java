@@ -2,9 +2,9 @@ package by.epam.osipov.internet.provider.dao.impl;
 
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Ban;
-import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -19,11 +19,30 @@ import java.util.Map;
 public class BanDAO extends AbstractDAO {
 
     private final static String SELECT_ALL = "SELECT * FROM ban";
-    private final static String SELECT_PASSPORT_AND_DESCRIPTION = "SELECT passport, description FROM ban\n" +
-            "JOIN user ON ban.idUser = user.idUser";
+    private final static String INSERT_BY_USER_ID = "INSERT INTO ban (idUser, description)  \n" +
+            "VALUES (\n" +
+            "(SELECT idUser FROM user WHERE passport = ?),?)";
 
     public BanDAO(ConnectionProxy connection) {
         super(connection);
+    }
+
+    public boolean createByUserId(Ban ban){
+        try (PreparedStatement ps = this.connection.prepareCall(INSERT_BY_USER_ID)) {
+
+            ps.setInt(1, ban.getIdUser());
+            ps.setString(2, ban.getDescription());
+            ps.executeUpdate();
+            if (ps.getUpdateCount() != 1) {
+                System.out.println("user was not added");
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println("Sql exception with inserting new user" + e);
+            return false;
+        }
+
+        return true;
     }
 
     @Override
@@ -33,7 +52,19 @@ public class BanDAO extends AbstractDAO {
 
     @Override
     public boolean deleteByKey(Object key) throws UnsupportedOperationException {
-        return false;
+
+        /*
+        try(PreparedStatement st = connection.prepareStatement(DELETE_BY_USER_ID)){
+
+            st.setString(1,(String) key);
+            st.executeUpdate();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+        */
+
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -52,18 +83,4 @@ public class BanDAO extends AbstractDAO {
         return bans;
     }
 
-    public Map<String, String> getPassportAndDescription(){
-        Map<String, String> result = new HashMap<>();
-
-        try (Statement st = connection.createStatement();) {
-
-            ResultSet rs = st.executeQuery(SELECT_ALL);
-            while (rs.next()) {
-                result.put(rs.getString(1), rs.getString(2));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
 }

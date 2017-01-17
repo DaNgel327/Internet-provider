@@ -18,6 +18,7 @@
             src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" charset="utf8"
             src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -61,7 +62,16 @@
                             <a href="controller?command=delete_user&passport=${user.getPassport()}">DELETE</a>
                         </li>
                         <li>
-                            <a href="#">BAN</a>
+                            <!-- Trigger the modal with a button -->
+                            <!--<input name="asasas" hidden>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                                Open Modal</button>-->
+                            <a class="btn btn-default"  href="#" role="button"
+                               onclick="${sessionScope.put("passport", user.getPassport())})"
+                               data-toggle="modal" data-target="#myModal">
+                                BAN
+                            </a>
+
                         </li>
                     </ul>
                 </td>
@@ -80,7 +90,7 @@
                             <a href="controller?command=delete_user&passport=${banned.getPassport()}">DELETE</a>
                         </li>
                         <li>
-                            <a href="#">BAN</a>
+                            <a href="#">UNBAN</a>
                         </li>
                     </ul>
                 </td>
@@ -91,6 +101,7 @@
     </table>
 
     <script>
+
         $(document).ready(function () {
             $('#example').DataTable();
         });
