@@ -85,8 +85,6 @@ public class AccessDAO extends AbstractDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            connection.close();
         }
         return access;
     }
@@ -102,8 +100,6 @@ public class AccessDAO extends AbstractDAO {
         } catch (SQLException e) {
             System.out.println("Sql exception with inserting new user" + e);
             return false;
-        } finally {
-            connection.close();
         }
 
         return true;

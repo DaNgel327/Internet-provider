@@ -2134,3 +2134,469 @@ Caused by: java.sql.SQLException: No suitable driver found for url=jdbc:mysql://
 03:51:37.461 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
 03:51:37.462 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
 03:51:37.463 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:12.301 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:06:12.316 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:06:12.323 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:06:12.336 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:06:12.346 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:06:12.347 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:12.369 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:14.172 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:14.179 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.224 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:34.226 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.227 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:34.269 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.270 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:34.273 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.274 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:34.281 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.283 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:34.287 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.288 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:34.291 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.295 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:34.303 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:34.303 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:36.965 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:06:39.637 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:06:39.639 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:07:17.364 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:07:17.365 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:07:17.371 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:07:17.375 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:07:17.375 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:07:17.385 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:07:17.385 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:07:17.386 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:12:00.222 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:12:00.239 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:12:00.253 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:12:00.263 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:12:00.271 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:12:00.272 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:12:00.296 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:21:37.149 [http-nio-8087-exec-1] ERROR by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was not added, problem in producing
+by.epam.osipov.internet.provider.exception.DatabaseConnectorException: Connection was not produced
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:57) ~[classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.<init>(ConnectionPool.java:42) [classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.getInstance(ConnectionPool.java:67) [classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:16) [classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:27) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:526) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:505) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:479) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:489) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1677) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+Caused by: com.mysql.cj.core.exceptions.InvalidConnectionAttributeException: The server time zone value 'RTZ 2 (????)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_101]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_101]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_101]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_101]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:118) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.mysqla.MysqlaSession.configureTimezone(MysqlaSession.java:293) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:2399) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1642) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+21:21:45.230 [http-nio-8087-exec-1] ERROR by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was not added, problem in producing
+by.epam.osipov.internet.provider.exception.DatabaseConnectorException: Connection was not produced
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:57) ~[classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.<init>(ConnectionPool.java:42) [classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.getInstance(ConnectionPool.java:67) [classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:16) [classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:27) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:526) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:505) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:479) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:489) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1677) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+Caused by: com.mysql.cj.core.exceptions.InvalidConnectionAttributeException: The server time zone value 'RTZ 2 (????)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_101]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_101]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_101]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_101]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:118) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.mysqla.MysqlaSession.configureTimezone(MysqlaSession.java:293) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:2399) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1642) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+21:21:53.303 [http-nio-8087-exec-1] ERROR by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was not added, problem in producing
+by.epam.osipov.internet.provider.exception.DatabaseConnectorException: Connection was not produced
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:57) ~[classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.<init>(ConnectionPool.java:42) [classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.getInstance(ConnectionPool.java:67) [classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:16) [classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:27) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:526) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:505) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:479) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:489) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1677) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+Caused by: com.mysql.cj.core.exceptions.InvalidConnectionAttributeException: The server time zone value 'RTZ 2 (????)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_101]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_101]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_101]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_101]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:118) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.mysqla.MysqlaSession.configureTimezone(MysqlaSession.java:293) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:2399) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1642) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+21:22:01.373 [http-nio-8087-exec-1] ERROR by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was not added, problem in producing
+by.epam.osipov.internet.provider.exception.DatabaseConnectorException: Connection was not produced
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:57) ~[classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.<init>(ConnectionPool.java:42) [classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.getInstance(ConnectionPool.java:67) [classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:16) [classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:27) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:526) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:505) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:479) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:489) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1677) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+Caused by: com.mysql.cj.core.exceptions.InvalidConnectionAttributeException: The server time zone value 'RTZ 2 (????)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source) ~[?:?]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_101]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_101]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:118) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.mysqla.MysqlaSession.configureTimezone(MysqlaSession.java:293) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:2399) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1642) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+21:22:09.450 [http-nio-8087-exec-1] ERROR by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was not added, problem in producing
+by.epam.osipov.internet.provider.exception.DatabaseConnectorException: Connection was not produced
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:57) ~[classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.<init>(ConnectionPool.java:42) [classes/:?]
+	at by.epam.osipov.internet.provider.pool.ConnectionPool.getInstance(ConnectionPool.java:67) [classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:16) [classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:27) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:526) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:513) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:505) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:479) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:489) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1677) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+Caused by: com.mysql.cj.core.exceptions.InvalidConnectionAttributeException: The server time zone value 'RTZ 2 (????)' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source) ~[?:?]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_101]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_101]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:73) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.util.TimeUtil.getCanonicalTimezone(TimeUtil.java:118) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.mysqla.MysqlaSession.configureTimezone(MysqlaSession.java:293) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:2399) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:1642) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1601) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.5.jar:6.0.5]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_101]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_101]
+	at by.epam.osipov.internet.provider.pool.DatabaseConnector.produce(DatabaseConnector.java:53) ~[classes/:?]
+	... 34 more
+21:22:09.455 [http-nio-8087-exec-1] FATAL by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Pool was not initialized
+21:25:13.324 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:25:13.337 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:25:13.344 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:25:13.373 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:25:13.381 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:25:13.382 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:25:13.407 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:26:23.962 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:26:23.981 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:26:23.988 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:26:24.002 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:26:24.011 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:26:24.011 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:26:24.036 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:39:26.471 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:39:26.507 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:39:26.532 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:39:26.544 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:39:26.555 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:39:26.555 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:39:26.601 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:41:19.493 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:41:19.521 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:41:19.564 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:41:19.578 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:41:19.596 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:41:19.597 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:41:19.626 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:43:18.195 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:43:18.232 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:43:18.266 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:43:18.300 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:43:18.304 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:43:18.305 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:43:18.349 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:46:51.291 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:46:51.308 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:46:51.321 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:46:51.330 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:46:51.342 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:46:51.342 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:46:51.370 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:48:01.648 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:48:01.663 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:48:01.675 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:48:01.687 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:48:01.696 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:48:01.697 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:48:01.721 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:50:04.080 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:50:04.104 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:50:04.113 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:50:04.131 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:50:04.141 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:50:04.141 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:50:04.202 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:55:22.528 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:55:22.544 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:55:22.554 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:55:22.564 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:55:22.572 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:55:22.572 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:55:22.618 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+21:57:49.348 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:57:49.377 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:57:49.384 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:57:49.395 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:57:49.405 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+21:57:49.405 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+21:57:49.544 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool

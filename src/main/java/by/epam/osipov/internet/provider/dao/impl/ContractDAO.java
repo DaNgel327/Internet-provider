@@ -45,12 +45,6 @@ public class ContractDAO extends AbstractDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
-        } finally {
-            try {
-                connection.close();
-            } catch (Exception e) {
-                System.out.println("bad close connection");
-            }
         }
         return true;
     }
@@ -79,12 +73,6 @@ public class ContractDAO extends AbstractDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (Exception e) {
-                System.out.println("error");
-            }
         }
         return contracts;
     }
@@ -110,12 +98,6 @@ public class ContractDAO extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (Exception e) {
-                System.out.println("error");
-            }
         }
         return contract;
     }

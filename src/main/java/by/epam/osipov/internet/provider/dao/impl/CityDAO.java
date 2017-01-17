@@ -36,12 +36,6 @@ public class CityDAO extends AbstractDAO {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    connection.close();
-                } catch (Exception e) {
-                    System.out.println("bad close connection");
-                }
             }
             return id;
         }

@@ -69,12 +69,6 @@ public class UserDAO extends AbstractDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
-        } finally {
-            try {
-                connection.close();
-            } catch (Exception e) {
-                System.out.println("bad close connection");
-            }
         }
         return true;
 
@@ -98,15 +92,6 @@ public class UserDAO extends AbstractDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } //catch (PoolException e) {
-            //  e.printStackTrace();
-            //}
-            catch (Exception e) {
-                System.out.println("error");
-            }
         }
         return users;
     }
@@ -149,12 +134,6 @@ public class UserDAO extends AbstractDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (Exception e) {
-                System.out.println("bad close connection");
-            }
         }
         return email;
     }
