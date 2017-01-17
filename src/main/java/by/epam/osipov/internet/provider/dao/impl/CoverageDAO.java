@@ -25,6 +25,16 @@ public class CoverageDAO extends AbstractDAO {
     }
 
     @Override
+    public int getIdByKey(Object key) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean deleteByKey(Object id) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public List findAll() {
         return null;
     }

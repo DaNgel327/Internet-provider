@@ -37,14 +37,12 @@ public class RegisterCommand implements Command {
 
         sendAccessToUser(access);
 
-        System.out.println("asa");
-
         return "/";
     }
 
     private Access addNewAccess() {
         AccessService accessService = new AccessService();
-        Access access = accessService.generateUnique();
+        Access access = accessService.generateUniqueAccess();
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
             AccessDAO accessDAO = new AccessDAO(connection);
             accessDAO.create(access);
@@ -113,7 +111,7 @@ public class RegisterCommand implements Command {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
 
             CityDAO cityDAO = new CityDAO(connection);
-            idCity = cityDAO.getId(city.getName());
+            idCity = cityDAO.getIdByKey(city.getName());
 
         } catch (Exception e) {
             System.out.println("ex");

@@ -31,6 +31,16 @@ public class ContractDAO extends AbstractDAO {
         super(connection);
     }
 
+    @Override
+    public int getIdByKey(Object key) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean deleteByKey(Object id) {
+        throw new UnsupportedOperationException();
+    }
+
 
     @Override
     public List<Contract> findAll() {

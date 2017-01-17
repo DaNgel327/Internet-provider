@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Lenovo on 11.01.2017.
  */
-public abstract class AbstractDAO<K, T extends Entity> {
+public abstract class AbstractDAO<T extends Entity> {
     /**
      * Database connection (used with ConnectionProxy wrapper)
      * Logic layer
@@ -22,5 +22,10 @@ public abstract class AbstractDAO<K, T extends Entity> {
         this.connection = connection;
     }
 
-    public abstract List<T> findAll();
+
+    public abstract int getIdByKey(Object key) throws UnsupportedOperationException;
+
+    public abstract boolean deleteByKey(Object key) throws UnsupportedOperationException;
+
+    public abstract List<T> findAll() throws UnsupportedOperationException;
 }

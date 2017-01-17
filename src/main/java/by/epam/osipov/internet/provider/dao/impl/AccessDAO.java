@@ -32,6 +32,16 @@ public class AccessDAO extends AbstractDAO {
     }
 
     @Override
+    public int getIdByKey(Object key) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean deleteByKey(Object id) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public List<Access> findAll() {
         List<Access> accesses = new ArrayList<>();
         try (Statement st = connection.createStatement()) {

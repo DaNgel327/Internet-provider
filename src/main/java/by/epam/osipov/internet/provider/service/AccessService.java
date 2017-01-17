@@ -21,7 +21,7 @@ public class AccessService {
     private static final int PASSWORD_SIZE = 10;
     private static final byte USER_ROLE = 1;
 
-    public Access generateUnique(){
+    public Access generateUniqueAccess(){
         Access access = null;
         boolean exist = true;
 

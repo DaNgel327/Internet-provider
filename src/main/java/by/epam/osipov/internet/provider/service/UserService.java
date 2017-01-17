@@ -24,7 +24,7 @@ public class UserService {
             UserDAO userDAO = new UserDAO(connection);
 
             if(userDAO.create(user)){
-                idUser = userDAO.getIdByPassport(user);
+                idUser = userDAO.getIdByKey(passport);
             }
         } catch (Exception e) {
             System.out.println("ex");

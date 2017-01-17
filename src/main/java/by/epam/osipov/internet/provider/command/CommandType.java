@@ -12,7 +12,8 @@ public enum CommandType {
     LOGOUT(new LogoutCommand()),
     LOCALE(new LocaleCommand()),
     SHOW_USERS(new ShowUsersCommand()),
-    REGISTER_USER(new RegisterCommand());
+    REGISTER_USER(new RegisterCommand()),
+    DELETE_USER(new DeleteUserCommand());
 
     private Command command;
 

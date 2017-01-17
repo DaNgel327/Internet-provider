@@ -42,16 +42,27 @@
             <th>Position</th>
             <th>Office</th>
             <th>Age</th>
+            <th>Options</th>
         </tr>
         </thead>
 
         <tbody>
         <c:forEach var="user" items="${sessionScope.users}">
             <tr>
-                <th>${user.getName()}</th>
-                <th>${user.getPassport()}</th>
-                <th>${user.getPhone()}</th>
-                <th>${user.getBalance()}</th>
+                <td>${user.getName()}</td>
+                <td>${user.getPassport()}</td>
+                <td>${user.getPhone()}</td>
+                <td>${user.getBalance()}</td>
+                <td>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="controller?command=delete_user&passport=${user.getPassport()}">DELETE</a>
+                        </li>
+                        <li>
+                            <a href="#">BAN</a>
+                        </li>
+                    </ul>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

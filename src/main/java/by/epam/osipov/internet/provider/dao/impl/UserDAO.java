@@ -3,7 +3,6 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.entity.impl.User;
-import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
@@ -11,8 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Lenovo on 11.01.2017.
@@ -33,6 +32,54 @@ public class UserDAO extends AbstractDAO {
             "INSERT INTO user (sName, name, pName, passport, phone, balance, email) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
+    private final static String DELETE_BY_ID = "DELETE FROM user\n" +
+            "WHERE passport = ?\n";
+
+    @Override
+    public int getIdByKey(Object key) {
+        {
+            int id = -1;
+
+            try (PreparedStatement ps = connection.prepareStatement(SELECT_ID_BY_PASSPORT)) {
+                ps.setString(1, (String)key);
+
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    id = rs.getInt(1);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                    System.out.println("bad close connection");
+                }
+            }
+            return id;
+        }
+    }
+
+    @Override
+    public boolean deleteByKey(Object key) {
+        try (PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID)) {
+            ps.setString(1, (String)key);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("bad close connection");
+            }
+        }
+        return true;
+
+    }
+
 
     public UserDAO(ConnectionProxy connection) {
         super(connection);
@@ -42,7 +89,7 @@ public class UserDAO extends AbstractDAO {
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
 
-        try (Statement st = connection.createStatement();){
+        try (Statement st = connection.createStatement();) {
 
             ResultSet rs = st.executeQuery(SELECT_ALL);
             while (rs.next()) {
@@ -97,40 +144,18 @@ public class UserDAO extends AbstractDAO {
             ResultSet rs = ps.executeQuery();
 
 
-            if(rs.next()){
+            if (rs.next()) {
                 email = rs.getString(1);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-            try{
+        } finally {
+            try {
                 connection.close();
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println("bad close connection");
             }
         }
         return email;
-    }
-
-    public int getIdByPassport(User user){
-
-        int idUser = 0;
-
-        try (PreparedStatement ps = connection.prepareStatement(SELECT_ID_BY_PASSPORT);) {
-            ps.setString(1, user.getPassport());
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                idUser = rs.getInt(1);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            try{
-                connection.close();
-            }catch(Exception e){
-                System.out.println("bad close connection");
-            }
-        }
-        return idUser;
     }
 }
