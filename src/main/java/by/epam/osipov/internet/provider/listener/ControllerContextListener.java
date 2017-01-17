@@ -43,6 +43,5 @@ public class ControllerContextListener implements ServletContextListener {
             System.out.println("Error deregistering driver");
         }
 
-        
     }
 }

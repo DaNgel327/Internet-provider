@@ -12,7 +12,6 @@
 <link href="resource/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="resource/css/style.css" rel="stylesheet">
 <link href="resource/css/admin-content.css" rel="stylesheet">
-<script src="resource/js/admin-content.js"></script>
 
 <html>
 <head>

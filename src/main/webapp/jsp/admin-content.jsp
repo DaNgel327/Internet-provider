@@ -25,6 +25,8 @@
     #reg-button {
         margin-bottom: 20px !important;
     }
+
+
 </style>
 
 <div class="container">
@@ -65,6 +67,26 @@
                 </td>
             </tr>
         </c:forEach>
+
+        <c:forEach var="banned" items="${sessionScope.bans}">
+            <tr bgcolor="#ffe4c4">
+                <td>${banned.getName()}</td>
+                <td>${banned.getPassport()}</td>
+                <td>${banned.getPhone()}</td>
+                <td>${banned.getBalance()}</td>
+                <td>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="controller?command=delete_user&passport=${banned.getPassport()}">DELETE</a>
+                        </li>
+                        <li>
+                            <a href="#">BAN</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </c:forEach>
+
         </tbody>
     </table>
 

@@ -1,6 +1,7 @@
 package by.epam.osipov.internet.provider.service;
 
 import by.epam.osipov.internet.provider.dao.impl.UserDAO;
+import by.epam.osipov.internet.provider.entity.impl.Ban;
 import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
@@ -55,4 +56,32 @@ public class UserService {
         return false;
     }
 
+    public List<User> getBannedUsers(List<User> users, List<Ban> bans){
+
+        List<User> result = new ArrayList<>();
+
+        List<Integer>  bannedIds = new ArrayList<>();
+
+        for(Ban ban: bans){
+            bannedIds.add(ban.getIdUser());
+        }
+
+        for(User user: users){
+            int idUser = user.getId();
+            boolean flag = bannedIds.contains(idUser);
+            if(flag){
+                result.add(user);
+            }
+        }
+
+        return result;
+    }
+
+    public List<User> getSimpleUsers(List<User> users, List<Ban> bans){
+        List<User> banned = getBannedUsers(users, bans);
+
+        users.removeAll(banned);
+
+        return users;
+    }
 }
