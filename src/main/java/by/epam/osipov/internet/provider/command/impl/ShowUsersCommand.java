@@ -32,7 +32,6 @@ public class ShowUsersCommand implements Command {
 
             UserService userService = new UserService();
 
-
             content.setSessionAttribute("bans", userService.getBannedUsers(users, bans));
             content.setSessionAttribute("users", userService.getSimpleUsers(users, bans));
 

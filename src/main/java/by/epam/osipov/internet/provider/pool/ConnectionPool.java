@@ -17,7 +17,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Threadsafe connection pool
  */
 public class ConnectionPool {
-    private static final Logger LOG = LogManager.getLogger();
+//    private static final Logger LOG = LogManager.getLogger();
 
     private static final int POOL_SIZE = 5;
     private static final int TIMEOUT_VALID = 3;
@@ -42,17 +42,17 @@ public class ConnectionPool {
                     ConnectionProxy connection = DatabaseConnector.produce();
                     connection.setAutoCommit(true);
                     availableConnections.put(connection);
-                    LOG.info("Connection was initialized and added to pool");
+                    //LOG.info("Connection was initialized and added to pool");
                 } catch (InterruptedException e) {
-                    LOG.error("Connection was not added, problem in queue", e);
+                    //LOG.error("Connection was not added, problem in queue", e);
                 } catch (SQLException e) {
-                    LOG.error("Connection was not added, problem in setting auto commit", e);
+                   // LOG.error("Connection was not added, problem in setting auto commit", e);
                 } catch (DatabaseConnectorException e) {
-                    LOG.error("Connection was not added, problem in producing", e);
+                    //LOG.error("Connection was not added, problem in producing", e);
                 }
             }
             if (availableConnections.isEmpty()) {
-                LOG.fatal("Pool was not initialized");
+                //LOG.fatal("Pool was not initialized");
                 throw new RuntimeException();
             }
         }
@@ -79,7 +79,7 @@ public class ConnectionPool {
         ConnectionProxy connection = null;
         try {
             connection = availableConnections.take();
-            LOG.info("Connection was taken from pool");
+            //LOG.info("Connection was taken from pool");
         } catch (InterruptedException e) {
             throw new ConnectionPoolException("Exception in ConnectionPool while trying to take connection", e);
         }
@@ -101,7 +101,7 @@ public class ConnectionPool {
                 newConnection.setAutoCommit(true);
                 availableConnections.put(newConnection);
             }
-            LOG.info("Connection was put to pool");
+            //LOG.info("Connection was put to pool");
         } catch (DatabaseConnectorException | InterruptedException | SQLException e) {
             throw new ConnectionPoolException("Exception in ConnectionPool while trying to put connection", e);
         }
@@ -122,9 +122,9 @@ public class ConnectionPool {
                     }
 
                     connection.realClose();
-                    LOG.info(String.format("closed successfully (#%d)", i));
+                    //LOG.info(String.format("closed successfully (#%d)", i));
                 } catch (SQLException | InterruptedException e) {
-                    LOG.warn(String.format("problem with connection closing (#%d)", i));
+                    //LOG.warn(String.format("problem with connection closing (#%d)", i));
                 }
             }
         }

@@ -59,16 +59,15 @@
                 <td>
                     <ul class="list-inline">
                         <li>
-                            <a href="controller?command=delete_user&passport=${user.getPassport()}">DELETE</a>
+                            <a onclick="return confirmDelete()" href="controller?command=delete_user&passport=${user.getPassport()}">DELETE</a>
                         </li>
                         <li>
                             <!-- Trigger the modal with a button -->
                             <!--<input name="asasas" hidden>
                             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
                                 Open Modal</button>-->
-                            <a class="btn btn-default"  href="#" role="button"
-                               onclick="${sessionScope.put("passport", user.getPassport())})"
-                               data-toggle="modal" data-target="#myModal">
+                            <a class="btn btn-default" id="${user.getPassport()}" href="#" role="button"
+                               onclick="return confirmBan(id)">
                                 BAN
                             </a>
 
@@ -101,6 +100,28 @@
     </table>
 
     <script>
+
+        function confirmDelete() {
+            var result = confirm("Want to delete?");
+            if (result) {
+                //Logic to delete the item
+            }
+            return result;
+        }
+
+        function confirmBan(passport) {
+            do {
+                var description = prompt('Reason for deleting', 'Write reason');
+            }while(description=="");
+
+            var id = document.getElementById(passport);
+
+            var request = "controller?command=ban_user&passport="+passport+"&description="+description;
+
+            var link = document.getElementById(passport).setAttribute("href", request);
+
+            return true;
+        }
 
         $(document).ready(function () {
             $('#example').DataTable();
