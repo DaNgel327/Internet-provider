@@ -59,7 +59,8 @@
                 <td>
                     <ul class="list-inline">
                         <li>
-                            <a onclick="return confirmDelete()" href="controller?command=delete_user&passport=${user.getPassport()}">DELETE</a>
+                            <a onclick="return confirmDelete()"
+                               href="controller?command=delete_user&passport=${user.getPassport()}">DELETE</a>
                         </li>
                         <li>
                             <!-- Trigger the modal with a button -->
@@ -78,7 +79,8 @@
         </c:forEach>
 
         <c:forEach var="banned" items="${sessionScope.bans}">
-            <tr bgcolor="#ffe4c4">
+
+            <tr id="banned" style="background-color: #ffe4c4">
                 <td>${banned.getName()}</td>
                 <td>${banned.getPassport()}</td>
                 <td>${banned.getPhone()}</td>
@@ -89,7 +91,10 @@
                             <a href="controller?command=delete_user&passport=${banned.getPassport()}">DELETE</a>
                         </li>
                         <li>
-                            <a href="#">UNBAN</a>
+                            <a class="btn btn-default" id="${banned.getPassport()}" href="#" role="button"
+                               onclick="return confirmUnban(id)">
+                                UNBAN
+                            </a>
                         </li>
                     </ul>
                 </td>
@@ -112,11 +117,28 @@
         function confirmBan(passport) {
             do {
                 var description = prompt('Reason for deleting', 'Write reason');
-            }while(description=="");
+            } while (description == "");
 
             var id = document.getElementById(passport);
 
-            var request = "controller?command=ban_user&passport="+passport+"&description="+description;
+            var request = "controller?command=ban_user&passport=" + passport + "&description=" + description;
+
+            var link = document.getElementById(passport).setAttribute("href", request);
+
+            return true;
+        }
+
+        function confirmUnban(passport) {
+
+            var sure = confirm('Are you shure?');
+
+            if(!sure){
+                return false;
+            }
+
+            var id = document.getElementById(passport);
+
+            var request = "controller?command=unban_user&passport=" + passport;
 
             var link = document.getElementById(passport).setAttribute("href", request);
 
@@ -130,6 +152,7 @@
         $('#example').DataTable({
             "ordering": false
         });
+
     </script>
 </div>
 </body>

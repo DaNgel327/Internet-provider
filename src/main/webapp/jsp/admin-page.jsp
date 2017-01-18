@@ -14,7 +14,6 @@
 <body>
 <c:import url="header.jsp"/>
 <c:import url="admin-content.jsp"/>
-<c:import url="ban.jsp"/>
 <c:import url="footer.jsp"/>
 </body>
 </html>

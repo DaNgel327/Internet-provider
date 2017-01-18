@@ -22,16 +22,18 @@ public class BanDAO extends AbstractDAO {
     private final static String INSERT_BY_USER_ID = "INSERT INTO ban (idUser, description)  \n" +
             "VALUES (\n" +
             "(SELECT idUser FROM user WHERE passport = ?),?)";
+    private final static String DELETE_BY_USER_ID =
+            "DELETE FROM ban WHERE idUser = (SELECT idUser FROM user WHERE passport = ?)";
 
     public BanDAO(ConnectionProxy connection) {
         super(connection);
     }
 
-    public boolean createByUserId(Ban ban){
+    public boolean createByUserPassport(String passport, String description){
         try (PreparedStatement ps = this.connection.prepareCall(INSERT_BY_USER_ID)) {
 
-            ps.setInt(1, ban.getIdUser());
-            ps.setString(2, ban.getDescription());
+            ps.setString(1, passport);
+            ps.setString(2, description);
             ps.executeUpdate();
             if (ps.getUpdateCount() != 1) {
                 System.out.println("user was not added");
@@ -51,18 +53,15 @@ public class BanDAO extends AbstractDAO {
     }
 
     @Override
-    public boolean deleteByKey(Object key) throws UnsupportedOperationException {
+    public boolean deleteByKey(Object key) {
 
-        /*
         try(PreparedStatement st = connection.prepareStatement(DELETE_BY_USER_ID)){
 
             st.setString(1,(String) key);
-            st.executeUpdate();
+            st.execute();
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
-
-        */
 
         throw new UnsupportedOperationException();
     }
