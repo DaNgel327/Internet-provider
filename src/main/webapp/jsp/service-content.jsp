@@ -35,6 +35,9 @@
             <th>Description</th>
             <th>Validity</th>
             <th onclick="sortCost(tbody, 3, 1)">Cost</th>
+            <c:if test="${sessionScope.user=='admin'}">
+                <th>Options</th>
+            </c:if>
         </tr>
         </thead>
 
@@ -45,22 +48,31 @@
                 <td>${service.getDescription()}</td>
                 <td>${service.getValidity()}</td>
                 <td>${service.getCost()}</td>
+                <c:if test="${sessionScope.user=='admin'}">
+                    <td>
+                        <li>
+                            <a onclick="return confirmDelete()"
+                               href="controller?command=delete_service&name=${service.getName()}">DELETE</a>
+                        </li>
+                    </td>
+                </c:if>
+
             </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
 <script>
-    
+
     $(document).ready(function () {
         $('#example').DataTable();
     });
 
-    $('#example').dataTable( {
+    $('#example').dataTable({
         "aoColumnDefs": [
-            { 'bSortable': false, 'aTargets': [ 0 ] },
-            { 'bSortable': false, 'aTargets': [ 1 ] },
-            { 'bSortable': false, 'aTargets': [ 2 ] }
+            {'bSortable': false, 'aTargets': [0]},
+            {'bSortable': false, 'aTargets': [1]},
+            {'bSortable': false, 'aTargets': [2]}
         ]
     });
 

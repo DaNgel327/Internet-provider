@@ -5,6 +5,7 @@ import by.epam.osipov.internet.provider.entity.impl.Service;
 import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,6 +18,8 @@ import java.util.List;
 public class ServiceDAO extends AbstractDAO {
 
     private final static String SELECT_ALL = "SELECT * FROM service";
+    private final static String DELETE_BY_NAME = "DELETE FROM service " +
+            "WHERE name = ?";
 
     public ServiceDAO(ConnectionProxy connection) {
         super(connection);
@@ -28,8 +31,15 @@ public class ServiceDAO extends AbstractDAO {
     }
 
     @Override
-    public boolean deleteByKey(Object key) throws UnsupportedOperationException {
-        return false;
+    public boolean deleteByKey(Object key){
+        try (PreparedStatement ps = connection.prepareStatement(DELETE_BY_NAME)) {
+            ps.setString(1, (String)key);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override

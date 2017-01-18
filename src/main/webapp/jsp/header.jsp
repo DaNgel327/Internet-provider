@@ -11,6 +11,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap Template</title>
 
+
+    <c:import url="/jsp/login.jsp"/>
+
     <!-- Bootstrap -->
     <link href="../resource/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../resource/css/style.css">

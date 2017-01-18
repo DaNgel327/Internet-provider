@@ -20,7 +20,6 @@
 </head>
 <body>
 
-<c:import url="jsp/login.jsp"/>
 <c:import url="jsp/header.jsp"/>
 <c:import url="jsp/main-content.jsp"/>
 <c:import url="jsp/footer.jsp"/>
