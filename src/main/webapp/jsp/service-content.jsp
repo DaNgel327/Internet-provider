@@ -34,7 +34,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>Validity</th>
-            <th>Cost</th>
+            <th onclick="sortCost(tbody, 3, 1)">Cost</th>
         </tr>
         </thead>
 
@@ -51,13 +51,17 @@
     </table>
 </div>
 <script>
-
+    
     $(document).ready(function () {
         $('#example').DataTable();
     });
 
-    $('#example').DataTable({
-        "ordering": false
+    $('#example').dataTable( {
+        "aoColumnDefs": [
+            { 'bSortable': false, 'aTargets': [ 0 ] },
+            { 'bSortable': false, 'aTargets': [ 1 ] },
+            { 'bSortable': false, 'aTargets': [ 2 ] }
+        ]
     });
 
 </script>
