@@ -23,6 +23,6 @@ public class DeleteServiceCommand implements Command {
         } catch (Exception e) {
             System.out.println("ex");
         }
-        return "/jsp/service-page.jsp";
+        return new ShowServiceCommand().execute(content);
     }
 }
