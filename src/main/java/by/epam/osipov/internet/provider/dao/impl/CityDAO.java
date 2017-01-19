@@ -1,11 +1,15 @@
 package by.epam.osipov.internet.provider.dao.impl;
 
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
+import by.epam.osipov.internet.provider.entity.impl.City;
+import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,6 +20,7 @@ public class CityDAO extends AbstractDAO {
 
     private static final String GET_ID = "SELECT idCity FROM city\n" +
             "WHERE name = ?";
+    private static final String SELECT_ALL = "SELECT * FROM city";
 
 
     public CityDAO(ConnectionProxy connection) {
@@ -47,8 +52,19 @@ public class CityDAO extends AbstractDAO {
     }
 
     @Override
-    public List findAll() {
-        return null;
+    public List<City> findAll() {
+        List<City> cities = new ArrayList<>();
+
+        try (Statement st = connection.createStatement();) {
+
+            ResultSet rs = st.executeQuery(SELECT_ALL);
+            while (rs.next()) {
+                cities.add(new City(rs.getInt(1), rs.getString(2)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return cities;
     }
 
 }

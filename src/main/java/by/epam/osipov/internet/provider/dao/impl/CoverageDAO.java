@@ -8,6 +8,8 @@ import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +21,7 @@ public class CoverageDAO extends AbstractDAO {
             "SELECT idCoverage FROM city\n" +
                     "JOIN coverage ON city.idCity = coverage.idCity\n" +
                     "WHERE name= ? && street= ? && houseNumber = ?";
+    private static final String SELECT_ALL = "SELECT * FROM coverage";
 
     public CoverageDAO(ConnectionProxy connection) {
         super(connection);
@@ -35,8 +38,19 @@ public class CoverageDAO extends AbstractDAO {
     }
 
     @Override
-    public List findAll() {
-        return null;
+    public List<Coverage> findAll() {
+        List<Coverage> coverageList = new ArrayList<>();
+
+        try (Statement st = connection.createStatement();) {
+
+            ResultSet rs = st.executeQuery(SELECT_ALL);
+            while (rs.next()) {
+                coverageList.add(new Coverage(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return coverageList;
     }
 
     public int getIdByParameters(Coverage coverage, City city) {
