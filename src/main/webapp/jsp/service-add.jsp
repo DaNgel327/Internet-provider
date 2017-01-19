@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -38,7 +37,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <textarea placeholder="Description" class="form-control" rows="3" required></textarea>
-                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -117,140 +116,6 @@
 
     </div>
 </div>
-
-<script type="text/javascript">
-
-    function showError(inputNumber, errorMessage) {
-        var input = document.getElementsByTagName('input')[inputNumber];
-        if (input.value != "") {
-            input.value = "";
-        }
-        input.setAttribute('placeholder', errorMessage);
-    }
-
-    function check(input, regex, message, inputNumber) {
-
-        if (!regex.test(input)) {
-            showError(inputNumber, message);
-            return false;
-        }
-
-        return true;
-    }
-    /*
-     function validateName(name) {
-     if (name == "") {
-     showError(0, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(name)) {
-     showError(0, 'This field must include only - and letters');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validateSurname(surname) {
-     if (surname == "") {
-     showError(1, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(surname)) {
-     showError(1, 'This field must include only - and letters');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validatePatronymic(patronymic) {
-     if (patronymic == "") {
-     showError(2, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z]+/;
-
-     if (!re.test(patronymic)) {
-     showError(2, 'This field must include only letters');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validatePassport(passport) {
-     if (passport == "") {
-     showError(3, 'This field is required');
-     return false;
-     }
-
-     var re = /^([a-zA-Z]{2})([0-9]{7})$/;
-
-     if (!re.test(passport)) {
-     showError(3, 'this field must include 2 latters and 7 numbers');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validatePhone(phone) {
-     if (phone == "") {
-     showError(4, 'This field is required');
-     return false;
-     }
-
-     var re = /^([+])([0-9]{3})-([0-9]{2})-([0-9]{3})-([0-9]{2})-([0-9]{2})$/;
-
-     if (!re.test(phone)) {
-     showError(4, 'this field must include 2 latters and 7 numbers');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validateCity(city) {
-     if (city == "") {
-     showError(5, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(city)) {
-     showError(5, 'Only letters and -');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validateStreet(street) {
-     if (street == "") {
-     showError(6, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(Street)) {
-     showError(6, 'Only letters and -');
-     return false;
-     }
-
-     return true;
-     }
-     */
-</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../resource/bootstrap/js/bootstrap.js"></script>

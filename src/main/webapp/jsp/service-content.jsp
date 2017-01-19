@@ -20,14 +20,21 @@
 
 </head>
 <body>
-<c:if test="${sessionScope.user=='admin'}">
-    <a class="btn btn-default" href="/jsp/registration-page.jsp" role="button" id="reg-button">
-        <i class="fa fa-user-plus" aria-hidden="true"></i>
-        Register new User
-    </a>
-</c:if>
+<style>
+    #add-button {
+        margin-bottom: 20px !important;
+    }
+</style>
 
 <div class="container">
+
+    <c:if test="${sessionScope.user=='admin'}">
+        <a class="btn btn-default" href="/jsp/service-add.jsp" role="button" id="add-button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add new tariff
+        </a>
+    </c:if>
+
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
         <tr>
@@ -50,10 +57,12 @@
                 <td>${service.getCost()}</td>
                 <c:if test="${sessionScope.user=='admin'}">
                     <td>
-                        <li>
-                            <a onclick="return confirmDelete()"
-                               href="controller?command=delete_service&name=${service.getName()}">DELETE</a>
-                        </li>
+                        <ul class="list-inline">
+                            <li>
+                                <a class="btn btn-default" onclick="return confirmDelete()"
+                                   href="controller?command=delete_service&name=${service.getName()}">DELETE</a>
+                            </li>
+                        </ul>
                     </td>
                 </c:if>
 
@@ -64,6 +73,14 @@
 </div>
 <script>
 
+    function confirmDelete() {
+        var result = confirm("Want to delete?");
+        if (result) {
+            //Logic to delete the item
+        }
+        return result;
+    }
+
     $(document).ready(function () {
         $('#example').DataTable();
     });
@@ -72,7 +89,9 @@
         "aoColumnDefs": [
             {'bSortable': false, 'aTargets': [0]},
             {'bSortable': false, 'aTargets': [1]},
-            {'bSortable': false, 'aTargets': [2]}
+            {'bSortable': false, 'aTargets': [2]},
+            {'bSortable': false, 'aTargets': [3]}
+
         ]
     });
 

@@ -59,7 +59,7 @@
                 <td>
                     <ul class="list-inline">
                         <li>
-                            <a onclick="return confirmDelete()"
+                            <a class="btn btn-default" onclick="return confirmDelete()"
                                href="controller?command=delete_user&passport=${user.getPassport()}">DELETE</a>
                         </li>
                         <li>
