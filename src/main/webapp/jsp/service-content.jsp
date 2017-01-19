@@ -24,6 +24,12 @@
     #add-button {
         margin-bottom: 20px !important;
     }
+    #sort-disabled:after{
+        content: "" !important;
+    }
+    #sort-disabled{
+        cursor: default !important;
+    }
 </style>
 
 <div class="container">
@@ -38,12 +44,12 @@
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
         <tr>
-            <th>Name</th>
+            <th id="sort-disabled">Name</th>
             <th>Description</th>
             <th>Validity</th>
             <th onclick="sortCost(tbody, 3, 1)">Cost</th>
             <c:if test="${sessionScope.user=='admin'}">
-                <th>Options</th>
+                <th id="sort-disabled">Options</th>
             </c:if>
         </tr>
         </thead>
@@ -73,6 +79,7 @@
 </div>
 <script>
 
+
     function confirmDelete() {
         var result = confirm("Want to delete?");
         if (result) {
@@ -85,15 +92,18 @@
         $('#example').DataTable();
     });
 
-    $('#example').dataTable({
+    $('#example').DataTable({
+
         "aoColumnDefs": [
             {'bSortable': false, 'aTargets': [0]},
             {'bSortable': false, 'aTargets': [1]},
-            {'bSortable': false, 'aTargets': [2]},
-            {'bSortable': false, 'aTargets': [3]}
-
+            {'bSortable': false, 'aTargets': [2]}
         ]
+
+
     });
+
+
 
 </script>
 </body>
