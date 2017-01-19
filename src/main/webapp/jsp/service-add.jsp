@@ -23,7 +23,7 @@
         <h1>Add new tariff</h1><br>
 
         <form role="form" action="${pageContext.request.contextPath}/controller">
-            <input hidden name="command" value="add_tariff"/>
+            <input hidden name="command" value="add_service"/>
 
             <div class="row">
                 <div class="col-md-12">
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <textarea placeholder="Description" class="form-control" rows="3" required></textarea>
+                        <textarea placeholder="Description" name="description" class="form-control" rows="3" required></textarea>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <select class="form-control input-sm">
+                        <select class="form-control input-sm" name="validity">
                             <option>1 Day</option>
                             <option>1 Weekends</option>
                             <option>1 Week</option>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="number" min="0" step="0.01" class="form-control input-sm" placeholder="Cost" required>
+                        <input type="number" min="0" name="cost" step="0.01" class="form-control input-sm" placeholder="Cost" required>
                     </div>
                 </div>
             </div>

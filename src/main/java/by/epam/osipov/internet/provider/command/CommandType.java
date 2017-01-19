@@ -17,7 +17,8 @@ public enum CommandType {
     BAN_USER(new BanUserCommand()),
     UNBAN_USER(new UnbanUserCommand()),
     SHOW_SERVICE(new ShowServiceCommand()),
-    DELETE_SERVICE(new DeleteServiceCommand());
+    DELETE_SERVICE(new DeleteServiceCommand()),
+    ADD_SERVICE(new AddServiceCommand());
 
     private Command command;
 
