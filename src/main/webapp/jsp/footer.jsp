@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Origional snipet by msurguy<http://bootsnipp.com/msurguy>, I editted his snipet so that it works with bootstrap 3.3 -->
-<div class="container">
+<div class="container" style="padding-top: 30px">
     <div class="row">
         <div class="col-xs-3">
             <ul class="list-unstyled">

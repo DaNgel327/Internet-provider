@@ -8,14 +8,21 @@ import by.epam.osipov.internet.provider.entity.impl.Coverage;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpression;
-import javax.xml.xpath.XPathFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -54,8 +61,8 @@ public class CoverageFileGenerator {
         List<String> lines = new ArrayList<>();
 
         for (String s : addresses) {
-            String[] coordinates = getLatLongPositions(s);
-            String line = s + "," + coordinates[0] + " " + coordinates[1];
+            String coordinates = getLatLongPositions(s);
+            String line = s + "," + coordinates;
             lines.add(line);
         }
 
@@ -90,32 +97,57 @@ public class CoverageFileGenerator {
         return result;
     }
 
-    public static String[] getLatLongPositions(String address) throws Exception {
+    public static List<String> getTextValuesByTagName(Element element, String tagName) {
+        NodeList nodeList = element.getElementsByTagName(tagName);
+        ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            list.add(getTextValue(nodeList.item(i)));
+        }
+        return list;
+    }
+
+    public static String getTextValue(Node node) {
+        StringBuffer textValue = new StringBuffer();
+        int length = node.getChildNodes().getLength();
+        for (int i = 0; i < length; i ++) {
+            Node c = node.getChildNodes().item(i);
+            if (c.getNodeType() == Node.TEXT_NODE) {
+                textValue.append(c.getNodeValue());
+            }
+        }
+        return textValue.toString().trim();
+    }
+
+
+
+    public static String getLatLongPositions(String address) throws Exception {
         int responseCode = 0;
-        String api = "http://maps.googleapis.com/maps/api/geocode/xml?address=" + URLEncoder.encode(address, "UTF-8") + "&sensor=true";
+        String api = "https://geocode-maps.yandex.ru/1.x/?geocode=" + URLEncoder.encode(address, "UTF-8");
         System.out.println("URL : " + api);
         URL url = new URL(api);
         HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
         httpConnection.connect();
-        responseCode = httpConnection.getResponseCode();
-        if (responseCode == 200) {
-            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            ;
-            Document document = builder.parse(httpConnection.getInputStream());
-            XPathFactory xPathfactory = XPathFactory.newInstance();
-            XPath xpath = xPathfactory.newXPath();
-            XPathExpression expr = xpath.compile("/GeocodeResponse/status");
-            String status = (String) expr.evaluate(document, XPathConstants.STRING);
-            if (status.equals("OK")) {
-                expr = xpath.compile("//geometry/location/lat");
-                String latitude = (String) expr.evaluate(document, XPathConstants.STRING);
-                expr = xpath.compile("//geometry/location/lng");
-                String longitude = (String) expr.evaluate(document, XPathConstants.STRING);
-                return new String[]{latitude, longitude};
-            } else {
-                throw new Exception("Error from the API - response status: " + status);
-            }
-        }
-        return null;
+
+        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+        Document document = builder.parse(httpConnection.getInputStream());
+
+        List<String> poses = getTextValuesByTagName(document.getDocumentElement(),"pos");
+
+        return poses.get(0);
     }
+
+    public static void printDocument(Document doc, OutputStream out) throws IOException, TransformerException {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+        transformer.transform(new DOMSource(doc),
+                new StreamResult(new OutputStreamWriter(out, "UTF-8")));
+    }
+
 }
