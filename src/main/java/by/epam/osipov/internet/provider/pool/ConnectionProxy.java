@@ -1,6 +1,5 @@
 package by.epam.osipov.internet.provider.pool;
 
-import by.epam.osipov.internet.provider.controller.Controller;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +14,9 @@ import java.util.concurrent.Executor;
  * Connection proxy object
  */
 public class ConnectionProxy implements AutoCloseable{
-    //private static final Logger LOGGER = LogManager.getLogger();
+
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private Connection connection;
 
@@ -27,7 +28,7 @@ public class ConnectionProxy implements AutoCloseable{
         try {
             ConnectionPool.getInstance().putConnection(this);
         }catch (ConnectionPoolException e) {
-           // LOGGER.error("Connection was not put to pool");
+           LOGGER.error("Connection was not put to pool");
         }
     }
     public Statement createStatement() throws SQLException {

@@ -2,6 +2,8 @@ package by.epam.osipov.internet.provider.pool;
 
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DatabaseConnectorException;
+import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -17,7 +19,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ConnectionPool {
 
 
-    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.Logger.getLogger(ConnectionPool.class);
+    private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger();
 
 
     private static final int POOL_SIZE = 5;

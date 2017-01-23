@@ -1,6 +1,5 @@
 package by.epam.osipov.internet.provider.generator;
 
-import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.dao.impl.*;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.entity.impl.City;
@@ -12,6 +11,8 @@ import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import by.epam.osipov.internet.provider.service.AccessService;
 import by.epam.osipov.internet.provider.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +21,13 @@ import java.util.Random;
 /**
  * Created by Lenovo on 18.01.2017.
  */
-public class UserGenerator{
+public class UserGenerator {
 
     private static List<String> names;
     private static List<String> patronymic;
     private static List<String> surnames;
 
-    static{
+    static {
         names = new ArrayList<>();
         names.add("Ivanov");
         names.add("Petrov");
@@ -53,7 +54,7 @@ public class UserGenerator{
         names.add("Bogdan");
     }
 
-    static{
+    static {
         patronymic = new ArrayList<>();
         patronymic.add("Iharavich/na");
         patronymic.add("Vladislavovich/na");
@@ -66,7 +67,7 @@ public class UserGenerator{
         patronymic.add("Rodionovich/na");
     }
 
-    static{
+    static {
         surnames = new ArrayList<>();
         surnames.add("Ihar");
         surnames.add("Vlad");
@@ -94,39 +95,43 @@ public class UserGenerator{
     }
 
     public static void main(String[] args) {
-        for(int i=0;i<200;i++)
-        new UserGenerator().generate();
+
+        Logger LOGGER = LogManager.getLogger();
+        LOGGER.info("ASas");
+
+        //for(int i=0;i<200;i++)
+        //new UserGenerator().generate();
     }
 
 
-public void generate(){
+    public void generate() {
 
-    String name = names.get(new Random().nextInt(names.size()-1));
-    String surname = surnames.get(new Random().nextInt(surnames.size()-1));
-    String patronym = patronymic.get(new Random().nextInt(patronymic.size()-1));
-    String passport = "MA";
-    for(int i = 0;i<7;i++){
-        passport+=new Random().nextInt(9);
+        String name = names.get(new Random().nextInt(names.size() - 1));
+        String surname = surnames.get(new Random().nextInt(surnames.size() - 1));
+        String patronym = patronymic.get(new Random().nextInt(patronymic.size() - 1));
+        String passport = "MA";
+        for (int i = 0; i < 7; i++) {
+            passport += new Random().nextInt(9);
+        }
+        int idUser = addNewUser(name, surname, patronym, passport);
+
+        Access access = addNewAccess();
+
+        int idAccess = access.getId();
+
+        int idCoverage = defineCoverage("Minsk", "Kulman", 11, 1);
+
+        int apt = 1;
+        //сделать что то с этим
+        int idService = 0;
+
+        java.sql.Timestamp sqlTime = new java.sql.Timestamp(new java.util.Date().getTime());
+
+        addNewContract(idUser, idCoverage, apt, idService, idAccess, sqlTime);
+
+        sendAccessToUser(access);
+
     }
-    int idUser = addNewUser(name, surname, patronym, passport);
-
-    Access access = addNewAccess();
-
-    int idAccess = access.getId();
-
-    int idCoverage = defineCoverage("Minsk", "Kulman", 11, 1);
-
-    int apt = 1;
-    //сделать что то с этим
-    int idService = 0;
-
-    java.sql.Timestamp sqlTime = new java.sql.Timestamp(new java.util.Date().getTime());
-
-    addNewContract(idUser, idCoverage, apt, idService, idAccess, sqlTime);
-
-    sendAccessToUser(access);
-
-}
 
     private Access addNewAccess() {
         AccessService accessService = new AccessService();

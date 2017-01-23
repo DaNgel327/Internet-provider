@@ -4,7 +4,9 @@ import by.epam.osipov.internet.provider.command.Command;
 import by.epam.osipov.internet.provider.command.factory.CommandFactory;
 import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.exception.CommandException;
-import org.apache.log4j.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,12 +18,15 @@ import java.io.IOException;
 @WebServlet(name = "controller")
 public class Controller extends HttpServlet {
 
-    private static final Logger LOGGER = Logger.getLogger(Controller.class);
+
+     private static final Logger LOGGER = LogManager.getLogger();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestContent requestContent = new RequestContent(request);
         Command command = CommandFactory.defineCommand(requestContent);
         String page = null;
+
+        LOGGER.info("EEEEEEEEEEE");
 
         try {
             page = command.execute(requestContent);
@@ -41,6 +46,7 @@ public class Controller extends HttpServlet {
         Command command = CommandFactory.defineCommand(requestContent);
         String page = null;
 
+        LOGGER.info("EEEEEEEEEEE");
         try {
 
             page = command.execute(requestContent);

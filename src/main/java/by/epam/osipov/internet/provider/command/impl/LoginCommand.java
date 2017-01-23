@@ -29,7 +29,7 @@ public class LoginCommand implements Command {
                 content.setSessionAttribute("loginError", "Ошибка авторизации.\nНеверное имя пользователя или пароль");
             }
         } catch (Exception e) {
-            System.out.println("ex");
+            System.out.println("ex: "+ e);
         }
 
         return "/";
