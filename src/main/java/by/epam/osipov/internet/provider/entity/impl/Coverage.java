@@ -10,18 +10,21 @@ public class Coverage extends Entity {
     private int idCity;
     private String street;
     private int houseNumber;
+    private int building;
 
-    public Coverage(int idCity, String street, int houseNumber) {
+    public Coverage(int idCity, String street, int houseNumber, int building) {
         this.idCity = idCity;
         this.street = street;
         this.houseNumber = houseNumber;
+        this.building = building;
     }
 
-    public Coverage(int id, int idCity, String street, int houseNumber) {
+    public Coverage(int id, int idCity, String street, int houseNumber, int building) {
         super(id);
         this.idCity = idCity;
         this.street = street;
         this.houseNumber = houseNumber;
+        this.building = building;
     }
 
     public int getIdCity() {
@@ -46,5 +49,13 @@ public class Coverage extends Entity {
 
     public void setHouseNumber(int houseNumber) {
         this.houseNumber = houseNumber;
+    }
+
+    public int getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(int building) {
+        this.building = building;
     }
 }

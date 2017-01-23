@@ -41,12 +41,14 @@ import java.util.List;
  * This class will get the lat long values.
  */
 public class CoverageFileGenerator {
+
     public static void main(String[] args) throws Exception {
 
         List<String> addresses = null;
 
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
             CoverageDAO coverageDAO = new CoverageDAO(connection);
+
             CityDAO cityDAO = new CityDAO(connection);
 
             List<Coverage> coverageList = coverageDAO.findAll();

@@ -2,8 +2,6 @@ package by.epam.osipov.internet.provider.pool;
 
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DatabaseConnectorException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -17,14 +15,15 @@ import java.util.concurrent.locks.ReentrantLock;
  * Threadsafe connection pool
  */
 public class ConnectionPool {
-//    private static final Logger LOG = LogManager.getLogger();
+
+
+    private static final org.apache.log4j.Logger LOGGER = org.apache.log4j.Logger.getLogger(ConnectionPool.class);
+
 
     private static final int POOL_SIZE = 5;
     private static final int TIMEOUT_VALID = 3;
 
     private BlockingQueue<ConnectionProxy> availableConnections;
-
-    private DatabaseConnector connectionProducer;
 
     private static AtomicBoolean isInitialized = new AtomicBoolean(false);
     private static Lock initializationLock = new ReentrantLock();
@@ -33,26 +32,20 @@ public class ConnectionPool {
 
     private ConnectionPool() {
         availableConnections = new ArrayBlockingQueue<ConnectionProxy>(POOL_SIZE);
-        connectionProducer = new DatabaseConnector();
 
         while (availableConnections.size() != POOL_SIZE) {
             int rest = POOL_SIZE - availableConnections.size();
-            for (int i = 0; i < rest; i++) {
+            for (int i = 0; i < rest; i++)
                 try {
-                    ConnectionProxy connection = DatabaseConnector.produce();
+                    ConnectionProxy connection = new ConnectionProxy(DatabaseConnector.getConnection());
                     connection.setAutoCommit(true);
                     availableConnections.put(connection);
-                    //LOG.info("Connection was initialized and added to pool");
-                } catch (InterruptedException e) {
-                    //LOG.error("Connection was not added, problem in queue", e);
-                } catch (SQLException e) {
-                   // LOG.error("Connection was not added, problem in setting auto commit", e);
-                } catch (DatabaseConnectorException e) {
-                    //LOG.error("Connection was not added, problem in producing", e);
+                    LOGGER.info("Connection was initialized and added to pool");
+                } catch (InterruptedException | DatabaseConnectorException | SQLException e) {
+                    LOGGER.error("Connection wasn't initialized" + e);
                 }
-            }
             if (availableConnections.isEmpty()) {
-                //LOG.fatal("Pool was not initialized");
+                LOGGER.fatal("Pool was not initialized");
                 throw new RuntimeException();
             }
         }
@@ -79,7 +72,7 @@ public class ConnectionPool {
         ConnectionProxy connection = null;
         try {
             connection = availableConnections.take();
-            //LOG.info("Connection was taken from pool");
+            LOGGER.info("Connection was taken from pool");
         } catch (InterruptedException e) {
             throw new ConnectionPoolException("Exception in ConnectionPool while trying to take connection", e);
         }
@@ -89,19 +82,18 @@ public class ConnectionPool {
 
     public void putConnection(ConnectionProxy connection) throws ConnectionPoolException {
 
-        //КОСТЫЛЬ!!!!!!!!!
-        if(availableConnections.size()==POOL_SIZE){
+        if (availableConnections.size() == POOL_SIZE) {
             return;
         }
         try {
             if (connection.isValid(TIMEOUT_VALID)) {
                 availableConnections.put(connection);
             } else {
-                ConnectionProxy newConnection = connectionProducer.produce();
+                ConnectionProxy newConnection = new ConnectionProxy(DatabaseConnector.getConnection());
                 newConnection.setAutoCommit(true);
                 availableConnections.put(newConnection);
             }
-            //LOG.info("Connection was put to pool");
+            LOGGER.info("Connection was put to pool");
         } catch (DatabaseConnectorException | InterruptedException | SQLException e) {
             throw new ConnectionPoolException("Exception in ConnectionPool while trying to put connection", e);
         }
@@ -122,9 +114,9 @@ public class ConnectionPool {
                     }
 
                     connection.realClose();
-                    //LOG.info(String.format("closed successfully (#%d)", i));
+                    LOGGER.info(String.format("closed successfully (#%d)", i));
                 } catch (SQLException | InterruptedException e) {
-                    //LOG.warn(String.format("problem with connection closing (#%d)", i));
+                    LOGGER.warn(String.format("problem with connection closing (#%d)", i));
                 }
             }
         }

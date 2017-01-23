@@ -1,13 +1,27 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Searchbox</title>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCINqVlCjanlmaF1XNGQZBTIyA_MYj_3mI&callback=initMap">
+    </script>
+
 </head>
 <body>
+<div class="container">
+    <div id="map">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
+                height="480"></iframe>
+    </div>
 
+</div>
+<script>
+    function initMap() {
+
+    }
+</script>
 </body>
 </html>

@@ -118,7 +118,8 @@ public class RegisterCommand implements Command {
             return -1;
         }
 
-        Coverage coverage = new Coverage(idCity, street, houseNumber);
+        // CHAAANGE 1
+        Coverage coverage = new Coverage(idCity, street, houseNumber, 1);
 
         int idCoverage = -1;
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {

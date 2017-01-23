@@ -45,7 +45,7 @@ public class CoverageDAO extends AbstractDAO {
 
             ResultSet rs = st.executeQuery(SELECT_ALL);
             while (rs.next()) {
-                coverageList.add(new Coverage(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4)));
+                coverageList.add(new Coverage(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getInt(5)));
             }
         } catch (SQLException e) {
             e.printStackTrace();

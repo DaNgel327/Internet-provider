@@ -10,16 +10,30 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCINqVlCjanlmaF1XNGQZBTIyA_MYj_3mI&callback=initMap">
+    </script>
 </head>
 <body>
 <c:import url="header.jsp"/>
 <div class="container">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
-            height="480"></iframe>
+    <div id="map">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
+                height="480"></iframe>
+    </div>
+
+    <c:if test="${sessionScope.user=='admin'}">
+        <a href="#" class="btn btn-default">ADD NEW LOCATION</a>
+        <a download="C:\Users\Lenovo\InternetProvider\src\main\webapp\the-file-name.csv" class="btn btn-default">DOWNLOAD CSV</a>
+    </c:if>
 </div>
 <c:import url="footer.jsp"/>
 
+<script>
+    function initMap() {
 
+    }
+</script>
 </body>
 </html>
