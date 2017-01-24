@@ -3,6 +3,8 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.entity.impl.User;
+import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
@@ -11,7 +13,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by Lenovo on 11.01.2017.
@@ -35,71 +36,94 @@ public class UserDAO extends AbstractDAO {
     private final static String DELETE_BY_ID = "DELETE FROM user\n" +
             "WHERE passport = ?";
 
-    @Override
-    public int getIdByKey(Object key) {
-        {
-            int id = -1;
-
-            try (PreparedStatement ps = connection.prepareStatement(SELECT_ID_BY_PASSPORT)) {
-                ps.setString(1, (String)key);
-
-                ResultSet rs = ps.executeQuery();
-                if (rs.next()) {
-                    id = rs.getInt(1);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    connection.close();
-                } catch (Exception e) {
-                    System.out.println("bad close connection");
-                }
-            }
-            return id;
-        }
-    }
-
-    @Override
-    public boolean deleteByKey(Object key) {
-        try (PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID)) {
-            ps.setString(1, (String)key);
-            ps.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
-
-    }
-
-
     public UserDAO(ConnectionProxy connection) {
         super(connection);
     }
 
+    /**
+     * Returns user's id from database by passport.
+     *
+     * @param key user's passport
+     * @return user's id
+     */
     @Override
-    public List<User> findAll() {
+    public int getIdByKey(Object key) throws EntityNotFoundException, DAOException {
+        int id;
+
+        try (PreparedStatement ps = connection.prepareStatement(SELECT_ID_BY_PASSPORT)) {
+            ps.setString(1, (String) key);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                id = rs.getInt(1);
+            } else {
+                throw new EntityNotFoundException("User with key '" + key + "' not found");
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error while trying to find user by key '" + key + "'", e);
+        }
+
+        return id;
+    }
+
+    /**
+     * Deletes user from database by user's id
+     *
+     * @param key user's id
+     */
+    @Override
+    public void deleteByKey(Object key) throws DAOException {
+        try (PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID)) {
+            ps.setString(1, (String) key);
+            ps.executeUpdate();
+
+            if (ps.getUpdateCount() == -1) {
+                throw new DAOException("User '" + key + "' doesn't deleted");
+            }
+
+        } catch (SQLException e) {
+            throw new DAOException("Error while trying to delete user with key '" + key + "'", e);
+        }
+    }
+
+    /**
+     * Returns list with all users in database
+     *
+     * @return list with users
+     */
+    @Override
+    public List<User> findAll() throws DAOException {
         List<User> users = new ArrayList<>();
 
         try (Statement st = connection.createStatement();) {
 
             ResultSet rs = st.executeQuery(SELECT_ALL);
             while (rs.next()) {
-                users.add(new User(rs.getInt(1), rs.getString(2), rs.getString(3),
-                        rs.getString(4), rs.getString(5), rs.getString(6), rs.getDouble(7), rs.getString(8)));
+
+                int id = rs.getInt(1);
+                String surname = rs.getString(2);
+                String name = rs.getString(3);
+                String patronymic = rs.getString(4);
+                String passport = rs.getString(5);
+                String phone = rs.getString(6);
+                double balance = rs.getDouble(7);
+                String email = rs.getString(8);
+
+                users.add(new User(id, surname, name, patronymic, passport, phone, balance, email));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DAOException("Error while trying to find all users", e);
         }
         return users;
     }
 
-    public boolean create(User user) {
+    /**
+     * Inserts new user to database
+     *
+     * @param user the user to insert
+     */
+    public void create(User user) throws DAOException {
 
         try (PreparedStatement ps = this.connection.prepareCall(INSERT_NEW)) {
-
             ps.setString(1, user.getSurname());
             ps.setString(2, user.getName());
             ps.setString(3, user.getPatronymic());
@@ -108,32 +132,35 @@ public class UserDAO extends AbstractDAO {
             ps.setDouble(6, user.getBalance());
             ps.setString(7, user.getEmail());
             ps.executeUpdate();
+
             if (ps.getUpdateCount() != 1) {
-                System.out.println("user was not added");
+                throw new DAOException("User '" + user + "' doesn't inserted");
             }
         } catch (SQLException e) {
-            System.out.println("Sql exception with inserting new user" + e);
-            return false;
+            throw new DAOException("Ero while trying insert user '" + user + "'", e);
         }
-
-        return true;
-
     }
 
-    public String getEmailByAccess(Access access) {
+    /**
+     * Returns user's email by access.
+     *
+     * @param access user's access
+     * @return user's email
+     */
+    public String getEmailByAccess(Access access) throws EntityNotFoundException, DAOException {
 
-        String email = null;
+        String email;
 
         try (PreparedStatement ps = connection.prepareStatement(GET_EMAIL_BY_LOGIN)) {
             ps.setString(1, access.getLogin());
             ResultSet rs = ps.executeQuery();
-
-
             if (rs.next()) {
                 email = rs.getString(1);
+            } else {
+                throw new EntityNotFoundException("Access '" + access + "' not found in database");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DAOException("Eor while trying get email by user's access '" + access + "'", e);
         }
         return email;
     }

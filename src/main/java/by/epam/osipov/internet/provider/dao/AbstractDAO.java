@@ -1,6 +1,8 @@
 package by.epam.osipov.internet.provider.dao;
 
 import by.epam.osipov.internet.provider.entity.Entity;
+import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
@@ -14,7 +16,6 @@ import java.util.List;
 public abstract class AbstractDAO<T extends Entity> {
     /**
      * Database connection (used with ConnectionProxy wrapper)
-     * Logic layer
      */
     protected ConnectionProxy connection;
 
@@ -22,10 +23,9 @@ public abstract class AbstractDAO<T extends Entity> {
         this.connection = connection;
     }
 
+    public abstract int getIdByKey(Object key) throws UnsupportedOperationException, EntityNotFoundException, DAOException;
 
-    public abstract int getIdByKey(Object key) throws UnsupportedOperationException;
+    public abstract void deleteByKey(Object key) throws UnsupportedOperationException, DAOException;
 
-    public abstract boolean deleteByKey(Object key) throws UnsupportedOperationException;
-
-    public abstract List<T> findAll() throws UnsupportedOperationException;
+    public abstract List<T> findAll() throws UnsupportedOperationException, DAOException;
 }

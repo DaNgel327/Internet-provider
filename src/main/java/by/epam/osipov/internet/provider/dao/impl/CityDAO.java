@@ -2,7 +2,7 @@ package by.epam.osipov.internet.provider.dao.impl;
 
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.City;
-import by.epam.osipov.internet.provider.entity.impl.User;
+import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
@@ -11,15 +11,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by Lenovo on 16.01.2017.
  */
 public class CityDAO extends AbstractDAO {
 
-    private static final String GET_ID = "SELECT idCity FROM city\n" +
-            "WHERE name = ?";
+    private static final String GET_ID_BY_NAME = "SELECT idCity FROM city " +"WHERE name = ?";
     private static final String SELECT_ALL = "SELECT * FROM city";
 
 
@@ -27,44 +25,57 @@ public class CityDAO extends AbstractDAO {
         super(connection);
     }
 
+    /**
+     * Returns city id by name
+     *
+     * @param key city name
+     */
     @Override
-    public int getIdByKey(Object key) {
+    public int getIdByKey(Object key) throws DAOException {
         {
-            int id = -1;
+            int id;
 
-            try (PreparedStatement ps = connection.prepareStatement(GET_ID)) {
-                ps.setString(1, (String)key);
+            try (PreparedStatement ps = connection.prepareStatement(GET_ID_BY_NAME)) {
+                ps.setString(1, (String) key);
 
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     id = rs.getInt(1);
+                } else {
+                    throw new DAOException("City '" + key + "' wasn't found");
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                throw new DAOException("Error while trying to get id of '" + key + "' city", e);
             }
             return id;
         }
     }
 
     @Override
-    public boolean deleteByKey(Object id) {
-        throw new UnsupportedOperationException();
+    public void deleteByKey(Object id) {
+        throw new UnsupportedOperationException("CityDAO doesn't support 'deleteByKey'");
     }
 
+    /**
+     * Returns list of all cities in database
+     *
+     * @return list of cities
+     * */
     @Override
-    public List<City> findAll() {
+    public List<City> findAll() throws DAOException {
         List<City> cities = new ArrayList<>();
 
         try (Statement st = connection.createStatement();) {
 
             ResultSet rs = st.executeQuery(SELECT_ALL);
             while (rs.next()) {
-                cities.add(new City(rs.getInt(1), rs.getString(2)));
+                int cityId = rs.getInt(1);
+                String cityName = rs.getString(2);
+                cities.add(new City(cityId, cityName));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DAOException("Error while trying to find all cities");
         }
         return cities;
     }
-
 }

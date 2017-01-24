@@ -2,6 +2,7 @@ package by.epam.osipov.internet.provider.dao.impl;
 
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Contract;
+import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
@@ -21,11 +22,10 @@ public class ContractDAO extends AbstractDAO {
     private static final String SELECT_BY_ID = "SELECT * FROM contract WHERE user.id = ?";
 
     private static final String INSERT_NEW = "INSERT INTO contract (idUser, idCoverage, apartmentNumber, idService, " +
-            "idAccess, serviceProvisionDate) " +
-            "VALUES (?, ?, ?, ?, ?, ?)";
+            "idAccess, serviceProvisionDate) " + "VALUES (?, ?, ?, ?, ?, ?)";
 
-    private static final String DELETE_BY_ID_USER = "DELETE FROM contract\n" +
-            "WHERE idUser = ?";
+    private static final String DELETE_BY_ID_USER = "DELETE FROM contract\n" + "WHERE idUser = ?";
+
 
     public ContractDAO(ConnectionProxy connection) {
         super(connection);
@@ -33,29 +33,40 @@ public class ContractDAO extends AbstractDAO {
 
     @Override
     public int getIdByKey(Object key) {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("ContractDAO doesn't support 'getIdByKey'");
     }
 
+    /**
+     * Deletes contract by user's id
+     *
+     * @param key user's id.
+     */
     @Override
-    public boolean deleteByKey(Object key) {
+    public void deleteByKey(Object key) throws DAOException {
         try (PreparedStatement ps = connection.prepareStatement(DELETE_BY_ID_USER)) {
-            ps.setInt(1, (Integer)key);
+            ps.setInt(1, (Integer) key);
             ps.executeUpdate();
 
+            if (ps.getUpdateCount() == -1) {
+                throw new DAOException("Contract of user '" + key + "doesn't deleted");
+            }
+
         } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+            throw new DAOException("Erorr while trying delete contract of user '" + key + "'", e);
         }
-        return true;
     }
 
 
+    /**
+     * Returns list of all contracts in database
+     *
+     * @return list of contracts
+     */
     @Override
-    public List<Contract> findAll() {
+    public List<Contract> findAll() throws DAOException {
         List<Contract> contracts = new ArrayList<>();
 
         try (Statement st = connection.createStatement();) {
-
             ResultSet rs = st.executeQuery(SELECT_ALL);
             while (rs.next()) {
 
@@ -72,11 +83,12 @@ public class ContractDAO extends AbstractDAO {
 
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new DAOException("Error while trying find all contracts", e);
         }
         return contracts;
     }
 
+    /*
     public Contract findById(int id) {
 
         Contract contract = null;
@@ -101,8 +113,14 @@ public class ContractDAO extends AbstractDAO {
         }
         return contract;
     }
+    */
 
-    public boolean create(Contract contract) {
+    /**
+     * Inserts new contract to database
+     *
+     * @param contract contract to insert
+     */
+    public void create(Contract contract) throws DAOException {
 
         try (PreparedStatement ps = this.connection.prepareCall(INSERT_NEW)) {
 
@@ -116,15 +134,11 @@ public class ContractDAO extends AbstractDAO {
 
             ps.executeUpdate();
             if (ps.getUpdateCount() != 1) {
-                System.out.println("user was not added");
+                throw new DAOException("Contract '" + contract + "' wasn't added to database");
             }
         } catch (SQLException e) {
-            System.out.println("Sql exception with inserting new user" + e);
-            return false;
+            throw new DAOException("Error while trying insert contract '" + contract + "'", e);
         }
-
-        return true;
-
     }
 
 }
