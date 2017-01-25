@@ -23,18 +23,20 @@ public class BanUserCommand implements Command {
 
     @Override
     public String execute(RequestContent content) throws CommandException {
+        try {
+            return tryExecute(content);
+        } catch (ConnectionPoolException | DAOException | CommandException e) {
+            throw new CommandException("Error while trying to execute Ban User command", e);
+        }
+    }
 
-
+    private String tryExecute(RequestContent content) throws ConnectionPoolException, DAOException, CommandException {
         String passport = content.getParameter(PASSPORT_PARAM);
         String description = content.getParameter(DESCRIPTION_PARAM);
 
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
             BanDAO banDAO = new BanDAO(connection);
             banDAO.createByUserPassport(passport, description);
-        } catch (ConnectionPoolException e) {
-            LOGGER.error("Error while trying to execute ban user command " + e);
-        } catch (DAOException e) {
-            e.printStackTrace();
         }
 
         ShowUsersCommand showUsersCommand = new ShowUsersCommand();

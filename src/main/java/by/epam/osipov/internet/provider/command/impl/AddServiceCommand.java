@@ -9,8 +9,6 @@ import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * Created by Lenovo on 19.01.2017.
@@ -22,11 +20,17 @@ public class AddServiceCommand implements Command {
     private static final String VALIDITY_PARAM = "validity";
     private static final String COST_PARAM = "cost";
 
-
-    private static final Logger LOGGER = LogManager.getLogger();
-
     @Override
     public String execute(RequestContent content) throws CommandException {
+
+        try {
+            return tryExecute(content);
+        } catch (CommandException | DAOException | ConnectionPoolException e) {
+            throw new CommandException("Error while trying execute add service command", e);
+        }
+    }
+
+    private String tryExecute(RequestContent content) throws CommandException, DAOException, ConnectionPoolException {
 
         String name = content.getParameter(NAME_PARAM);
         String description = content.getParameter(DESCRIPTION_PARAM);
@@ -38,11 +42,8 @@ public class AddServiceCommand implements Command {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
             ServiceDAO serviceDAO = new ServiceDAO(connection);
             serviceDAO.create(service);
-        } catch (ConnectionPoolException e) {
-            LOGGER.error("Error while trying to execute add service command " + e);
-        } catch (DAOException e) {
-            e.printStackTrace();
         }
         return new ShowServiceCommand().execute(content);
     }
+
 }

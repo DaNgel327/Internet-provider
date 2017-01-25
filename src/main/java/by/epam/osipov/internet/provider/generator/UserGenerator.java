@@ -8,6 +8,7 @@ import by.epam.osipov.internet.provider.entity.impl.Coverage;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
+import by.epam.osipov.internet.provider.exception.RegistrationException;
 import by.epam.osipov.internet.provider.mail.ssl.EmailSender;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
@@ -137,7 +138,12 @@ public class UserGenerator {
 
     private Access addNewAccess() {
         AccessService accessService = new AccessService();
-        Access access = accessService.generateUniqueAccess();
+        Access access = null;
+        try {
+            access = accessService.generateUniqueAccess();
+        } catch (RegistrationException e) {
+            e.printStackTrace();
+        }
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
             AccessDAO accessDAO = new AccessDAO(connection);
             accessDAO.create(access);
@@ -152,9 +158,15 @@ public class UserGenerator {
 
 
         UserService userService = new UserService();
-        if (userService.userExist(passport)) {
-            return -1;
-            //  return "registration page";
+        try {
+            if (userService.userExist(passport)) {
+                return -1;
+                //  return "registration page";
+            }
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
 
         String phone = "+375-29-393-68-95";
@@ -164,8 +176,13 @@ public class UserGenerator {
             balance = "0.0";
         }
 
-        int idUser = userService.registerNew(surname, name, patronymic, passport, phone,
-                Double.parseDouble(balance), email);
+        int idUser = 0;
+        try {
+            idUser = userService.registerNew(surname, name, patronymic, passport, phone,
+                    Double.parseDouble(balance), email);
+        } catch (RegistrationException e) {
+            e.printStackTrace();
+        }
         if (idUser < 1) {
             System.out.println("ошибка регистрации пользователя. хз какая. чет с user");
             return -1;
@@ -180,7 +197,11 @@ public class UserGenerator {
             String email = userDAO.getEmailByAccess(access);
 
             EmailSender emailSender = new EmailSender();
-            emailSender.sendAccess(access, email);
+            try {
+                emailSender.sendAccess(access, email);
+            } catch (RegistrationException e) {
+                e.printStackTrace();
+            }
 
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
@@ -240,5 +261,4 @@ public class UserGenerator {
         }
         return true;
     }
-
 }

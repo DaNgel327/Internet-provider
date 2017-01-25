@@ -8,6 +8,8 @@ import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.Ban;
 import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.exception.CommandException;
+import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import by.epam.osipov.internet.provider.service.UserService;
@@ -20,6 +22,14 @@ import java.util.List;
 public class ShowUsersCommand implements Command {
     @Override
     public String execute(RequestContent content) throws CommandException {
+        try {
+            return tryExecute(content);
+        } catch (ConnectionPoolException | DAOException e) {
+            throw new CommandException("Error while trying Show Users command", e);
+        }
+    }
+
+    private String tryExecute(RequestContent content) throws CommandException, ConnectionPoolException, DAOException {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
 
             UserDAO userDAO = new UserDAO(connection);
@@ -35,8 +45,6 @@ public class ShowUsersCommand implements Command {
             content.setSessionAttribute("bans", userService.getBannedUsers(users, bans));
             content.setSessionAttribute("users", userService.getSimpleUsers(users, bans));
 
-        } catch (Exception e) {
-            System.out.println("ex");
         }
 
         return "/jsp/admin-page.jsp";

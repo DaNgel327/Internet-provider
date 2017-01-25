@@ -21,15 +21,18 @@ public class DeleteServiceCommand implements Command {
 
     @Override
     public String execute(RequestContent content) throws CommandException {
+        try {
+            return tryExecute(content);
+        } catch (CommandException | DAOException | ConnectionPoolException e) {
+            throw new CommandException("Error while trying to execute Delete Service command", e);
+        }
+    }
 
+    private String tryExecute(RequestContent content) throws CommandException, DAOException, ConnectionPoolException {
         String name = content.getParameter(NAME_PARAM);
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
             ServiceDAO serviceDAO = new ServiceDAO(connection);
             serviceDAO.deleteByKey(name);
-        } catch (ConnectionPoolException e) {
-            LOGGER.error("Error while trying to execute delete service command " + e);
-        } catch (DAOException e) {
-            e.printStackTrace();
         }
         return new ShowServiceCommand().execute(content);
     }
