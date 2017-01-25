@@ -121,7 +121,7 @@ public class UserDAO extends AbstractDAO {
      *
      * @param user the user to insert
      */
-    public void create(User user) throws DAOException {
+    public boolean create(User user) throws DAOException {
 
         try (PreparedStatement ps = this.connection.prepareCall(INSERT_NEW)) {
             ps.setString(1, user.getSurname());
@@ -139,6 +139,7 @@ public class UserDAO extends AbstractDAO {
         } catch (SQLException e) {
             throw new DAOException("Ero while trying insert user '" + user + "'", e);
         }
+        return false;
     }
 
     /**

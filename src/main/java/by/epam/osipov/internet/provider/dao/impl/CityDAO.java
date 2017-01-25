@@ -3,6 +3,7 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.City;
 import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
@@ -31,7 +32,7 @@ public class CityDAO extends AbstractDAO {
      * @param key city name
      */
     @Override
-    public int getIdByKey(Object key) throws DAOException {
+    public int getIdByKey(Object key) throws DAOException, EntityNotFoundException {
         {
             int id;
 
@@ -42,7 +43,7 @@ public class CityDAO extends AbstractDAO {
                 if (rs.next()) {
                     id = rs.getInt(1);
                 } else {
-                    throw new DAOException("City '" + key + "' wasn't found");
+                    throw new EntityNotFoundException("City '" + key + "' wasn't found");
                 }
             } catch (SQLException e) {
                 throw new DAOException("Error while trying to get id of '" + key + "' city", e);

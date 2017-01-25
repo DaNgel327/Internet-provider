@@ -5,6 +5,7 @@ import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.dao.impl.BanDAO;
 import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import org.apache.logging.log4j.LogManager;
@@ -32,6 +33,8 @@ public class BanUserCommand implements Command {
             banDAO.createByUserPassport(passport, description);
         } catch (ConnectionPoolException e) {
             LOGGER.error("Error while trying to execute ban user command " + e);
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
 
         ShowUsersCommand showUsersCommand = new ShowUsersCommand();

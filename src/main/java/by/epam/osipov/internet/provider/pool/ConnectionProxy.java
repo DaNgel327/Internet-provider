@@ -13,7 +13,7 @@ import java.util.concurrent.Executor;
 /**
  * Connection proxy object
  */
-public class ConnectionProxy implements AutoCloseable{
+public class ConnectionProxy implements Connection{
 
 
     private static final Logger LOGGER = LogManager.getLogger();

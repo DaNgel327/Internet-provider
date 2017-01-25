@@ -23,6 +23,9 @@ class DatabaseConnector {
     private static final AtomicBoolean initialized = new AtomicBoolean(false);
     private static Properties config;
 
+    /**
+     * Returns database connection
+     * */
     public static Connection getConnection() throws DatabaseConnectorException {
         if (!initialized.get()) {
             init();
@@ -34,6 +37,7 @@ class DatabaseConnector {
             throw new DatabaseConnectorException("Database connection error: " + e.getMessage());
         }
     }
+
 
     private static void init() throws DatabaseConnectorException {
         initialized.set(true);

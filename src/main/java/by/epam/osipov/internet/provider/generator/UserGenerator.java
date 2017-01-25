@@ -6,6 +6,8 @@ import by.epam.osipov.internet.provider.entity.impl.City;
 import by.epam.osipov.internet.provider.entity.impl.Contract;
 import by.epam.osipov.internet.provider.entity.impl.Coverage;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.mail.ssl.EmailSender;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
@@ -182,6 +184,10 @@ public class UserGenerator {
 
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
+        } catch (DAOException e) {
+            e.printStackTrace();
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();
         }
 
     }
@@ -229,6 +235,8 @@ public class UserGenerator {
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
             return false;
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
         return true;
     }

@@ -3,6 +3,7 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
@@ -91,7 +92,7 @@ public class AccessDAO extends AbstractDAO {
      * @param login user's login
      * @return user's access
      */
-    public Access findByLogin(String login) throws DAOException {
+    public Access findByLogin(String login) throws DAOException, EntityNotFoundException {
         Access access;
         try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_LOGIN)) {
             ps.setString(1, login);
@@ -103,7 +104,7 @@ public class AccessDAO extends AbstractDAO {
 
                 access = new Access(accessId, login, password, role);
             } else {
-                throw new DAOException("Access with login '" + login + "' wasn't found");
+                throw new EntityNotFoundException("Access with login '" + login + "' wasn't found");
             }
         } catch (SQLException e) {
             throw new DAOException("Error while trying to find access by login '" + login + "'", e);
@@ -120,7 +121,7 @@ public class AccessDAO extends AbstractDAO {
         try (PreparedStatement ps = this.connection.prepareCall(INSERT_NEW)) {
             ps.setString(1, access.getLogin());
             ps.setString(2, access.getPassword());
-            ps.setInt(3, access.getRole());
+            ps.setByte(3, access.getRole());
             ps.executeUpdate();
             if (ps.getUpdateCount() == -1) {
                 throw new DAOException("Access '" + access + "' wasn't added to database");

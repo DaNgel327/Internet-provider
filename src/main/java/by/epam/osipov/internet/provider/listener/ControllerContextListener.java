@@ -1,7 +1,7 @@
 package by.epam.osipov.internet.provider.listener;
 
 import com.mysql.jdbc.AbandonedConnectionCleanupThread;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -15,8 +15,7 @@ import java.util.Enumeration;
  */
 public class ControllerContextListener implements ServletContextListener {
 
-
-    private static final Logger LOGGER = Logger.getLogger(ControllerContextListener.class);
+    private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger();
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
@@ -24,24 +23,26 @@ public class ControllerContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
+        deregisterDrivers();
+    }
 
+    private void deregisterDrivers() {
+
+        try {
+            tryDeregisterDrivers();
+        } catch (InterruptedException | SQLException e) {
+            LOGGER.warn("error while deregister driver", e);
+        }
+    }
+
+    private void tryDeregisterDrivers() throws SQLException, InterruptedException {
         Enumeration<Driver> drivers = DriverManager.getDrivers();
         while (drivers.hasMoreElements()) {
             Driver driver = drivers.nextElement();
-            System.out.println(String.format("deregistering jdbc driver: %s", driver));
-            try {
-                DriverManager.deregisterDriver(driver);
-            } catch (SQLException e) {
-                System.out.println(String.format("Error deregistering driver %s", driver));
-            }
+            LOGGER.info("deregistering jdbc driver: " + driver);
+            DriverManager.deregisterDriver(driver);
         }
 
-        // MySQL driver leaves around a thread. This static method cleans it up.
-        try {
-            AbandonedConnectionCleanupThread.shutdown();
-        } catch (InterruptedException e) {
-            System.out.println("Error deregistering driver");
-        }
-
+        AbandonedConnectionCleanupThread.shutdown();
     }
 }

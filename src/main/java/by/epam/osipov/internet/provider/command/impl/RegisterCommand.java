@@ -9,6 +9,8 @@ import by.epam.osipov.internet.provider.entity.impl.Contract;
 import by.epam.osipov.internet.provider.entity.impl.Coverage;
 import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.mail.ssl.EmailSender;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
@@ -47,8 +49,12 @@ public class RegisterCommand implements Command {
             AccessDAO accessDAO = new AccessDAO(connection);
             accessDAO.create(access);
             access = accessDAO.findByLogin(access.getLogin());
-        } catch (Exception e) {
-            System.out.println("ex");
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
         return access;
     }
@@ -62,14 +68,9 @@ public class RegisterCommand implements Command {
         UserService userService = new UserService();
         if (userService.userExist(passport)) {
             return -1;
-            //  return "registration page";
         }
 
         String phone = content.getParameter("phone");
-        String city = content.getParameter("city");
-        String street = content.getParameter("street");
-        String house = content.getParameter("house");
-        String apartmentNumber = content.getParameter("apt");
         String email = content.getParameter("email");
         String balance = content.getParameter("balance");
 
@@ -77,13 +78,8 @@ public class RegisterCommand implements Command {
             balance = "0.0";
         }
 
-        int idUser = userService.registerNew(surname, name, patronymic, passport, phone,
+        return userService.registerNew(surname, name, patronymic, passport, phone,
                 Double.parseDouble(balance), email);
-        if (idUser < 1) {
-            System.out.println("ошибка регистрации пользователя. хз какая. чет с user");
-            return -1;
-        }
-        return idUser;
     }
 
     private void sendAccessToUser(Access access) {
@@ -96,6 +92,10 @@ public class RegisterCommand implements Command {
             emailSender.sendAccess(access, email);
 
         } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } catch (DAOException e) {
+            e.printStackTrace();
+        } catch (EntityNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -147,6 +147,8 @@ public class RegisterCommand implements Command {
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
             return false;
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
         return true;
     }

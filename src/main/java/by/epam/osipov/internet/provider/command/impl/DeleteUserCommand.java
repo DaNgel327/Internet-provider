@@ -7,6 +7,7 @@ import by.epam.osipov.internet.provider.dao.impl.ContractDAO;
 import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import org.apache.logging.log4j.LogManager;
@@ -31,12 +32,11 @@ public class DeleteUserCommand implements Command {
     private boolean deleteAccess(int idUser) {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
             AccessDAO accessDAO = new AccessDAO(connection);
-
-            if (!accessDAO.deleteByKey(idUser)) {
-                return false;
-            }
+            accessDAO.deleteByKey(idUser);
         } catch (ConnectionPoolException e) {
             LOGGER.error("Error while trying to execute delete user command. Method: deleteAccess " + e);
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
         return true;
     }
@@ -48,10 +48,8 @@ public class DeleteUserCommand implements Command {
             UserDAO userDAO = new UserDAO(connection);
             idUser = userDAO.getIdByKey(passport);
 
-            if (!userDAO.deleteByKey(passport)) {
-                L
-                return -1;
-            }
+            userDAO.deleteByKey(passport);
+
         } catch (Exception e) {
             System.out.println("ex");
         }
@@ -63,10 +61,7 @@ public class DeleteUserCommand implements Command {
 
             ContractDAO contractDAO = new ContractDAO(connection);
 
-            if (!contractDAO.deleteByKey(idUser)) {
-                System.out.println("exception");
-                return false;
-            }
+            contractDAO.deleteByKey(idUser);
         } catch (Exception e) {
             System.out.println("ex");
         }

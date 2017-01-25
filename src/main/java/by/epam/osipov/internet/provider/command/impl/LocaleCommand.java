@@ -3,7 +3,6 @@ package by.epam.osipov.internet.provider.command.impl;
 import by.epam.osipov.internet.provider.command.Command;
 import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.exception.CommandException;
-import by.epam.osipov.internet.provider.resource.ConfigurationManager;
 import org.apache.log4j.Logger;
 
 /**

@@ -4,6 +4,9 @@ import by.epam.osipov.internet.provider.command.Command;
 import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.dao.impl.AccessDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
+import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
@@ -28,8 +31,12 @@ public class LoginCommand implements Command {
                 //change from session to normal attr
                 content.setSessionAttribute("loginError", "Ошибка авторизации.\nНеверное имя пользователя или пароль");
             }
-        } catch (Exception e) {
-            System.out.println("ex: "+ e);
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } catch (EntityNotFoundException e) {
+            content.setSessionAttribute("loginError", "Ошибка авторизации.\nНеверное имя пользователя или пароль");
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
 
         return "/";

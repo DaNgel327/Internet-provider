@@ -4,6 +4,9 @@ import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.Ban;
 import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
+import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
+import by.epam.osipov.internet.provider.exception.RegistrationException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
@@ -15,31 +18,69 @@ import java.util.List;
  */
 public class UserService {
 
-    public int registerNew(String surname, String name, String patronymic, String passport, String phone, double balance, String email) {
+
+    /**
+     * Register new user. If something
+     * wrong - catch errors
+     *
+     * @param surname    user's surname
+     * @param name       user's name
+     * @param patronymic user's patronymic (third name)
+     * @param passport   user's passport
+     * @param phone      user's phone
+     * @param balance    user's start balance
+     * @param email      user's email
+     * @return user's id
+     */
+    public int registerNew(String surname, String name, String patronymic, String passport,
+                           String phone, double balance, String email) throws RegistrationException {
+        try {
+            return tryRegisterNew(surname, name, patronymic, passport, phone, balance, email);
+        } catch (ConnectionPoolException | EntityNotFoundException | DAOException e) {
+            throw new RegistrationException("Error while trying to register new use", e);
+        }
+    }
+
+    /**
+     * Try to register new user.
+     * If something wrong throws an exception.
+     *
+     * @param surname    user's surname
+     * @param name       user's name
+     * @param patronymic user's patronymic (third name)
+     * @param passport   user's passport
+     * @param phone      user's phone
+     * @param balance    user's start balance
+     * @param email      user's email
+     * @return user's id
+     */
+    private int tryRegisterNew(String surname, String name, String patronymic, String passport,
+                               String phone, double balance, String email) throws ConnectionPoolException, DAOException, EntityNotFoundException {
 
         User user = new User(surname, name, patronymic, passport, phone, balance, email);
-
-        int idUser = -1;
+        int userId;
 
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
             UserDAO userDAO = new UserDAO(connection);
 
-            if(userDAO.create(user)){
-                idUser = userDAO.getIdByKey(passport);
-            }
-        } catch (Exception e) {
-            System.out.println("ex");
-            return -1;
+            userDAO.create(user);
+            userId = userDAO.getIdByKey(passport);
         }
 
-        return idUser;
+        return userId;
     }
 
-    public boolean userExist(String passport) {
+    /**
+     * Checks if user exist in database by passport
+     *
+     * @param passport user's passport to check
+     * @return true if user exist in database. Otherwise returns false
+     */
+    public boolean userExist(String passport) throws ConnectionPoolException, DAOException {
 
-        List<User> users = new ArrayList<>();
+        List<User> users;
 
-        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()){
+        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
             UserDAO userDAO = new UserDAO(connection);
 
             users = userDAO.findAll();
@@ -50,26 +91,31 @@ public class UserService {
                 }
             }
 
-        }  catch (ConnectionPoolException e) {
-            e.printStackTrace();
         }
         return false;
     }
 
-    public List<User> getBannedUsers(List<User> users, List<Ban> bans){
+    /**
+     * Returns list of banned users
+     *
+     * @param users list of all users
+     * @param bans  list of bans
+     * @return list of banned users
+     */
+    public List<User> getBannedUsers(List<User> users, List<Ban> bans) {
 
         List<User> result = new ArrayList<>();
 
-        List<Integer>  bannedIds = new ArrayList<>();
+        List<Integer> bannedIds = new ArrayList<>();
 
-        for(Ban ban: bans){
+        for (Ban ban : bans) {
             bannedIds.add(ban.getIdUser());
         }
 
-        for(User user: users){
+        for (User user : users) {
             int idUser = user.getId();
             boolean flag = bannedIds.contains(idUser);
-            if(flag){
+            if (flag) {
                 result.add(user);
             }
         }
@@ -77,7 +123,15 @@ public class UserService {
         return result;
     }
 
-    public List<User> getSimpleUsers(List<User> users, List<Ban> bans){
+    /**
+     * Returns simple users from database.
+     * Simple users - users which are not banned.
+     *
+     * @param users list of all users
+     * @param bans  list of bans
+     * @return list of simple users
+     */
+    public List<User> getSimpleUsers(List<User> users, List<Ban> bans) {
         List<User> banned = getBannedUsers(users, bans);
 
         users.removeAll(banned);

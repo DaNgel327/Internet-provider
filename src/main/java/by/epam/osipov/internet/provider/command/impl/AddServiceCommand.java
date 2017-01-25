@@ -6,6 +6,7 @@ import by.epam.osipov.internet.provider.dao.impl.ServiceDAO;
 import by.epam.osipov.internet.provider.entity.impl.Service;
 import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import org.apache.logging.log4j.LogManager;
@@ -39,6 +40,8 @@ public class AddServiceCommand implements Command {
             serviceDAO.create(service);
         } catch (ConnectionPoolException e) {
             LOGGER.error("Error while trying to execute add service command " + e);
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
         return new ShowServiceCommand().execute(content);
     }

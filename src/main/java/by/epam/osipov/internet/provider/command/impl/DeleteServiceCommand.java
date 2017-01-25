@@ -5,6 +5,7 @@ import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.dao.impl.ServiceDAO;
 import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
+import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import org.apache.logging.log4j.LogManager;
@@ -27,6 +28,8 @@ public class DeleteServiceCommand implements Command {
             serviceDAO.deleteByKey(name);
         } catch (ConnectionPoolException e) {
             LOGGER.error("Error while trying to execute delete service command " + e);
+        } catch (DAOException e) {
+            e.printStackTrace();
         }
         return new ShowServiceCommand().execute(content);
     }

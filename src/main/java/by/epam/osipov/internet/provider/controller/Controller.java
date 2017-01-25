@@ -5,6 +5,7 @@ import by.epam.osipov.internet.provider.command.factory.CommandFactory;
 import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.exception.CommandException;
 
+import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,16 +27,11 @@ public class Controller extends HttpServlet {
         Command command = CommandFactory.defineCommand(requestContent);
         String page = null;
 
-        LOGGER.info("EEEEEEEEEEE");
-
         try {
             page = command.execute(requestContent);
         } catch (CommandException e) {
             LOGGER.error(e);
-            //requestContent.setSessionAttribute(EXCEPTION, new ObjectMemoryContainer(e, MemoryContainerType.ONE_OFF));
-            //page = MappingManager.ERROR_PAGE_500;
         }
-
 
         requestContent.insertValues(request);
         response.sendRedirect(page);
@@ -46,16 +42,10 @@ public class Controller extends HttpServlet {
         Command command = CommandFactory.defineCommand(requestContent);
         String page = null;
 
-        LOGGER.info("EEEEEEEEEEE");
         try {
-
             page = command.execute(requestContent);
-
         } catch (CommandException e) {
-
-            LOGGER.error(e);
-            //requestContent.setSessionAttribute(EXCEPTION, new ObjectMemoryContainer(e, MemoryContainerType.ONE_OFF));
-            // page = MappingManager.getInstance().getProperty(MappingManager.ERROR_PAGE_500);
+            LOGGER.error(e);;
         }
 
 
@@ -66,10 +56,8 @@ public class Controller extends HttpServlet {
     @Override
     public void destroy() {
         super.destroy();
-        /*
         if (ConnectionPool.isInitialized()) {
             ConnectionPool.getInstance().closeAll();
         }
-        */
     }
 }

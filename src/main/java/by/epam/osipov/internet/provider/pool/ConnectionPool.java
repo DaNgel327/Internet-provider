@@ -18,9 +18,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConnectionPool {
 
-
     private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger();
-
 
     private static final int POOL_SIZE = 5;
     private static final int TIMEOUT_VALID = 3;
@@ -32,6 +30,10 @@ public class ConnectionPool {
 
     private static ConnectionPool instance;
 
+    /**
+     * ConnectionPool constructor.
+     * Initialize connection pool
+     * */
     private ConnectionPool() {
         availableConnections = new ArrayBlockingQueue<ConnectionProxy>(POOL_SIZE);
 
@@ -53,14 +55,20 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Returns ConnectionPool instance if
+     * it is initialized.
+     * Otherwise initialize ConnectionPool instance
+     * and returns it.
+     *
+     * @return Connection pool instance
+     * */
     public static ConnectionPool getInstance() {
-        //if (!isInitialized.get()) {
         if (isInitialized.compareAndSet(false, true)) {
             initializationLock.lock();
             try {
                 if (instance == null) {
                     instance = new ConnectionPool();
-                    //isInitialized.set(true);
                 }
             } finally {
                 initializationLock.unlock();
@@ -70,8 +78,13 @@ public class ConnectionPool {
         return instance;
     }
 
+    /**
+     * Returns available connection from pool
+     *
+     * @return connection database connection
+     * */
     public ConnectionProxy getConnection() throws ConnectionPoolException {
-        ConnectionProxy connection = null;
+        ConnectionProxy connection;
         try {
             connection = availableConnections.take();
             LOGGER.info("Connection was taken from pool");
@@ -82,11 +95,16 @@ public class ConnectionPool {
         return connection;
     }
 
-    public void putConnection(ConnectionProxy connection) throws ConnectionPoolException {
+    /**
+     * Returns connection back to pool
+     *
+     * @param connection connection to return
+     * */
+    void putConnection(ConnectionProxy connection) throws ConnectionPoolException {
 
-        if (availableConnections.size() == POOL_SIZE) {
-            return;
-        }
+       // if (availableConnections.size() == POOL_SIZE) {
+        //    return;
+        //}
         try {
             if (connection.isValid(TIMEOUT_VALID)) {
                 availableConnections.put(connection);
@@ -101,11 +119,11 @@ public class ConnectionPool {
         }
     }
 
-
+    /**
+     * Closes all connections from connection pool
+     * */
     public void closeAll() {
-        //if (isInitialized.get()) {
         if (isInitialized.compareAndSet(true, false)) {
-            //isInitialized.set(false);
 
             for (int i = 0; i < POOL_SIZE; i++) {
                 try {
@@ -122,5 +140,12 @@ public class ConnectionPool {
                 }
             }
         }
+    }
+
+    /**
+     * Returns flag of initialization
+     * */
+    public static boolean isInitialized() {
+        return isInitialized.get();
     }
 }
