@@ -78,6 +78,9 @@
                                         <li>
                                             <a href="controller?command=show_users">Пользователи</a>
                                         </li>
+                                        <li>
+                                            <a href="/jsp/change_password.jsp">Сменить пароль</a>
+                                        </li>
                                     </c:when>
                                     <c:otherwise>
                                         <li>

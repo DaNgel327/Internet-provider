@@ -3,10 +3,15 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.entity.impl.User;
+import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
+import by.epam.osipov.internet.provider.exception.RegistrationException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -121,8 +126,7 @@ public class UserDAO extends AbstractDAO {
      *
      * @param user the user to insert
      */
-    public boolean create(User user) throws DAOException {
-
+    public void create(User user) throws DAOException {
         try (PreparedStatement ps = this.connection.prepareCall(INSERT_NEW)) {
             ps.setString(1, user.getSurname());
             ps.setString(2, user.getName());
@@ -133,13 +137,15 @@ public class UserDAO extends AbstractDAO {
             ps.setString(7, user.getEmail());
             ps.executeUpdate();
 
+
             if (ps.getUpdateCount() != 1) {
                 throw new DAOException("User '" + user + "' doesn't inserted");
             }
         } catch (SQLException e) {
             throw new DAOException("Ero while trying insert user '" + user + "'", e);
         }
-        return false;
+
+        throw new DAOException("Я кинул эксепшн");
     }
 
     /**

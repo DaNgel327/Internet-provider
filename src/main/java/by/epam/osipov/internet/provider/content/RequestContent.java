@@ -70,6 +70,10 @@ public class RequestContent {
         return requestParameters.get(key)[0];
     }
 
+    public Object getSessionAttribute(String attributeName) {
+        return sessionAttributes.get(attributeName);
+    }
+
     public Object setAttribute(String key, Object value) {
         return requestAttributes.put(key, value);
     }

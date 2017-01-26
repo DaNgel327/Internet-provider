@@ -71,7 +71,7 @@ public class CoverageFileGenerator {
         createFile(lines);
     }
 
-    public static void createFile(List<String> lines) {
+    private static void createFile(List<String> lines) {
         //List<String> lines = Arrays.asList("The first line", "The second line");
 
         Path file = Paths.get("the-file-name.csv");
@@ -84,7 +84,7 @@ public class CoverageFileGenerator {
 
     }
 
-    public static List<String> getFullAddresses(List<Coverage> coverageList, List<City> cityList) {
+    private static List<String> getFullAddresses(List<Coverage> coverageList, List<City> cityList) {
         List<String> result = new ArrayList<>();
 
         for (Coverage coverage : coverageList) {
@@ -99,7 +99,7 @@ public class CoverageFileGenerator {
         return result;
     }
 
-    public static List<String> getTextValuesByTagName(Element element, String tagName) {
+    private static List<String> getTextValuesByTagName(Element element, String tagName) {
         NodeList nodeList = element.getElementsByTagName(tagName);
         ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -108,7 +108,7 @@ public class CoverageFileGenerator {
         return list;
     }
 
-    public static String getTextValue(Node node) {
+    private static String getTextValue(Node node) {
         StringBuffer textValue = new StringBuffer();
         int length = node.getChildNodes().getLength();
         for (int i = 0; i < length; i ++) {
@@ -122,7 +122,7 @@ public class CoverageFileGenerator {
 
 
 
-    public static String getLatLongPositions(String address) throws Exception {
+    private static String getLatLongPositions(String address) throws Exception {
         int responseCode = 0;
         String api = "https://geocode-maps.yandex.ru/1.x/?geocode=" + URLEncoder.encode(address, "UTF-8");
         System.out.println("URL : " + api);

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controller")
+@WebServlet("/controller")
 public class Controller extends HttpServlet {
 
 
@@ -30,7 +30,9 @@ public class Controller extends HttpServlet {
         try {
             page = command.execute(requestContent);
         } catch (CommandException e) {
-            LOGGER.error(e);
+           for(StackTraceElement element: e.getStackTrace()){
+               LOGGER.error(element);
+           }
         }
 
         requestContent.insertValues(request);
@@ -45,7 +47,7 @@ public class Controller extends HttpServlet {
         try {
             page = command.execute(requestContent);
         } catch (CommandException e) {
-            LOGGER.error(e);;
+            LOGGER.error("SKA OSHIBKA",e);
         }
 
 

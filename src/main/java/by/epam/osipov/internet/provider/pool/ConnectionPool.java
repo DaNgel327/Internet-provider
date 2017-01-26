@@ -2,8 +2,8 @@ package by.epam.osipov.internet.provider.pool;
 
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DatabaseConnectorException;
-import org.apache.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -18,7 +18,8 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConnectionPool {
 
-    private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger();
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private static final int POOL_SIZE = 5;
     private static final int TIMEOUT_VALID = 3;
@@ -33,7 +34,7 @@ public class ConnectionPool {
     /**
      * ConnectionPool constructor.
      * Initialize connection pool
-     * */
+     */
     private ConnectionPool() {
         availableConnections = new ArrayBlockingQueue<ConnectionProxy>(POOL_SIZE);
 
@@ -62,7 +63,7 @@ public class ConnectionPool {
      * and returns it.
      *
      * @return Connection pool instance
-     * */
+     */
     public static ConnectionPool getInstance() {
         if (isInitialized.compareAndSet(false, true)) {
             initializationLock.lock();
@@ -82,7 +83,7 @@ public class ConnectionPool {
      * Returns available connection from pool
      *
      * @return connection database connection
-     * */
+     */
     public ConnectionProxy getConnection() throws ConnectionPoolException {
         ConnectionProxy connection;
         try {
@@ -99,10 +100,10 @@ public class ConnectionPool {
      * Returns connection back to pool
      *
      * @param connection connection to return
-     * */
+     */
     void putConnection(ConnectionProxy connection) throws ConnectionPoolException {
 
-       // if (availableConnections.size() == POOL_SIZE) {
+        // if (availableConnections.size() == POOL_SIZE) {
         //    return;
         //}
         try {
@@ -121,7 +122,7 @@ public class ConnectionPool {
 
     /**
      * Closes all connections from connection pool
-     * */
+     */
     public void closeAll() {
         if (isInitialized.compareAndSet(true, false)) {
 
@@ -144,7 +145,7 @@ public class ConnectionPool {
 
     /**
      * Returns flag of initialization
-     * */
+     */
     public static boolean isInitialized() {
         return isInitialized.get();
     }
