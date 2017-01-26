@@ -16,7 +16,7 @@
     </script>
 </head>
 <body>
-<c:import url="header.jsp"/>
+<c:import url="parts/header.jsp"/>
 <div class="container">
     <div id="map">
         <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
@@ -28,7 +28,7 @@
         <a download="C:\Users\Lenovo\InternetProvider\src\main\webapp\the-file-name.csv" class="btn btn-default">DOWNLOAD CSV</a>
     </c:if>
 </div>
-<c:import url="footer.jsp"/>
+<c:import url="parts/footer.jsp"/>
 
 <script>
     function initMap() {

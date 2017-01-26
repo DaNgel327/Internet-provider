@@ -144,8 +144,6 @@ public class UserDAO extends AbstractDAO {
         } catch (SQLException e) {
             throw new DAOException("Ero while trying insert user '" + user + "'", e);
         }
-
-        throw new DAOException("Я кинул эксепшн");
     }
 
     /**

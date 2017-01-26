@@ -72,48 +72,6 @@
 
             <input type="submit" value="Add tariff" class="btn btn-info btn-block">
         </form>
-
-        <!--
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="first_name" id="first_name" class="form-control input-sm"
-                           placeholder="First Name">
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="last_name" id="last_name" class="form-control input-sm"
-                           placeholder="Last Name">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control input-sm"
-                           placeholder="Email Address">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="first_name" id="first_name2" class="form-control input-sm"
-                           placeholder="First Name">
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="last_name" id="last_name2" class="form-control input-sm"
-                           placeholder="Last Name">
-                </div>
-            </div>
-        </div>
-        -->
-
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

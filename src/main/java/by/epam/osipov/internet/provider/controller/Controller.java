@@ -30,9 +30,7 @@ public class Controller extends HttpServlet {
         try {
             page = command.execute(requestContent);
         } catch (CommandException e) {
-           for(StackTraceElement element: e.getStackTrace()){
-               LOGGER.error(element);
-           }
+           LOGGER.error("Error while trying to execute command ", e);
         }
 
         requestContent.insertValues(request);
@@ -47,7 +45,7 @@ public class Controller extends HttpServlet {
         try {
             page = command.execute(requestContent);
         } catch (CommandException e) {
-            LOGGER.error("SKA OSHIBKA",e);
+            LOGGER.error("Error while trying to execute command ",e);
         }
 
 
