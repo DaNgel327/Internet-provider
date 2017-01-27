@@ -2,7 +2,6 @@ package by.epam.osipov.internet.provider.mail.ssl;
 
 
 import by.epam.osipov.internet.provider.entity.impl.Access;
-import by.epam.osipov.internet.provider.exception.RegistrationException;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -36,13 +35,6 @@ public class EmailSender {
      * @param access Access object to send
      * @param email  receiver email
      */
-    public void sendAccess(Access access, String email) throws RegistrationException {
-        try {
-            trySendAccess(access, email);
-        } catch (MessagingException e) {
-            throw new RegistrationException("Error while trying to send email to user", e);
-        }
-    }
 
     /**
      * Try to send Access object to user
@@ -50,7 +42,7 @@ public class EmailSender {
      * @param access Access object to send
      * @param email  receiver email
      */
-    private void trySendAccess(Access access, String email) throws MessagingException {
+    public void sendAccess(Access access, String email) throws MessagingException {
         String aboutAccess = "\nYour Login: " + access.getLogin() + "\n Password: " + access.getPassword();
 
         Session session = Session.getDefaultInstance(props, new Authenticator() {

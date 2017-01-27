@@ -8,7 +8,6 @@ import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import org.apache.logging.log4j.LogManager;

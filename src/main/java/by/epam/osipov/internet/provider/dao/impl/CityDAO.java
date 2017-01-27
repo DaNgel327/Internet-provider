@@ -3,7 +3,6 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.City;
 import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;

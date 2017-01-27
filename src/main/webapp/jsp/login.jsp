@@ -18,7 +18,7 @@
      style="display: none;">
     <div class="modal-dialog">
 
-        <div class="loginmodal-container">
+        <div class="modalWindow-container">
 
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                     aria-hidden="true">&times;</span></button>
@@ -32,7 +32,7 @@
                 <input name="command" type="hidden" value="login">
                 <input type="text" name="user" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
-                <input type="submit" class="login loginmodal-submit" value="login">
+                <input type="submit" class="modalWindow-submit" value="login">
             </form>
 
             <div class="login-help">

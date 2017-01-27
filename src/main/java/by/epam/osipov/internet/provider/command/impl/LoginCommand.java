@@ -7,7 +7,6 @@ import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 

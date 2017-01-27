@@ -51,7 +51,7 @@ public class AccessService {
 
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
 
-            if (isOldPassCorrect(login, curPass)) {
+            if (!isOldPassCorrect(login, curPass)) {
                 throw new ServiceException("Old password is incorrect");
             }
 
@@ -59,6 +59,7 @@ public class AccessService {
             Access access = accessDAO.findByLogin(login);
 
             access.setPassword(newPass);
+            accessDAO.update(access);
         } catch (ConnectionPoolException | DAOException e) {
             throw new ServiceException("Error while trying to change password", e);
         }

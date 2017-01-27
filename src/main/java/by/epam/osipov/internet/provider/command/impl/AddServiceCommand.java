@@ -24,7 +24,6 @@ public class AddServiceCommand implements Command {
 
     @Override
     public String execute(RequestContent content) throws CommandException {
-
         try {
             return tryExecute(content);
         } catch (CommandException | DAOException | ConnectionPoolException e) {
@@ -33,7 +32,6 @@ public class AddServiceCommand implements Command {
     }
 
     private String tryExecute(RequestContent content) throws CommandException, DAOException, ConnectionPoolException {
-
         String name = content.getParameter(NAME_PARAM);
         String description = content.getParameter(DESCRIPTION_PARAM);
         String validity = content.getParameter(VALIDITY_PARAM).replaceAll("\\+", " ");

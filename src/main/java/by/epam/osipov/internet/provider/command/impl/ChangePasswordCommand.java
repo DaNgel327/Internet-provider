@@ -31,13 +31,17 @@ public class ChangePasswordCommand implements Command {
         String newPass = content.getParameter(NEW_PASSWORD_PARAM);
         String newPassConfirm = content.getParameter(CONFIRM_PARAM);
 
+        if(!newPass.equals(newPassConfirm)){
+            content.setSessionAttribute("done", false);
+        }
         String login = content.getSessionAttribute("user").toString();
 
         AccessService accessService = new AccessService();
         if (accessService.isOldPassCorrect(login, curPass)) {
             accessService.changePassword(login, curPass, newPass);
+            content.setSessionAttribute("done", true);
         } else {
-            //alert need
+            content.setSessionAttribute("done", false);
             return null;
         }
 

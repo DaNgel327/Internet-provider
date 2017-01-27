@@ -12,14 +12,12 @@
     <title>Bootstrap Template</title>
 
 
-    <c:import url="/jsp/login.jsp"/>
-
     <!-- Bootstrap -->
     <link href="../../resource/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../../resource/css/style.css">
     <link rel="stylesheet" type="text/css" href="../../resource/bootstrap/css/font-awesome.css">
-
     <link rel="stylesheet" type="text/css" href="../../resource/css/form.css">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +49,8 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
             <ul class="nav navbar-nav">
-                <li><a href="controller?command=show_service"><fmt:message key="nav.service" bundle="${ value }"/></a></li>
+                <li><a href="controller?command=show_service"><fmt:message key="nav.service" bundle="${ value }"/></a>
+                </li>
                 <li><a href="#"><fmt:message key="nav.price" bundle="${ value }"/></a></li>
                 <li><a href="/jsp/coverage.jsp"><fmt:message key="nav.coverage" bundle="${ value }"/></a></li>
                 <li><a href="#"><fmt:message key="nav.downloads" bundle="${ value }"/></a></li>
@@ -79,7 +78,8 @@
                                             <a href="controller?command=show_users">Пользователи</a>
                                         </li>
                                         <li>
-                                            <a href="/jsp/change_password.jsp">Сменить пароль</a>
+                                            <a href="#" data-toggle="modal" data-target="#changePassword-modal">Сменить
+                                                пароль</a>
                                         </li>
                                     </c:when>
                                     <c:otherwise>
@@ -122,6 +122,9 @@
         </div>
     </div>
 </div>
+
+<c:import url="/jsp/change-password.jsp"/>
+<c:import url="/jsp/login.jsp"/>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

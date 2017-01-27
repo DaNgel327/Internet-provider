@@ -11,9 +11,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -23,7 +25,9 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
@@ -42,36 +46,7 @@ import java.util.List;
  */
 public class CoverageFileGenerator {
 
-    public static void main(String[] args) throws Exception {
-
-        List<String> addresses = null;
-
-        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
-            CoverageDAO coverageDAO = new CoverageDAO(connection);
-
-            CityDAO cityDAO = new CityDAO(connection);
-
-            List<Coverage> coverageList = coverageDAO.findAll();
-            List<City> cityList = cityDAO.findAll();
-
-            addresses = getFullAddresses(coverageList, cityList);
-
-        } catch (Exception e) {
-            System.out.println("ex");
-        }
-
-        List<String> lines = new ArrayList<>();
-
-        for (String s : addresses) {
-            String coordinates = getLatLongPositions(s);
-            String line = s + "," + coordinates;
-            lines.add(line);
-        }
-
-        createFile(lines);
-    }
-
-    private static void createFile(List<String> lines) {
+    public static void createFile(List<String> lines) {
         //List<String> lines = Arrays.asList("The first line", "The second line");
 
         Path file = Paths.get("the-file-name.csv");
@@ -84,7 +59,7 @@ public class CoverageFileGenerator {
 
     }
 
-    private static List<String> getFullAddresses(List<Coverage> coverageList, List<City> cityList) {
+    public static List<String> getFullAddresses(List<Coverage> coverageList, List<City> cityList) {
         List<String> result = new ArrayList<>();
 
         for (Coverage coverage : coverageList) {
@@ -122,7 +97,7 @@ public class CoverageFileGenerator {
 
 
 
-    private static String getLatLongPositions(String address) throws Exception {
+    public static String getLatLongPositions(String address) throws IOException, ParserConfigurationException, SAXException {
         int responseCode = 0;
         String api = "https://geocode-maps.yandex.ru/1.x/?geocode=" + URLEncoder.encode(address, "UTF-8");
         System.out.println("URL : " + api);

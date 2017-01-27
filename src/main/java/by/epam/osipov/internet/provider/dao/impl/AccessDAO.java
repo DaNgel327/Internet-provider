@@ -3,7 +3,6 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
 import java.sql.PreparedStatement;
@@ -25,8 +24,9 @@ public class AccessDAO extends AbstractDAO {
 
     private final static String UPDATE_BY_ID = "UPDATE access " +
             "SET login = ?, " +
-            "password = ?, "+
-            "role = ?";
+            "password = ?, " +
+            "role = ? " +
+            "WHERE idAccess = ?";
 
     private final static String SELECT_BY_LOGIN = "SELECT * FROM access WHERE login = ?";
 
@@ -136,12 +136,13 @@ public class AccessDAO extends AbstractDAO {
             ps.setString(1, access.getLogin());
             ps.setString(2, access.getPassword());
             ps.setByte(3, access.getRole());
+            ps.setInt(4, access.getId());
             ps.executeUpdate();
             if (ps.getUpdateCount() == -1) {
                 throw new DAOException("Access '" + access + "' wasn't updated");
             }
         } catch (SQLException e) {
-            throw new DAOException("Error while tryingupdate access '" + access + "'", e);
+            throw new DAOException("Error while trying update access '" + access + "'", e);
         }
     }
 

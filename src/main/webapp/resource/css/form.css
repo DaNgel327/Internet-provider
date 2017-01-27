@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /****** LOGIN MODAL ******/
-.loginmodal-container {
+.modalWindow-container {
   padding: 30px;
   max-width: 350px;
   width: 100% !important;
@@ -13,32 +13,20 @@
   font-family: roboto;
 }
 
-a:focus {
-  outline:none;
-}
-
-
- .close {
-   color: #aaaaaa;
-   float: right;
-   font-size: 28px;
-   font-weight: bold;
- }
-
-.loginmodal-container h1 {
+.modalWindow-container h1 {
   text-align: center;
   font-size: 1.8em;
   font-family: roboto;
 }
 
-.loginmodal-container input[type=submit] {
+.modalWindow-container input[type=submit] {
   width: 100%;
   display: block;
   margin-bottom: 10px;
   position: relative;
 }
 
-.loginmodal-container input[type=text], input[type=password] {
+.modalWindow-container input[type=text], input[type=password] {
   height: 44px;
   font-size: 16px;
   width: 100%;
@@ -53,7 +41,7 @@ a:focus {
   -moz-box-sizing: border-box;
 }
 
-.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+.modalWindow-container input[type=text]:hover, input[type=password]:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
@@ -61,23 +49,23 @@ a:focus {
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
-.loginmodal {
+.modalWindow {
   text-align: center;
   font-size: 14px;
   font-family: 'Arial', sans-serif;
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
-  user-select: none; */
+  /* border-radius: 3px; */
+  /* -webkit-user-select: none;
+    user-select: none; */
 }
 
-.loginmodal-submit {
+.modalWindow-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
   color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #4d90fe;
   padding: 17px 0px;
   font-family: roboto;
@@ -85,7 +73,7 @@ a:focus {
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
-.loginmodal-submit:hover {
+.modalWindow-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
@@ -93,7 +81,7 @@ a:focus {
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
-.loginmodal-container a {
+.modalWindow-container a {
   text-decoration: none;
   color: #666;
   font-weight: 400;
@@ -101,7 +89,7 @@ a:focus {
   display: inline-block;
   opacity: 0.6;
   transition: opacity ease 0.5s;
-} 
+}
 
 .login-help{
   font-size: 12px;

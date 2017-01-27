@@ -18,7 +18,6 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConnectionPool {
 
-
     private static final Logger LOGGER = LogManager.getLogger();
 
     private static final int POOL_SIZE = 5;

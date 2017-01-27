@@ -25,15 +25,10 @@
 
     <c:if test="${sessionScope.user=='admin'}">
         <a href="#" class="btn btn-default">ADD NEW LOCATION</a>
-        <a download="C:\Users\Lenovo\InternetProvider\src\main\webapp\the-file-name.csv" class="btn btn-default">DOWNLOAD CSV</a>
+        <a href="controller?command&generate_csv" class="btn btn-default">Generate csv</a>
     </c:if>
 </div>
 <c:import url="parts/footer.jsp"/>
 
-<script>
-    function initMap() {
-
-    }
-</script>
 </body>
 </html>

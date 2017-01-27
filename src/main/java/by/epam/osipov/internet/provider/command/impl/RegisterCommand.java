@@ -14,6 +14,8 @@ import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import by.epam.osipov.internet.provider.service.AccessService;
 import by.epam.osipov.internet.provider.service.UserService;
 
+import javax.mail.MessagingException;
+
 /**
  * Created by Lenovo on 15.01.2017.
  */
@@ -23,12 +25,12 @@ public class RegisterCommand implements Command {
     public String execute(RequestContent content) throws CommandException {
         try {
             return tryExecute(content);
-        } catch (RegistrationException | ServiceException | EntityNotFoundException | DAOException | ConnectionPoolException e) {
+        } catch (ServiceException | DAOException | ConnectionPoolException | MessagingException e) {
             throw new CommandException("Error while trying to execute Register user command", e);
         }
     }
 
-    private String tryExecute(RequestContent content) throws RegistrationException, ConnectionPoolException, DAOException, EntityNotFoundException, ServiceException {
+    private String tryExecute(RequestContent content) throws ConnectionPoolException, DAOException, ServiceException, MessagingException {
 
         int idUser = addNewUser(content);
         Access access = addNewAccess();
@@ -47,7 +49,7 @@ public class RegisterCommand implements Command {
         return "/";
     }
 
-    private Access addNewAccess() throws RegistrationException, ConnectionPoolException, DAOException, EntityNotFoundException, ServiceException {
+    private Access addNewAccess() throws ConnectionPoolException, DAOException, ServiceException {
         AccessService accessService = new AccessService();
         Access access = accessService.generateUniqueAccess();
 
@@ -59,7 +61,7 @@ public class RegisterCommand implements Command {
         return access;
     }
 
-    private int addNewUser(RequestContent content) throws ConnectionPoolException, DAOException, RegistrationException, ServiceException {
+    private int addNewUser(RequestContent content) throws ConnectionPoolException, DAOException, ServiceException {
         String name = content.getParameter("name");
         String surname = content.getParameter("surname");
         String patronymic = content.getParameter("patronymic");
@@ -67,7 +69,8 @@ public class RegisterCommand implements Command {
 
         UserService userService = new UserService();
         if (userService.checkIsUserExist(passport)) {
-            throw new RegistrationException("Error while trying to register new user. User exist");
+            //alert add
+            //throw new RegistrationException("Error while trying to register new user. User exist");
         }
 
 
@@ -83,7 +86,7 @@ public class RegisterCommand implements Command {
                 Double.parseDouble(balance), email);
     }
 
-    private void sendAccessToUser(Access access) throws DAOException, EntityNotFoundException, ConnectionPoolException, RegistrationException {
+    private void sendAccessToUser(Access access) throws DAOException, ConnectionPoolException, MessagingException {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
             UserDAO userDAO = new UserDAO(connection);
 
@@ -94,7 +97,7 @@ public class RegisterCommand implements Command {
         }
     }
 
-    private int defineCoverage(RequestContent content) throws DAOException, EntityNotFoundException, ConnectionPoolException {
+    private int defineCoverage(RequestContent content) throws DAOException, ConnectionPoolException {
 
         City city = new City(content.getParameter("city"));
         int idCity = 0;

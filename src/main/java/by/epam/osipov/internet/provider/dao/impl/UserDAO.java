@@ -3,15 +3,9 @@ package by.epam.osipov.internet.provider.dao.impl;
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.entity.impl.User;
-import by.epam.osipov.internet.provider.exception.CommandException;
 import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
-import by.epam.osipov.internet.provider.exception.RegistrationException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -152,17 +146,15 @@ public class UserDAO extends AbstractDAO {
      */
     public String getEmailByAccess(Access access) throws DAOException {
 
-        String email;
+        String email = "";
 
         try (PreparedStatement ps = connection.prepareStatement(GET_EMAIL_BY_LOGIN)) {
             ps.setString(1, access.getLogin());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 email = rs.getString(1);
-            } else {
-                throw new EntityNotFoundException("Access '" + access + "' not found in database");
             }
-        } catch (SQLException | EntityNotFoundException e) {
+        } catch (SQLException e) {
             throw new DAOException("Eor while trying get email by user's access '" + access + "'", e);
         }
         return email;

@@ -14,6 +14,7 @@ import by.epam.osipov.internet.provider.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.mail.MessagingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -183,15 +184,14 @@ public class UserGenerator {
             String email = userDAO.getEmailByAccess(access);
 
             EmailSender emailSender = new EmailSender();
-            try {
                 emailSender.sendAccess(access, email);
-            } catch (RegistrationException e) {
-                e.printStackTrace();
-            }
+
 
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
         } catch (DAOException e) {
+            e.printStackTrace();
+        } catch (MessagingException e) {
             e.printStackTrace();
         }
 
