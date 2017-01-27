@@ -19,27 +19,24 @@ public class LoginCommand implements Command {
     public String execute(RequestContent content) throws CommandException {
         try {
             return tryExecute(content);
-        } catch (ConnectionPoolException | DAOException | EntityNotFoundException e) {
+        } catch (ConnectionPoolException | DAOException e) {
             throw new CommandException("Error while trying to execute Login command", e);
         }
     }
 
-    private String tryExecute(RequestContent content) throws ConnectionPoolException, EntityNotFoundException, DAOException {
+    private String tryExecute(RequestContent content) throws ConnectionPoolException, DAOException {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
             String login = content.getParameter("user");
             String password = content.getParameter("password");
 
             AccessDAO accessDAO = new AccessDAO(connection);
             Access access = accessDAO.findByLogin(login);
-            if (verifyAccess(access, password)) {
+            boolean isVerified = verifyAccess(access, password);
+            if (isVerified) {
                 content.setSessionAttribute("user", login);
                 content.setSessionAttribute("role", access.getRole());
-                //change from session to normal attr
-                content.setSessionAttribute("loginError", null);
-            } else {
-                //change from session to normal attr
-                content.setSessionAttribute("loginError", "Ошибка авторизации.\nНеверное имя пользователя или пароль");
             }
+            content.setSessionAttribute("isVerified", isVerified);
         }
         return "/";
     }

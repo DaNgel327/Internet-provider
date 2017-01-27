@@ -34,7 +34,7 @@ public class CityDAO extends AbstractDAO {
     @Override
     public int getIdByKey(Object key) throws DAOException {
 
-        int id;
+        int id = 0;
 
         try (PreparedStatement ps = connection.prepareStatement(GET_ID_BY_NAME)) {
             ps.setString(1, (String) key);
@@ -42,10 +42,8 @@ public class CityDAO extends AbstractDAO {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 id = rs.getInt(1);
-            } else {
-                throw new EntityNotFoundException("City '" + key + "' wasn't found");
             }
-        } catch (SQLException | EntityNotFoundException e) {
+        } catch (SQLException e) {
             throw new DAOException("Error while trying to get id of '" + key + "' city", e);
         }
         return id;

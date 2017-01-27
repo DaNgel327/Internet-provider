@@ -3964,3 +3964,630 @@ Caused by: by.epam.osipov.internet.provider.exception.DAOException: Я кинул эксе
 01:00:00.564 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
 01:00:00.565 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
 01:00:00.565 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+13:49:57.116 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:49:57.164 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:49:57.173 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:49:57.178 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:49:57.202 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:49:57.203 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+13:49:57.265 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+13:50:30.676 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+13:50:30.681 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+13:50:30.686 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+13:50:30.689 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+13:50:30.692 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+13:50:56.222 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:50:56.235 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:50:56.243 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:50:56.251 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:50:56.260 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:50:56.260 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+13:50:56.310 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+13:51:14.283 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+13:51:14.334 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+13:51:47.055 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+13:51:47.055 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+13:51:47.055 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+13:51:47.060 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+13:51:47.060 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+13:53:00.842 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:53:00.873 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:53:00.880 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:53:00.890 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:53:00.900 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:53:00.901 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+13:53:00.958 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+13:54:43.408 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+13:54:43.409 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+13:54:43.409 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+13:54:43.409 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+13:54:43.414 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+13:57:12.521 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:57:12.537 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:57:12.543 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:57:12.552 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:57:12.562 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+13:57:12.562 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+13:57:12.587 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+13:59:37.832 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+13:59:37.832 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+13:59:37.832 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+13:59:37.837 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+13:59:37.837 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+14:00:03.191 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:00:03.228 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:00:03.239 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:00:03.269 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:00:03.276 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:00:03.276 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:00:03.316 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:00:04.843 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:00:04.939 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:01:48.964 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+14:01:48.965 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+14:01:48.967 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+14:01:48.968 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+14:01:48.970 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+14:02:14.076 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:02:14.088 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:02:14.099 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:02:14.105 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:02:14.115 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:02:14.116 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:02:14.163 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:02:15.472 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:02:15.500 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:02:48.935 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+14:02:48.938 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+14:02:48.940 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+14:02:48.942 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+14:02:48.945 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+14:03:13.283 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:03:13.298 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:03:13.303 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:03:13.324 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:03:13.336 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:03:13.336 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:03:13.360 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:04:48.573 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+14:04:48.573 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+14:04:48.573 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+14:04:48.578 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+14:04:48.578 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+14:05:14.815 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:05:14.828 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:05:14.834 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:05:14.840 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:05:14.855 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:05:14.856 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:05:14.880 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:06:43.035 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+14:06:43.035 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+14:06:43.040 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+14:06:43.040 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+14:06:43.040 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+14:10:16.640 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:10:16.655 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:10:16.657 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:10:16.668 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:10:16.677 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+14:10:16.678 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:10:16.719 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:10:21.418 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:10:21.438 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:10:21.439 [http-nio-8087-exec-1] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+14:10:29.911 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:10:29.916 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:10:29.917 [http-nio-8087-exec-3] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+14:10:38.815 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+14:10:38.818 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+14:10:38.819 [http-nio-8087-exec-10] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+14:12:59.657 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+14:12:59.657 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+14:12:59.657 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+14:12:59.657 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+14:12:59.662 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:24:38.162 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:24:38.223 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:24:38.261 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:24:38.266 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:24:38.283 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:24:38.283 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:24:38.381 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:24:38.381 [http-nio-8087-exec-10] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+15:25:16.235 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:25:16.240 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:25:16.240 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:25:16.245 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:25:16.245 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:25:38.746 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:25:38.770 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:25:38.774 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:25:38.794 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:25:38.802 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:25:38.802 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:25:38.842 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:25:38.842 [http-nio-8087-exec-10] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+15:26:06.485 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:26:06.485 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:26:06.490 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:26:06.490 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:26:06.495 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:26:30.294 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:26:30.306 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:26:30.314 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:26:30.366 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:26:30.390 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:26:30.390 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:26:30.462 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:26:30.462 [http-nio-8087-exec-10] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+15:27:56.191 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:27:56.196 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:27:56.196 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:27:56.201 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:27:56.201 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:31:16.423 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:31:16.524 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:31:16.557 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:31:16.583 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:31:16.593 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:31:16.593 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:31:16.680 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:31:16.680 [http-nio-8087-exec-4] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+15:31:32.356 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:31:32.361 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:31:32.361 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:31:32.366 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:31:32.366 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:32:16.305 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:32:16.333 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:32:16.337 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:32:16.345 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:32:16.365 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:32:16.365 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:32:28.725 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:32:35.774 [http-nio-8087-exec-4] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+15:32:36.391 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:32:36.396 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:32:36.401 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:32:36.401 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:32:36.406 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:41:56.902 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:41:56.930 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:41:56.938 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:41:56.955 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:41:56.967 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:41:56.967 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:41:57.059 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:41:57.059 [http-nio-8087-exec-4] ERROR by.epam.osipov.internet.provider.controller.Controller doPost - Error while trying to execute command 
+by.epam.osipov.internet.provider.exception.CommandException: Error while trying to execute Login command
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:23) ~[classes/:?]
+	at by.epam.osipov.internet.provider.controller.Controller.doPost(Controller.java:31) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at by.epam.osipov.internet.provider.content.filter.EncodingFilter.doFilter(EncodingFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.7.jar:2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [catalina.jar:9.0.0.M13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:745) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-coyote.jar:9.0.0.M13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_101]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M13]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_101]
+Caused by: by.epam.osipov.internet.provider.exception.DAOException: Error while trying to find access by login '1234567890'
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:112) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+Caused by: by.epam.osipov.internet.provider.exception.EntityNotFoundException: Access with login '1234567890' wasn't found
+	at by.epam.osipov.internet.provider.dao.impl.AccessDAO.findByLogin(AccessDAO.java:109) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.tryExecute(LoginCommand.java:33) ~[classes/:?]
+	at by.epam.osipov.internet.provider.command.impl.LoginCommand.execute(LoginCommand.java:21) ~[classes/:?]
+	... 31 more
+15:42:31.239 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:42:31.239 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:42:31.244 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:42:31.249 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:42:31.254 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:47:01.865 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:47:01.878 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:47:01.882 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:47:01.890 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:47:01.898 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:47:01.902 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:47:01.946 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:47:39.464 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:47:39.469 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:47:39.474 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:47:39.479 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:47:39.484 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:50:57.418 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:50:57.438 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:50:57.446 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:50:57.468 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:50:57.502 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:50:57.502 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:50:57.530 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:51:25.849 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+15:51:25.854 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+15:51:25.854 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+15:51:25.859 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+15:51:25.859 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+15:52:27.381 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:52:27.397 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:52:27.405 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:52:27.413 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:52:27.465 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+15:52:27.465 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:52:27.489 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:52:30.397 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:52:30.559 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:52:33.705 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:52:33.709 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:52:40.042 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:52:40.122 [http-nio-8087-exec-7] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+15:52:42.431 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+15:52:42.521 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool

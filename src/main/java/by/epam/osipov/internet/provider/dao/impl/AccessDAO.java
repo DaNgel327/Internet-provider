@@ -95,7 +95,7 @@ public class AccessDAO extends AbstractDAO {
      * @return user's access
      */
     public Access findByLogin(String login) throws DAOException {
-        Access access;
+        Access access = null;
         try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_LOGIN)) {
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
@@ -105,10 +105,8 @@ public class AccessDAO extends AbstractDAO {
                 byte role = rs.getByte(4);
 
                 access = new Access(accessId, login, password, role);
-            } else {
-                throw new EntityNotFoundException("Access with login '" + login + "' wasn't found");
             }
-        } catch (SQLException | EntityNotFoundException e) {
+        } catch (SQLException e) {
             throw new DAOException("Error while trying to find access by login '" + login + "'", e);
         }
         return access;

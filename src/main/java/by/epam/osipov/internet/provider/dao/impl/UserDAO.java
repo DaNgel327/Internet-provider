@@ -53,17 +53,15 @@ public class UserDAO extends AbstractDAO {
      */
     @Override
     public int getIdByKey(Object key) throws DAOException {
-        int id;
+        int id = 0;
 
         try (PreparedStatement ps = connection.prepareStatement(SELECT_ID_BY_PASSPORT)) {
             ps.setString(1, (String) key);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 id = rs.getInt(1);
-            } else {
-                throw new EntityNotFoundException("User with key '" + key + "' not found");
             }
-        } catch (SQLException | EntityNotFoundException e) {
+        } catch (SQLException e) {
             throw new DAOException("Error while trying to find user by key '" + key + "'", e);
         }
 
