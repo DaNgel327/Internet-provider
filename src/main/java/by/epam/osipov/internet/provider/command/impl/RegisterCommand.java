@@ -23,12 +23,12 @@ public class RegisterCommand implements Command {
     public String execute(RequestContent content) throws CommandException {
         try {
             return tryExecute(content);
-        } catch (RegistrationException | EntityNotFoundException | DAOException | ConnectionPoolException e) {
+        } catch (RegistrationException | ServiceException | EntityNotFoundException | DAOException | ConnectionPoolException e) {
             throw new CommandException("Error while trying to execute Register user command", e);
         }
     }
 
-    private String tryExecute(RequestContent content) throws RegistrationException, ConnectionPoolException, DAOException, EntityNotFoundException {
+    private String tryExecute(RequestContent content) throws RegistrationException, ConnectionPoolException, DAOException, EntityNotFoundException, ServiceException {
 
         int idUser = addNewUser(content);
         Access access = addNewAccess();
@@ -47,7 +47,7 @@ public class RegisterCommand implements Command {
         return "/";
     }
 
-    private Access addNewAccess() throws RegistrationException, ConnectionPoolException, DAOException, EntityNotFoundException {
+    private Access addNewAccess() throws RegistrationException, ConnectionPoolException, DAOException, EntityNotFoundException, ServiceException {
         AccessService accessService = new AccessService();
         Access access = accessService.generateUniqueAccess();
 
@@ -59,14 +59,14 @@ public class RegisterCommand implements Command {
         return access;
     }
 
-    private int addNewUser(RequestContent content) throws ConnectionPoolException, DAOException, RegistrationException {
+    private int addNewUser(RequestContent content) throws ConnectionPoolException, DAOException, RegistrationException, ServiceException {
         String name = content.getParameter("name");
         String surname = content.getParameter("surname");
         String patronymic = content.getParameter("patronymic");
         String passport = content.getParameter("passport");
 
         UserService userService = new UserService();
-        if (userService.userExist(passport)) {
+        if (userService.checkIsUserExist(passport)) {
             throw new RegistrationException("Error while trying to register new user. User exist");
         }
 

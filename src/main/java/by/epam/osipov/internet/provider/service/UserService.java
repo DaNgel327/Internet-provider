@@ -2,11 +2,11 @@ package by.epam.osipov.internet.provider.service;
 
 import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.Ban;
+import by.epam.osipov.internet.provider.entity.impl.Service;
 import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
-import by.epam.osipov.internet.provider.exception.RegistrationException;
+import by.epam.osipov.internet.provider.exception.ServiceException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
@@ -33,29 +33,17 @@ public class UserService {
      * @return user's id
      */
     public int registerNew(String surname, String name, String patronymic, String passport,
-                           String phone, double balance, String email) throws RegistrationException {
+                           String phone, double balance, String email) throws ServiceException {
+
         try {
             return tryRegisterNew(surname, name, patronymic, passport, phone, balance, email);
-        } catch (ConnectionPoolException | EntityNotFoundException | DAOException e) {
-            throw new RegistrationException("Error while trying to register new use", e);
+        } catch (ConnectionPoolException | DAOException e) {
+            throw new ServiceException("Error while trying to register new user", e);
         }
     }
 
-    /**
-     * Try to register new user.
-     * If something wrong throws an exception.
-     *
-     * @param surname    user's surname
-     * @param name       user's name
-     * @param patronymic user's patronymic (third name)
-     * @param passport   user's passport
-     * @param phone      user's phone
-     * @param balance    user's start balance
-     * @param email      user's email
-     * @return user's id
-     */
     private int tryRegisterNew(String surname, String name, String patronymic, String passport,
-                               String phone, double balance, String email) throws ConnectionPoolException, DAOException, EntityNotFoundException {
+                               String phone, double balance, String email) throws ConnectionPoolException, DAOException {
 
         User user = new User(surname, name, patronymic, passport, phone, balance, email);
         int userId;
@@ -76,7 +64,15 @@ public class UserService {
      * @param passport user's passport to check
      * @return true if user exist in database. Otherwise returns false
      */
-    public boolean userExist(String passport) throws ConnectionPoolException, DAOException {
+    public boolean checkIsUserExist(String passport) throws ServiceException {
+        try {
+            return tryCheckIsUserExist(passport);
+        } catch (ConnectionPoolException | DAOException e) {
+            throw new ServiceException("Error while trying to check if user exist", e);
+        }
+    }
+
+    private boolean tryCheckIsUserExist(String passport) throws ConnectionPoolException, DAOException {
 
         List<User> users;
 
@@ -138,4 +134,5 @@ public class UserService {
 
         return users;
     }
+
 }

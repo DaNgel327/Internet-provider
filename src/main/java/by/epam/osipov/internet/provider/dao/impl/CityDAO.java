@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class CityDAO extends AbstractDAO {
 
-    private static final String GET_ID_BY_NAME = "SELECT idCity FROM city " +"WHERE name = ?";
+    private static final String GET_ID_BY_NAME = "SELECT idCity FROM city " + "WHERE name = ?";
     private static final String SELECT_ALL = "SELECT * FROM city";
 
 
@@ -32,24 +32,24 @@ public class CityDAO extends AbstractDAO {
      * @param key city name
      */
     @Override
-    public int getIdByKey(Object key) throws DAOException, EntityNotFoundException {
-        {
-            int id;
+    public int getIdByKey(Object key) throws DAOException {
 
-            try (PreparedStatement ps = connection.prepareStatement(GET_ID_BY_NAME)) {
-                ps.setString(1, (String) key);
+        int id;
 
-                ResultSet rs = ps.executeQuery();
-                if (rs.next()) {
-                    id = rs.getInt(1);
-                } else {
-                    throw new EntityNotFoundException("City '" + key + "' wasn't found");
-                }
-            } catch (SQLException e) {
-                throw new DAOException("Error while trying to get id of '" + key + "' city", e);
+        try (PreparedStatement ps = connection.prepareStatement(GET_ID_BY_NAME)) {
+            ps.setString(1, (String) key);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                id = rs.getInt(1);
+            } else {
+                throw new EntityNotFoundException("City '" + key + "' wasn't found");
             }
-            return id;
+        } catch (SQLException | EntityNotFoundException e) {
+            throw new DAOException("Error while trying to get id of '" + key + "' city", e);
         }
+        return id;
+
     }
 
     @Override
@@ -61,7 +61,7 @@ public class CityDAO extends AbstractDAO {
      * Returns list of all cities in database
      *
      * @return list of cities
-     * */
+     */
     @Override
     public List<City> findAll() throws DAOException {
         List<City> cities = new ArrayList<>();

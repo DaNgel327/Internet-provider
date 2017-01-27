@@ -5,10 +5,7 @@ import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.entity.impl.City;
 import by.epam.osipov.internet.provider.entity.impl.Contract;
 import by.epam.osipov.internet.provider.entity.impl.Coverage;
-import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
-import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.EntityNotFoundException;
-import by.epam.osipov.internet.provider.exception.RegistrationException;
+import by.epam.osipov.internet.provider.exception.*;
 import by.epam.osipov.internet.provider.mail.ssl.EmailSender;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
@@ -107,7 +104,7 @@ public class UserGenerator {
     }
 
 
-    public void generate() {
+    public void generate() throws ServiceException {
 
         String name = names.get(new Random().nextInt(names.size() - 1));
         String surname = surnames.get(new Random().nextInt(surnames.size() - 1));
@@ -136,14 +133,11 @@ public class UserGenerator {
 
     }
 
-    private Access addNewAccess() {
+    private Access addNewAccess() throws ServiceException {
         AccessService accessService = new AccessService();
         Access access = null;
-        try {
-            access = accessService.generateUniqueAccess();
-        } catch (RegistrationException e) {
-            e.printStackTrace();
-        }
+        access = accessService.generateUniqueAccess();
+
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
             AccessDAO accessDAO = new AccessDAO(connection);
             accessDAO.create(access);
@@ -154,20 +148,15 @@ public class UserGenerator {
         return access;
     }
 
-    private int addNewUser(String name, String surname, String patronymic, String passport) {
+    private int addNewUser(String name, String surname, String patronymic, String passport) throws ServiceException {
 
 
         UserService userService = new UserService();
-        try {
-            if (userService.userExist(passport)) {
-                return -1;
-                //  return "registration page";
-            }
-        } catch (ConnectionPoolException e) {
-            e.printStackTrace();
-        } catch (DAOException e) {
-            e.printStackTrace();
+        if (userService.checkIsUserExist(passport)) {
+            return -1;
+            //  return "registration page";
         }
+
 
         String phone = "+375-29-393-68-95";
         String email = "osipov.06@mail.ru";
@@ -177,12 +166,9 @@ public class UserGenerator {
         }
 
         int idUser = 0;
-        try {
-            idUser = userService.registerNew(surname, name, patronymic, passport, phone,
-                    Double.parseDouble(balance), email);
-        } catch (RegistrationException e) {
-            e.printStackTrace();
-        }
+        idUser = userService.registerNew(surname, name, patronymic, passport, phone,
+                Double.parseDouble(balance), email);
+
         if (idUser < 1) {
             System.out.println("ошибка регистрации пользователя. хз какая. чет с user");
             return -1;
@@ -206,8 +192,6 @@ public class UserGenerator {
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
         } catch (DAOException e) {
-            e.printStackTrace();
-        } catch (EntityNotFoundException e) {
             e.printStackTrace();
         }
 

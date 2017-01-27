@@ -52,7 +52,7 @@ public class UserDAO extends AbstractDAO {
      * @return user's id
      */
     @Override
-    public int getIdByKey(Object key) throws EntityNotFoundException, DAOException {
+    public int getIdByKey(Object key) throws DAOException {
         int id;
 
         try (PreparedStatement ps = connection.prepareStatement(SELECT_ID_BY_PASSPORT)) {
@@ -63,7 +63,7 @@ public class UserDAO extends AbstractDAO {
             } else {
                 throw new EntityNotFoundException("User with key '" + key + "' not found");
             }
-        } catch (SQLException e) {
+        } catch (SQLException | EntityNotFoundException e) {
             throw new DAOException("Error while trying to find user by key '" + key + "'", e);
         }
 
@@ -152,7 +152,7 @@ public class UserDAO extends AbstractDAO {
      * @param access user's access
      * @return user's email
      */
-    public String getEmailByAccess(Access access) throws EntityNotFoundException, DAOException {
+    public String getEmailByAccess(Access access) throws DAOException {
 
         String email;
 
@@ -164,7 +164,7 @@ public class UserDAO extends AbstractDAO {
             } else {
                 throw new EntityNotFoundException("Access '" + access + "' not found in database");
             }
-        } catch (SQLException e) {
+        } catch (SQLException | EntityNotFoundException e) {
             throw new DAOException("Eor while trying get email by user's access '" + access + "'", e);
         }
         return email;

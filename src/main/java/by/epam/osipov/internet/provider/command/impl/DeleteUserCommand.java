@@ -26,12 +26,12 @@ public class DeleteUserCommand implements Command {
     public String execute(RequestContent content) throws CommandException {
         try {
             return tryExecute(content);
-        } catch (EntityNotFoundException | ConnectionPoolException | DAOException | CommandException e) {
+        } catch (ConnectionPoolException | DAOException | CommandException e) {
             throw new CommandException("Error while trying to execute Delete User command", e);
         }
     }
 
-    private String tryExecute(RequestContent content) throws EntityNotFoundException, ConnectionPoolException, DAOException, CommandException {
+    private String tryExecute(RequestContent content) throws ConnectionPoolException, DAOException, CommandException {
         int idUser = deleteUser(content);
         deleteAccess(idUser);
         deleteContract(idUser);
@@ -46,7 +46,7 @@ public class DeleteUserCommand implements Command {
         return true;
     }
 
-    private int deleteUser(RequestContent content) throws ConnectionPoolException, DAOException, EntityNotFoundException {
+    private int deleteUser(RequestContent content) throws ConnectionPoolException, DAOException {
         String passport = content.getParameter(PASSPORT_PARAM);
         int idUser = -1;
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {

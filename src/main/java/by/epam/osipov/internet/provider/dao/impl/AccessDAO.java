@@ -23,9 +23,10 @@ public class AccessDAO extends AbstractDAO {
             "VALUES (?, ?, ?)";
     private final static String SET_CHECKS = "SET foreign_key_checks = 0";
 
-    private final static String SELECT_BY_ID = "SELECT * FROM access WHERE id = ?";
-    private final static String UPDATE_PASS = "UPDATE access SET password = ? WHERE login = ?";
-    private final static String DELETE_BY_ID = "DELETE FROM ACCESS WHERE login = ?";
+    private final static String UPDATE_BY_ID = "UPDATE access " +
+            "SET login = ?, " +
+            "password = ?, "+
+            "role = ?";
 
     private final static String SELECT_BY_LOGIN = "SELECT * FROM access WHERE login = ?";
 
@@ -36,6 +37,7 @@ public class AccessDAO extends AbstractDAO {
     public AccessDAO(ConnectionProxy connection) {
         super(connection);
     }
+
 
     @Override
     public int getIdByKey(Object key) {
@@ -92,7 +94,7 @@ public class AccessDAO extends AbstractDAO {
      * @param login user's login
      * @return user's access
      */
-    public Access findByLogin(String login) throws DAOException, EntityNotFoundException {
+    public Access findByLogin(String login) throws DAOException {
         Access access;
         try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_LOGIN)) {
             ps.setString(1, login);
@@ -106,7 +108,7 @@ public class AccessDAO extends AbstractDAO {
             } else {
                 throw new EntityNotFoundException("Access with login '" + login + "' wasn't found");
             }
-        } catch (SQLException e) {
+        } catch (SQLException | EntityNotFoundException e) {
             throw new DAOException("Error while trying to find access by login '" + login + "'", e);
         }
         return access;
@@ -128,6 +130,20 @@ public class AccessDAO extends AbstractDAO {
             }
         } catch (SQLException e) {
             throw new DAOException("Error while trying create new access '" + access + "'", e);
+        }
+    }
+
+    public void update(Access access) throws DAOException {
+        try (PreparedStatement ps = this.connection.prepareCall(UPDATE_BY_ID)) {
+            ps.setString(1, access.getLogin());
+            ps.setString(2, access.getPassword());
+            ps.setByte(3, access.getRole());
+            ps.executeUpdate();
+            if (ps.getUpdateCount() == -1) {
+                throw new DAOException("Access '" + access + "' wasn't updated");
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error while tryingupdate access '" + access + "'", e);
         }
     }
 

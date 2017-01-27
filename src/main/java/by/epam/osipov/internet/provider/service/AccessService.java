@@ -4,7 +4,7 @@ import by.epam.osipov.internet.provider.dao.impl.AccessDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;
-import by.epam.osipov.internet.provider.exception.RegistrationException;
+import by.epam.osipov.internet.provider.exception.ServiceException;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
@@ -25,18 +25,14 @@ public class AccessService {
      * Generates Access object with unique fields.
      * If something wrong catch exceptions
      */
-    public Access generateUniqueAccess() throws RegistrationException {
+    public Access generateUniqueAccess() throws ServiceException {
         try {
             return tryGenerateUniqueAccess();
         } catch (ConnectionPoolException | DAOException e) {
-            throw new RegistrationException("Can't generate new access", e);
+            throw new ServiceException("Error while trying to generate unique access", e);
         }
     }
 
-    /**
-     * Try to generate Access object with unique fields.
-     * If something wrong - throws an exception
-     */
     private Access tryGenerateUniqueAccess() throws ConnectionPoolException, DAOException {
         Access access = null;
         boolean exist = true;
@@ -44,11 +40,42 @@ public class AccessService {
         //while access exist in DB, try to generate new
         while (exist) {
             access = generateAccess();
-            exist = loginExist(access.getLogin());
+            exist = tryCheckIsLoginExist(access.getLogin());
         }
 
         return access;
     }
+
+    // совпадают ли pass1 и pass2 проверит js
+    public void changePassword(String login, String curPass, String newPass) throws ServiceException {
+
+        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
+
+            if (isOldPassCorrect(login, curPass)) {
+                throw new ServiceException("Old password is incorrect");
+            }
+
+            AccessDAO accessDAO = new AccessDAO(connection);
+            Access access = accessDAO.findByLogin(login);
+
+            access.setPassword(newPass);
+        } catch (ConnectionPoolException | DAOException e) {
+            throw new ServiceException("Error while trying to change password", e);
+        }
+
+    }
+
+    public boolean isOldPassCorrect(String login, String password) throws ServiceException {
+        Access access;
+        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
+            AccessDAO accessDAO = new AccessDAO(connection);
+            access = accessDAO.findByLogin(login);
+        } catch (ConnectionPoolException | DAOException e) {
+            throw new ServiceException("Error while trying check old password", e);
+        }
+        return access.getPassword().equals(password);
+    }
+
 
     /**
      * Generates Access object with random fields.
@@ -105,7 +132,15 @@ public class AccessService {
      * @param login login to check
      * @return true if login exist. Otherwise - false
      */
-    private boolean loginExist(String login) throws ConnectionPoolException, DAOException {
+    private boolean checkIsLoginExist(String login) throws ServiceException {
+        try {
+            return tryCheckIsLoginExist(login);
+        } catch (ConnectionPoolException | DAOException e) {
+            throw new ServiceException("Error while trying to check if login exis", e);
+        }
+    }
+
+    private boolean tryCheckIsLoginExist(String login) throws ConnectionPoolException, DAOException {
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
             AccessDAO accessDAO = new AccessDAO(connection);
             List<Access> accesses;
@@ -120,9 +155,5 @@ public class AccessService {
         }
 
         return false;
-    }
-
-    public void changePassword(){
-
     }
 }
