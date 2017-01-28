@@ -52,7 +52,7 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
             <ul class="nav navbar-nav">
-                <li><a href="controller?command=show_service"><fmt:message key="nav.service" bundle="${ value }"/></a>
+                <li><a href="${pageContext.request.contextPath}/controller?command=show_service"><fmt:message key="nav.service" bundle="${ value }"/></a>
                 </li>
                 <li><a href="#"><fmt:message key="nav.price" bundle="${ value }"/></a></li>
                 <li><a href="${pageContext.request.contextPath}/jsp/coverage.jsp"><fmt:message key="nav.coverage" bundle="${ value }"/></a></li>

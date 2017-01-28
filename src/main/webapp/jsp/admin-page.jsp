@@ -9,7 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
-<c:import url="parts/header.jsp"/>
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/bootstrap.css"/>
@@ -22,19 +21,19 @@
             src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
 </head>
+
 <body>
 
+<c:import url="parts/header.jsp"/>
 <style>
     #reg-button {
         margin-bottom: 20px !important;
     }
-
-
 </style>
 
 <div class="container">
 
-    <a class="btn btn-default" href="/jsp/registration-page.jsp" role="button" id="reg-button">
+    <a class="btn btn-default" href="controller?command=show_registration_page" role="button" id="reg-button">
         <i class="fa fa-user-plus" aria-hidden="true"></i>
         Register new User
     </a>
@@ -157,6 +156,13 @@
 
     </script>
 </div>
-</body>
+
+
 <c:import url="parts/footer.jsp"/>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../resource/bootstrap/js/bootstrap.js"></script>
+</body>
 </html>

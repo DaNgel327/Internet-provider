@@ -21,7 +21,8 @@ public enum CommandType {
     ADD_SERVICE(new AddServiceCommand()),
     CHANGE_PASSWORD(new ChangePasswordCommand()),
     SHOW_ACCOUNT(new ShowAccountCommand()),
-    GENERATE_CSV(new GenerateCSVCommand());
+    GENERATE_CSV(new GenerateCSVCommand()),
+    SHOW_REGISTRATION_PAGE(new ShowRegistrationPageCommand());
 
     private Command command;
 

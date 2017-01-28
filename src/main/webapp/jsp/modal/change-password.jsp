@@ -14,7 +14,8 @@
 </head>
 <body>
 
-<div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+<div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true"
      style="display: none;">
     <div class="modal-dialog">
 
@@ -28,12 +29,13 @@
             </div>
 
             <h1>Login to Your Account</h1><br>
-            <form action="${pageContext.request.contextPath}/controller" method="post">
+            <form onsubmit="return checkPassword(this)" action="/controller" method="post">
                 <input name="command" type="hidden" value="change_password">
                 <input type="password" name="currentPassword" placeholder="Current password">
                 <input type="password" name="newPassword" placeholder="New password">
                 <input type="password" name="confirm" placeholder="Confirm new password">
-                <input type="submit" onclick="return checkPasswords(this.form)" class="modalWindow-submit" value="Change">
+                <input type="submit" class="modalWindow-submit"
+                       value="Change">
             </form>
         </div>
     </div>
@@ -45,67 +47,83 @@
     <c:when test="${!sessionScope.done && sessionScope.done!=null}">
         <script type="text/javascript">
 
-            $(window).on('load', function(){
-                $('#login-modal').modal('show');
+            $(window).on('load', function () {
+                $('#changePassword-modal').modal('show');
             });
 
-            document.getElementById("alert").hidden=false;
+            document.getElementById("alert").hidden = false;
 
-            $(".close").click(function(){
+            $(".close").click(function () {
 
-                document.getElementById("alert").hidden=true;
+                document.getElementById("alert").hidden = true;
             });
 
         </script>
     </c:when>
 </c:choose>
 
-
 <script>
 
-    function showError(inputNumber, errorMessage) {
-        var input = document.getElementsByTagName('input')[inputNumber];
+    function showError(inputName, errorMessage) {
+
+        var input = document.getElementsByName(inputName)[0];
+
         if (input.value != "") {
             input.value = "";
         }
         input.setAttribute('placeholder', errorMessage);
     }
 
-    function checkPassword(form){
+    function checkPassword(form) {
 
-        var elems = form.elements;
-        if(elems.currentPassword.value.length<8){
-            showError(1, 'Too small');
+        var currentPassword = form.elements.currentPassword.value;
+        var newPassword = form.elements.newPassword.value;
+        var confirm = form.elements.confirm.value;
+
+        if (currentPassword.length < 8) {
+            showError("currentPassword", 'Too small');
+            return false;
+        }
+        if (currentPassword.length > 16) {
+            showError("currentPassword", 'Too big');
             return false;
         }
 
-        if(elems.newPassword.value.length>16){
-            showError(2, 'Too big');
+        if (newPassword.length < 8) {
+            showError("newPassword", 'Too small');
+            return false;
+        }
+        if (newPassword.length > 16) {
+            showError("newPassword", 'Too big');
             return false;
         }
 
-        if(elems.newPassword.value!=elems.confirm.value){
-            showError(2, 'Dont mathes');
+        if (newPassword != confirm) {
+            showError("newPassword", 'Dont mathes');
+            showError("confirm", 'Dont mathes');
             return false;
         }
 
-        var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d_-]{8,16}$/;
+        var re = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d_-]{8,16}$/;
 
-        if(elems.newPassword.value.test(re)){
+        if (!re.test(newPassword)) {
 
-            if(!elems.newPassword.value.search(/[a-z]+/)){
-                showError(2, 'At least 1 lowercase');
+            if (newPassword.search(/[a-z]/) == -1) {
+                showError("newPassword", 'At least 1 lowercase');
+                showError("confirm", 'At least 1 lowercase');
                 return false;
             }
-            if(!elems.newPassword.value.search(/[A-Z]+/)){
-                showError(2, 'At least 1 upperrcase');
+            if (newPassword.search(/[A-Z]/) == -1) {
+                showError("newPassword", 'At least 1 upperrcase');
+                showError("confirm", 'At least 1 upperrcase');
                 return false;
             }
-            if(!elems.newPassword.value.search(/[0-9]+/)){
-                showError(2, 'At least 1 number');
+            if (newPassword.search(/[0-9]/) == -1) {
+                showError("newPassword", 'At least 1 number');
+                showError("confirm", 'At least 1 number');
                 return false;
             }
-            showError(2, 'Bad password');
+            showError("currentPassword", 'Bad password.');
             return false;
         }
 

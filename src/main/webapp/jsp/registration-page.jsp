@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -15,7 +16,6 @@
         margin: 0;
     }
 </style>
-
 <div class="row centered-form">
     <div id="reg-form" class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-3 col-md-offset-3 col-lg-offset-4">
 
@@ -91,11 +91,13 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
+
                         <select class="form-control input-sm">
                             <option value="" disabled selected>Select start service</option>
-                            <option>Service1</option>
-                            <option>Service2</option>
-                            <option>Service2</option>
+
+                            <c:forEach var="service" items="${services}">
+                                <option value="${service.getId()}">${service.getName()}</option>
+                            </c:forEach>
                         </select>
 
                     </div>
@@ -119,7 +121,6 @@
         </form>
     </div>
 </div>
-
 <script type="text/javascript">
 
     function showError(inputNumber, errorMessage) {

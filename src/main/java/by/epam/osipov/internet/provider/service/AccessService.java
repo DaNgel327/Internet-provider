@@ -100,7 +100,7 @@ public class AccessService {
 
         Random random = new Random();
 
-        for (int i = 0; i < length - 1; i++) {
+        for (int i = 0; i < length; i++) {
             boolean letter = random.nextBoolean();
             if (letter) {
                 boolean lowerCase = random.nextBoolean();
