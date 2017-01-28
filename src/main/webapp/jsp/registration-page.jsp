@@ -92,7 +92,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
 
-                        <select class="form-control input-sm">
+                        <select class="form-control input-sm" name="idService">
                             <option value="" disabled selected>Select start service</option>
 
                             <c:forEach var="service" items="${services}">

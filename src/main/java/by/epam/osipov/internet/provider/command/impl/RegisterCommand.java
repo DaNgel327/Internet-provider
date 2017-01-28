@@ -37,8 +37,8 @@ public class RegisterCommand implements Command {
         int idAccess = access.getId();
         int idCoverage = defineCoverage(content);
         int apt = Integer.parseInt(content.getParameter("apt"));
-        //сделать что то с этим
-        int idService = 0;
+        //
+        int idService = Integer.parseInt(content.getParameter("idService"));
 
         java.sql.Timestamp sqlTime = new java.sql.Timestamp(new java.util.Date().getTime());
 
