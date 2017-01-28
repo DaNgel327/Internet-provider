@@ -42,7 +42,7 @@ public class ChangePasswordCommand implements Command {
             content.setSessionAttribute("done", true);
         } else {
             content.setSessionAttribute("done", false);
-            return null;
+            return "/";
         }
 
         return "/";

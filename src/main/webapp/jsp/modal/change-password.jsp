@@ -30,10 +30,9 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                     aria-hidden="true">&times;</span></button>
 
-            <div class="alert alert-warning alert-dismissable" id="alert" hidden>
+            <div class="alert alert-warning alert-dismissable" id="badPassword-alert" hidden>
                 <p>Old password isn't correct</p>
             </div>
-
 
             <h1>Login to Your Account</h1><br>
             <form onsubmit="return checkPassword(this)" action="/controller" method="post">
@@ -58,7 +57,7 @@
                 $('#changePassword-modal').modal('show');
             });
 
-            document.getElementById("alert").hidden = false;
+            document.getElementById("badPassword-alert").hidden = false;
 
             $(".close").click(function () {
 
@@ -71,7 +70,6 @@
 
 <c:if test="${sessionScope.done && sessionScope.done!=null}">
     <script>
-
         document.getElementsByTagName("success-alert").hidden = false;
         $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
             $("#success-alert").slideUp(500);
