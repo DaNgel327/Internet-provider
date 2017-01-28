@@ -18,6 +18,9 @@
     <link rel="stylesheet" type="text/css" href="../../resource/bootstrap/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../../resource/css/form.css">
 
+    <c:import url="/jsp/modal/login.jsp"/>
+    <c:import url="/jsp/modal/change-password.jsp"/>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,12 +55,11 @@
                 <li><a href="controller?command=show_service"><fmt:message key="nav.service" bundle="${ value }"/></a>
                 </li>
                 <li><a href="#"><fmt:message key="nav.price" bundle="${ value }"/></a></li>
-                <li><a href="/jsp/coverage.jsp"><fmt:message key="nav.coverage" bundle="${ value }"/></a></li>
+                <li><a href="${pageContext.request.contextPath}/jsp/coverage.jsp"><fmt:message key="nav.coverage" bundle="${ value }"/></a></li>
                 <li><a href="#"><fmt:message key="nav.downloads" bundle="${ value }"/></a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-
 
                 <c:choose>
                     <c:when test="${sessionScope.user==null}">
@@ -123,13 +125,11 @@
     </div>
 </div>
 
-<c:import url="/jsp/change-password.jsp"/>
-<c:import url="/jsp/login.jsp"/>
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../resource/bootstrap/js/bootstrap.js"></script>
+
 </body>
 
 </html>

@@ -58,18 +58,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="form-group">
                         <input type="text" name="city" class="form-control input-sm" placeholder="City" required>
                     </div>
                 </div>
-
-                <div class="col-md-4">
+                <div class="col-md-6">
 
                     <div class="form-group">
                         <input type="text" name="street" class="form-control input-sm" placeholder="Street" required>
                     </div>
                 </div>
+            </div>
+            <div class="row">
 
                 <div class="col-md-2">
                     <div class="form-group">
@@ -80,6 +81,23 @@
                     <div class="form-group">
                         <input type="number" min="1" name="apt" class="form-control input-sm" required
                                placeholder="Apt.">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <input type="number" min="1" name="building" class="form-control input-sm" required
+                               placeholder="Building">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <select class="form-control input-sm">
+                            <option value="" disabled selected>Select start service</option>
+                            <option>Service1</option>
+                            <option>Service2</option>
+                            <option>Service2</option>
+                        </select>
+
                     </div>
                 </div>
             </div>
@@ -99,48 +117,6 @@
             </div>
             <input type="submit" value="Register" class="btn btn-info btn-block">
         </form>
-
-        <!--
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="first_name" id="first_name" class="form-control input-sm"
-                           placeholder="First Name">
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="last_name" id="last_name" class="form-control input-sm"
-                           placeholder="Last Name">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control input-sm"
-                           placeholder="Email Address">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="first_name" id="first_name2" class="form-control input-sm"
-                           placeholder="First Name">
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                    <input type="text" name="last_name" id="last_name2" class="form-control input-sm"
-                           placeholder="Last Name">
-                </div>
-            </div>
-        </div>
-        -->
-
     </div>
 </div>
 
@@ -163,119 +139,7 @@
 
         return true;
     }
-    /*
-     function validateName(name) {
-     if (name == "") {
-     showError(0, 'This field is required');
-     return false;
-     }
 
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(name)) {
-     showError(0, 'This field must include only - and letters');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validateSurname(surname) {
-     if (surname == "") {
-     showError(1, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(surname)) {
-     showError(1, 'This field must include only - and letters');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validatePatronymic(patronymic) {
-     if (patronymic == "") {
-     showError(2, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z]+/;
-
-     if (!re.test(patronymic)) {
-     showError(2, 'This field must include only letters');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validatePassport(passport) {
-     if (passport == "") {
-     showError(3, 'This field is required');
-     return false;
-     }
-
-     var re = /^([a-zA-Z]{2})([0-9]{7})$/;
-
-     if (!re.test(passport)) {
-     showError(3, 'this field must include 2 latters and 7 numbers');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validatePhone(phone) {
-     if (phone == "") {
-     showError(4, 'This field is required');
-     return false;
-     }
-
-     var re = /^([+])([0-9]{3})-([0-9]{2})-([0-9]{3})-([0-9]{2})-([0-9]{2})$/;
-
-     if (!re.test(phone)) {
-     showError(4, 'this field must include 2 latters and 7 numbers');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validateCity(city) {
-     if (city == "") {
-     showError(5, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(city)) {
-     showError(5, 'Only letters and -');
-     return false;
-     }
-
-     return true;
-     }
-
-     function validateStreet(street) {
-     if (street == "") {
-     showError(6, 'This field is required');
-     return false;
-     }
-
-     var re = /[a-zA-Z-]+/;
-
-     if (!re.test(Street)) {
-     showError(6, 'Only letters and -');
-     return false;
-     }
-
-     return true;
-     }
-     */
     function validate(form) {
         var elems = form.elements;
         var errors = 0;
@@ -294,15 +158,15 @@
         var STREET_ERROR = 'Street error';
         var EMAIL_ERROR = 'Email error';
 
-        if (!check(elems.Name.value, DOUBLE_OR_SINGLE_WORD_REG, NAME_ERROR, 0)) {
+        if (!check(elems.name.value, DOUBLE_OR_SINGLE_WORD_REG, NAME_ERROR, 0)) {
             errors++;
         }
 
-        if (!check(elems.sName.value, DOUBLE_OR_SINGLE_WORD_REG, SURNAME_ERROR, 1)) {
+        if (!check(elems.surname.value, DOUBLE_OR_SINGLE_WORD_REG, SURNAME_ERROR, 1)) {
             errors++;
         }
 
-        if (!check(elems.pName.value, DOUBLE_OR_SINGLE_WORD_REG, PATRONYMIC_ERROR, 2)) {
+        if (!check(elems.patronymic.value, DOUBLE_OR_SINGLE_WORD_REG, PATRONYMIC_ERROR, 2)) {
             errors++;
         }
 
@@ -328,5 +192,6 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../resource/bootstrap/js/bootstrap.js"></script>
+
 </body>
 </html>
