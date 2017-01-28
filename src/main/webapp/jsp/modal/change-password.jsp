@@ -14,6 +14,12 @@
 </head>
 <body>
 
+<div class="container alert alert-success" id="success-alert" hidden>
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>Success! </strong>
+    Password changed
+</div>
+
 <div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true"
      style="display: none;">
@@ -25,8 +31,9 @@
                     aria-hidden="true">&times;</span></button>
 
             <div class="alert alert-warning alert-dismissable" id="alert" hidden>
-                <p>Something goes wrong</p>
+                <p>Old password isn't correct</p>
             </div>
+
 
             <h1>Login to Your Account</h1><br>
             <form onsubmit="return checkPassword(this)" action="/controller" method="post">
@@ -61,6 +68,16 @@
         </script>
     </c:when>
 </c:choose>
+
+<c:if test="${sessionScope.done && sessionScope.done!=null}">
+    <script>
+
+        document.getElementsByTagName("success-alert").hidden = false;
+        $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
+            $("#success-alert").slideUp(500);
+        });
+    </script>
+</c:if>
 
 <script>
 
