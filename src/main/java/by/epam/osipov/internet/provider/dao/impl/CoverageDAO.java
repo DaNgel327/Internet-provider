@@ -21,10 +21,10 @@ public class CoverageDAO extends AbstractDAO {
     private static final String GET_ID_BY_OTHER_PARAMS =
             "SELECT idCoverage FROM city\n" +
                     "JOIN coverage ON city.idCity = coverage.idCity\n" +
-                    "WHERE name = ? && street = ? && houseNumber = ? && building = ?";
+                    "WHERE name = ? AND street = ? AND houseNumber = ? AND building = ?";
     private static final String SELECT_ALL = "SELECT * FROM coverage";
 
-    private static final String CREATE = "INSERT INTO coverage (idCity, street, houseNumber, building)" +
+    private static final String CREATE = "INSERT INTO coverage (idCity, street, house, building)" +
             "VALUES (?, ?, ?, ?)";
 
     public CoverageDAO(ConnectionProxy connection) {
@@ -76,7 +76,7 @@ public class CoverageDAO extends AbstractDAO {
      */
     public int getIdByParameters(Coverage coverage, City city) throws DAOException {
 
-        int id;
+        int id = 0;
 
         String cityName = city.getName();
         String streetName = coverage.getStreet();
@@ -92,9 +92,6 @@ public class CoverageDAO extends AbstractDAO {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 id = rs.getInt(1);
-            } else {
-                throw new DAOException("Coverage " + cityName + " " + streetName + " " + houseNumber +
-                        "doesn't exist");
             }
         } catch (SQLException e) {
             throw new DAOException("Error while trying to get id of '" + cityName + " " + streetName + " "
@@ -111,18 +108,18 @@ public class CoverageDAO extends AbstractDAO {
             int house = coverage.getHouseNumber();
             int building = coverage.getBuilding();
 
-
             ps.setInt(1, cityId);
             ps.setString(2, street);
             ps.setInt(3, house);
             ps.setInt(4, building);
 
+
             ps.executeUpdate();
             if (ps.getUpdateCount() != 1) {
-                throw new DAOException("Coverage '" + coverage + "' wasn't created");
+                throw new DAOException("Coverage cityId = '" + cityId + "' wasn't created");
             }
         } catch (SQLException e) {
-            throw new DAOException("Error while trying to create coverage '" + coverage + "'", e);
+            throw new DAOException("Error while trying to create coverage", e);
         }
     }
 }

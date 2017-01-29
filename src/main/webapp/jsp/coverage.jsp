@@ -16,11 +16,20 @@
     </script>
 </head>
 <body>
+
+
 <div class="container alert alert-success" id="coverage-added-alert" hidden>
     <button type="button" class="close" data-dismiss="alert">x</button>
     <strong>Success! </strong>
     Coverage added.
 </div>
+<div class="container alert alert-warning" id="coverage-exist-alert" hidden>
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>Error! </strong>
+    Coverage exist.
+</div>
+
+
 <c:import url="parts/header.jsp"/>
 
 <style>
@@ -86,50 +95,57 @@
         <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
                 height="480"></iframe>
     </div>
-    <div class="floating-form">
-        <div class="row">
-            <div class="floating-left-button" onclick="viewForm()">
-                <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
+
+    <c:if test="${sessionScope.role==0}">
+
+        <div class="floating-form">
+            <div class="row">
+                <div class="floating-left-button" onclick="viewForm()">
+                    <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
+                </div>
+                <div class="floating-right-button">
+                    <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
+                </div>
             </div>
-            <div class="floating-right-button">
-                <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
-            </div>
+            <form hidden id="locationForm" action="/controller" method="post">
+                <input hidden name="command" value="add_coverage"/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input required type="text" name="city" class="form-control input-sm" placeholder="City"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input required type="text" name="street" class="form-control input-sm"
+                                   placeholder="Street"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input required type="number" min="1" name="house" class="form-control input-sm"
+                                   placeholder="House"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input required type="number" min="1" name="building" class="form-control input-sm"
+                                   placeholder="Building"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="submit" class="form-control input-sm" value="Add coverage"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <form hidden id="locationForm"  action="/controller">
-            <input hidden name="command" value="add_coverage"/>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="text" name="city" class="form-control input-sm" placeholder="City"/>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="text" name="street" class="form-control input-sm" placeholder="Street"/>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="number" min="1" name="house" class="form-control input-sm" placeholder="House"/>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="number" min="1" name="building" class="form-control input-sm" placeholder="Building"/>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="submit" class="form-control input-sm" value="Add coverage"/>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+    </c:if>
 </div>
 
 <script>
@@ -139,15 +155,27 @@
     }
 </script>
 
-<c:if test="${complete}">
-    <script>
-        document.getElementsByTagName("coverage-added-alert").hidden = false;
-        $("#coverage-added-alert").fadeTo(5000, 500).slideUp(500, function () {
-            $("#coverage-added-alert").slideUp(500);
-        });
-    </script>
+<c:if test="${complete!=null}">
+    <c:choose>
+        <c:when test="${complete}">
+
+            <script>
+                document.getElementsByTagName("coverage-added-alert").hidden = false;
+                $("#coverage-added-alert").fadeTo(5000, 500).slideUp(500, function () {
+                    $("#coverage-added-alert").slideUp(500);
+                });
+            </script>
+        </c:when>
+        <c:otherwise>
+            <script>
+                document.getElementsByTagName("coverage-exist-alert").hidden = false;
+                $("#coverage-exist-alert").fadeTo(5000, 500).slideUp(500, function () {
+                    $("#coverage-exist-alert").slideUp(500);
+                });
+            </script>
+        </c:otherwise>
+    </c:choose>
 </c:if>
-<c:import url="parts/footer.jsp"/>
 
 </body>
 </html>
