@@ -98,7 +98,8 @@
                                     <a href="#">Сменить логин</a>
                                 </li>
                                 <li>
-                                    <a href="#">Сменить пароль</a>
+                                    <a href="#" data-toggle="modal" data-target="#changePassword-modal">Сменить
+                                        пароль</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
