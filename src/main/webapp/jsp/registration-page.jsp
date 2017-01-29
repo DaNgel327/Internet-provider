@@ -2,21 +2,30 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Registration</title>
 
     <link rel="stylesheet" type="text/css" href="../resource/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="../resource/css/registration-form.css"/>
 </head>
 <body>
 
+<c:import url="parts/header.jsp"/>
+
+
 <style>
+
+    #registration{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
+
 </style>
-<div class="row centered-form">
+<div id="registration" class="row centered-form">
     <div id="reg-form" class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-3 col-md-offset-3 col-lg-offset-4">
 
         <h1>Register new user</h1><br>
@@ -194,5 +203,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../resource/bootstrap/js/bootstrap.js"></script>
 
+
+<c:import url="parts/footer.jsp"/>
 </body>
 </html>

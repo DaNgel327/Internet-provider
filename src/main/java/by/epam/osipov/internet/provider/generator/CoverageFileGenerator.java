@@ -49,7 +49,7 @@ public class CoverageFileGenerator {
     public static void createFile(List<String> lines) {
         //List<String> lines = Arrays.asList("The first line", "The second line");
 
-        Path file = Paths.get("C:\\Users\\Lenovo\\InternetProvider\\src\\main\\webapp\\resource\\csv\\the-file-name.csv");
+        Path file = Paths.get("C:\\Users\\Lenovo\\InternetProvider\\src\\main\\webapp\\resource\\csv\\coverage.csv");
 
         try {
             Files.write(file, lines, Charset.forName("UTF-8"));

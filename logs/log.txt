@@ -7911,3 +7911,228 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown co
 22:32:12.978 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
 22:32:12.980 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
 22:32:12.981 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:22:21.711 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:22:21.800 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:22:21.824 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:22:21.832 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:22:21.866 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:22:21.866 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:22:21.912 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:22:24.597 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:22:24.640 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:22:53.298 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:22:53.299 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:22:53.300 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:22:53.304 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:22:53.305 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:30:06.574 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:30:06.597 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:30:06.608 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:30:06.633 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:30:06.666 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:30:06.666 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:30:06.698 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:31:48.163 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:31:48.164 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:31:48.166 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:31:48.168 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:31:48.171 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:34:25.499 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:34:25.535 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:34:25.542 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:34:25.558 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:34:25.585 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:34:25.586 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:34:25.618 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:34:32.778 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:34:32.793 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:34:54.802 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:34:54.810 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:35:27.718 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:35:27.719 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:35:27.720 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:35:27.721 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:35:27.721 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:36:04.020 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:36:04.039 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:36:04.049 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:36:04.086 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:36:04.092 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:36:04.093 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:36:04.119 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:36:19.892 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:36:19.908 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:37:06.320 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:37:06.326 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:37:06.328 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:37:06.329 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:37:06.330 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:37:52.693 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:37:52.711 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:37:52.718 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:37:52.743 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:37:52.782 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:37:52.783 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:37:52.811 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:38:01.949 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:38:01.994 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:38:47.580 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:38:47.582 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:38:47.584 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:38:47.585 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:38:47.586 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:39:33.153 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:39:33.167 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:39:33.173 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:39:33.196 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:39:33.216 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:39:33.216 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:39:33.247 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:45:29.348 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:45:29.363 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:45:29.365 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:45:29.368 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:45:29.371 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:46:13.971 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:46:13.988 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:46:14.012 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:46:14.019 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:46:14.028 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:46:14.029 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:46:14.050 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:47:13.191 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:47:13.192 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:47:13.194 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:47:13.195 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:47:13.196 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:47:46.896 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:47:46.937 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:47:46.944 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:47:46.962 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:47:46.967 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:47:46.967 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:47:47.014 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+23:48:19.799 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+23:48:19.800 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+23:48:19.802 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+23:48:19.804 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+23:48:19.805 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+23:48:50.982 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:48:51.014 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:48:51.024 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:48:51.035 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:48:51.041 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+23:48:51.042 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+23:48:51.092 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:07:16.482 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+00:07:16.489 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+00:07:16.491 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+00:07:16.492 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+00:07:16.496 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+00:19:29.118 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:19:29.160 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:19:29.176 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:19:29.195 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:19:29.200 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:19:29.201 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:19:29.307 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:19:33.780 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:19:33.846 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:19:59.299 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:19:59.336 [http-nio-8087-exec-8] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:20:11.141 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:20:11.149 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:20:31.202 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:20:31.250 [http-nio-8087-exec-9] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:21:13.916 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+00:21:13.917 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+00:21:13.917 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+00:21:13.917 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+00:21:13.918 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+00:21:46.900 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:21:46.938 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:21:46.950 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:21:46.963 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:21:46.970 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:21:46.971 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:21:47.033 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:21:51.130 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:21:51.207 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:22:19.234 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+00:22:19.235 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+00:22:19.236 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+00:22:19.238 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+00:22:19.238 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+00:28:02.060 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:28:02.096 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:28:02.107 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:28:02.122 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:28:02.129 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:28:02.130 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:28:02.164 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:28:03.822 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:28:03.898 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:28:19.758 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:28:19.843 [http-nio-8087-exec-6] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:28:31.697 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+00:28:31.699 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+00:28:31.702 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+00:28:31.703 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+00:28:31.704 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+00:32:27.876 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:32:27.891 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:32:27.897 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:32:27.907 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:32:27.925 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:32:27.925 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:32:27.961 [http-nio-8087-exec-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:32:32.605 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:32:32.673 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:35:36.762 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+00:35:36.765 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+00:35:36.768 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+00:35:36.771 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+00:35:36.772 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+00:36:23.152 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:36:23.168 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:36:23.174 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:36:23.182 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:36:23.188 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:36:23.189 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:36:23.221 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:36:25.726 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:36:25.833 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:36:28.251 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:36:28.283 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:37:49.699 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+00:37:49.703 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+00:37:49.706 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+00:37:49.707 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+00:37:49.708 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+00:38:30.927 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:38:30.953 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:38:30.965 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:38:30.983 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:38:31.009 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:38:31.009 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:38:31.039 [http-nio-8087-exec-10] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:38:32.662 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:38:32.715 [http-nio-8087-exec-2] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:38:37.711 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:38:37.730 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:40:48.962 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#0)
+00:40:48.964 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#1)
+00:40:48.966 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#2)
+00:40:48.967 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#3)
+00:40:48.967 [localhost-startStop-1] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool closeAll - closed successfully (#4)
+00:41:26.587 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:41:26.608 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:41:26.623 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:41:26.653 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:41:26.658 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool <init> - Connection was initialized and added to pool
+00:41:26.658 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:41:26.679 [http-nio-8087-exec-5] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:41:29.203 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:41:29.288 [http-nio-8087-exec-3] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
+00:41:31.207 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool getConnection - Connection was taken from pool
+00:41:31.277 [http-nio-8087-exec-4] INFO  by.epam.osipov.internet.provider.pool.ConnectionPool putConnection - Connection was put to pool
