@@ -22,134 +22,32 @@
 </head>
 <body>
 
-<style>
 
-    .floating-box {
-        float: left;
-        width: 640px;
-        height: 480px;
-        margin: 10px;
-    }
+<ul class="nav navbar-nav navbar-right">
 
-    .floating-form {
-        width: 400px;
-        height: 400px;
-        margin: 10px;
-        display: inline-block;
-    }
-
-    .floating-left-button {
-        float: left;
-        width: 45%;
-        margin: 2% 5% 10% 0;
-    }
-
-    .floating-right-button {
-        float: left;
-        width: 45%;
-        margin: 2% 0 10% 5%;
-    }
-
-    .row {
-        margin: 0;
-    }
-
-    @media only screen and (max-width: 1300px) {
-        /* For mobile phones: */
-        .floating-box {
-            float: none;
-            width: 640px;
-            display: table;
-            margin: 0 auto;
-        }
-
-        .floating-form {
-            width: 640px;
-            display: table;
-            margin: 0 auto;
-        }
-    }
-
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-
-    #removed{
-        display: none;
-    }
-
-</style>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">DROPDOWN<b
+                class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="#">Профиль</a>
+            </li>
+            <li class="dropdown-header">Доступ</li>
+            <li>
+                <a href="#">Сменить логин</a>
+            </li>
+            <li>
+                <a href="#">Сменить пароль</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <a href="/controller?command=logout">Выйти</a>
+            </li>
+        </ul>
+    </li>
 
 
-<div class="container">
-
-    <div class="floating-box">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
-                height="480"></iframe>
-    </div>
-    <div class="floating-form">
-        <div class="row">
-            <div class="floating-left-button" onclick="viewForm()">
-                <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
-            </div>
-
-            <div class="floating-right-button">
-                <a href="/controller?command=generate_csv" onclick="spin()" class="btn btn-default btn-block">
-                    Generate csv
-                    <i id="removed" class="fa fa-spinner fa-pulse fa fa-fw"></i>
-                </a>
-            </div>
-
-        </div>
-        <form hidden id="locationForm"  action="/controller">
-            <input hidden name="command" value="add_coverage"/>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="text" name="city" class="form-control input-sm" placeholder="City"/>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="text" name="street" class="form-control input-sm" placeholder="Street"/>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="number" min="1" name="house" class="form-control input-sm" placeholder="House"/>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input required type="number" min="1" name="building" class="form-control input-sm" placeholder="Building"/>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="submit" class="form-control input-sm" value="Add coverage"/>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-<script>
-    function spin() {
-        document.getElementById("removed").removeAttribute("id");
-    }
-    function viewForm() {
-        var form = document.getElementById("locationForm");
-        form.hidden = !form.hidden;
-    }
-</script>
-
+</ul>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

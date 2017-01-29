@@ -52,10 +52,13 @@
         </div>
         <div class="collapse navbar-collapse" id="responsive-menu">
             <ul class="nav navbar-nav">
-                <li><a href="${pageContext.request.contextPath}/controller?command=show_service"><fmt:message key="nav.service" bundle="${ value }"/></a>
+                <li><a href="${pageContext.request.contextPath}/controller?command=show_service"><fmt:message
+                        key="nav.service" bundle="${ value }"/></a>
                 </li>
                 <li><a href="#"><fmt:message key="nav.price" bundle="${ value }"/></a></li>
-                <li><a href="${pageContext.request.contextPath}/jsp/coverage.jsp"><fmt:message key="nav.coverage" bundle="${ value }"/></a></li>
+                <li><a href="${pageContext.request.contextPath}/jsp/coverage.jsp"><fmt:message key="nav.coverage"
+                                                                                               bundle="${ value }"/></a>
+                </li>
                 <li><a href="#"><fmt:message key="nav.downloads" bundle="${ value }"/></a></li>
             </ul>
 
@@ -86,17 +89,18 @@
                                     </c:when>
                                     <c:otherwise>
                                         <li>
-                                            <a href="#">Профиль</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Настройки</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Счета</a>
+                                            <a href="/jsp/profile.jsp">Профиль</a>
                                         </li>
                                     </c:otherwise>
                                 </c:choose>
-
+                                <li class="dropdown-header">Доступ</li>
+                                <li>
+                                    <a href="#">Сменить логин</a>
+                                </li>
+                                <li>
+                                    <a href="#">Сменить пароль</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="/controller?command=logout">Выйти</a>
                                 </li>
