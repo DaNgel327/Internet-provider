@@ -75,13 +75,13 @@
                 height="480"></iframe>
     </div>
     <div class="floating-form">
-        <div class="floating-left-button">
+        <div class="floating-left-button" onclick="viewForm()">
             <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
         </div>
         <div class="floating-right-button">
             <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
         </div>
-        <form>
+        <form hidden>
             <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -106,9 +106,24 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="submit" class="form-control input-sm" name="addCoverage" value="Add"/>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </div>
+
+<script>
+    function viewForm() {
+        var form = document.getElementsByTagName("form").item(0);
+        var isHidden = form.hidden;
+        form.hidden=!isHidden;
+    }
+</script>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
