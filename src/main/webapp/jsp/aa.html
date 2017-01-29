@@ -32,39 +32,50 @@
     }
 
     .floating-form {
-         width: 400px;
-         height: 400px;
-         margin: 10px;
+        width: 400px;
+        height: 400px;
+        margin: 10px;
         display: inline-block;
-     }
-    .floating-left-button{
+    }
+
+    .floating-left-button {
         float: left;
         width: 45%;
         margin: 2% 5% 10% 0;
     }
-    .floating-right-button{
+
+    .floating-right-button {
         float: left;
         width: 45%;
         margin: 2% 0 10% 5%;
     }
 
+    .row {
+        margin: 0;
+    }
 
     @media only screen and (max-width: 1300px) {
         /* For mobile phones: */
-
         .floating-box {
             float: none;
             width: 640px;
             display: table;
             margin: 0 auto;
         }
-        .floating-form {
 
+        .floating-form {
             width: 640px;
             display: table;
             margin: 0 auto;
         }
     }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
 </style>
 
 
@@ -75,41 +86,44 @@
                 height="480"></iframe>
     </div>
     <div class="floating-form">
-        <div class="floating-left-button" onclick="viewForm()">
-            <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
+        <div class="row">
+            <div class="floating-left-button" onclick="viewForm()">
+                <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
+            </div>
+            <div class="floating-right-button">
+                <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
+            </div>
         </div>
-        <div class="floating-right-button">
-            <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
-        </div>
-        <form hidden>
+        <form hidden id="locationForm"  action="/controller">
+            <input hidden name="command" value="add_coverage"/>
             <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="Input"/>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="Input"/>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="Input"/>
-                </div>
-            </div>
-        </div>
-            <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="Input"/>
+                        <input required type="text" name="city" class="form-control input-sm" placeholder="City"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input required type="text" name="street" class="form-control input-sm" placeholder="Street"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input required type="number" min="1" name="house" class="form-control input-sm" placeholder="House"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input required type="number" min="1" name="building" class="form-control input-sm" placeholder="Building"/>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="submit" class="form-control input-sm" name="addCoverage" value="Add"/>
+                        <input type="submit" class="form-control input-sm" value="Add coverage"/>
                     </div>
                 </div>
             </div>
@@ -119,9 +133,8 @@
 
 <script>
     function viewForm() {
-        var form = document.getElementsByTagName("form").item(0);
-        var isHidden = form.hidden;
-        form.hidden=!isHidden;
+        var form = document.getElementById("locationForm");
+        form.hidden = !form.hidden;
     }
 </script>
 

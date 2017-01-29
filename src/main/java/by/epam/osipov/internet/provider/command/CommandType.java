@@ -22,7 +22,8 @@ public enum CommandType {
     CHANGE_PASSWORD(new ChangePasswordCommand()),
     SHOW_ACCOUNT(new ShowAccountCommand()),
     GENERATE_CSV(new GenerateCSVCommand()),
-    SHOW_REGISTRATION_PAGE(new ShowRegistrationPageCommand());
+    SHOW_REGISTRATION_PAGE(new ShowRegistrationPageCommand()),
+    ADD_COVERAGE(new AddCoverageCommand());
 
     private Command command;
 

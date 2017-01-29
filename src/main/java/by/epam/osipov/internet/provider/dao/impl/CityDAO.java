@@ -19,6 +19,7 @@ public class CityDAO extends AbstractDAO {
 
     private static final String GET_ID_BY_NAME = "SELECT idCity FROM city " + "WHERE name = ?";
     private static final String SELECT_ALL = "SELECT * FROM city";
+    private static final String CREATE = "INSERT INTO city (name) VALUES(?)";
 
 
     public CityDAO(ConnectionProxy connection) {
@@ -75,5 +76,18 @@ public class CityDAO extends AbstractDAO {
             throw new DAOException("Error while trying to find all cities");
         }
         return cities;
+    }
+
+    public void create(String cityName) throws DAOException {
+        try (PreparedStatement ps = this.connection.prepareCall(CREATE)) {
+
+            ps.setString(1, cityName);
+            ps.executeUpdate();
+            if (ps.getUpdateCount() != 1) {
+                throw new DAOException("City '" + cityName + "' wasn't created");
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error while trying to create city '" + cityName + "'", e);
+        }
     }
 }

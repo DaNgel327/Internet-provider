@@ -16,26 +16,137 @@
     </script>
 </head>
 <body>
+<div class="container alert alert-success" id="coverage-added-alert" hidden>
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>Success! </strong>
+    Coverage added.
+</div>
 <c:import url="parts/header.jsp"/>
+
+<style>
+
+    .floating-box {
+        float: left;
+        width: 640px;
+        height: 480px;
+        margin: 10px;
+    }
+
+    .floating-form {
+        width: 400px;
+        height: 400px;
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .floating-left-button {
+        float: left;
+        width: 45%;
+        margin: 2% 5% 10% 0;
+    }
+
+    .floating-right-button {
+        float: left;
+        width: 45%;
+        margin: 2% 0 10% 5%;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    @media only screen and (max-width: 1300px) {
+        /* For mobile phones: */
+        .floating-box {
+            float: none;
+            width: 640px;
+            display: table;
+            margin: 0 auto;
+        }
+
+        .floating-form {
+            width: 640px;
+            display: table;
+            margin: 0 auto;
+        }
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+</style>
+
+
 <div class="container">
-    <div id="map" style="float:left">
+
+    <div class="floating-box">
         <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
                 height="480"></iframe>
     </div>
-
-    <c:if test="${sessionScope.user=='admin'}">
+    <div class="floating-form">
         <div class="row">
-            <div class="form-group">
-                <div class="col-md-6">
-                    <a href="#" class="btn btn-default">ADD NEW LOCATION</a>
-                </div>
-                <div class="col-md6">
-                    <a href="/controller?command=generate_csv" class="btn btn-default">Generate csv</a>
-                </div>
+            <div class="floating-left-button" onclick="viewForm()">
+                <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
+            </div>
+            <div class="floating-right-button">
+                <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
             </div>
         </div>
-    </c:if>
+        <form hidden id="locationForm"  action="/controller">
+            <input hidden name="command" value="add_coverage"/>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input required type="text" name="city" class="form-control input-sm" placeholder="City"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input required type="text" name="street" class="form-control input-sm" placeholder="Street"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input required type="number" min="1" name="house" class="form-control input-sm" placeholder="House"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input required type="number" min="1" name="building" class="form-control input-sm" placeholder="Building"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="submit" class="form-control input-sm" value="Add coverage"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
+<script>
+    function viewForm() {
+        var form = document.getElementById("locationForm");
+        form.hidden = !form.hidden;
+    }
+</script>
+
+<c:if test="${complete}">
+    <script>
+        document.getElementsByTagName("coverage-added-alert").hidden = false;
+        $("#coverage-added-alert").fadeTo(5000, 500).slideUp(500, function () {
+            $("#coverage-added-alert").slideUp(500);
+        });
+    </script>
+</c:if>
 <c:import url="parts/footer.jsp"/>
 
 </body>

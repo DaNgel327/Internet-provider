@@ -24,6 +24,9 @@ public class CoverageDAO extends AbstractDAO {
                     "WHERE name = ? && street = ? && houseNumber = ? && building = ?";
     private static final String SELECT_ALL = "SELECT * FROM coverage";
 
+    private static final String CREATE = "INSERT INTO coverage (idCity, street, houseNumber, building)" +
+            "VALUES (?, ?, ?, ?)";
+
     public CoverageDAO(ConnectionProxy connection) {
         super(connection);
     }
@@ -98,5 +101,28 @@ public class CoverageDAO extends AbstractDAO {
                     + houseNumber + "'");
         }
         return id;
+    }
+
+    public void create(Coverage coverage) throws DAOException {
+        try (PreparedStatement ps = this.connection.prepareCall(CREATE)) {
+
+            int cityId = coverage.getIdCity();
+            String street = coverage.getStreet();
+            int house = coverage.getHouseNumber();
+            int building = coverage.getBuilding();
+
+
+            ps.setInt(1, cityId);
+            ps.setString(2, street);
+            ps.setInt(3, house);
+            ps.setInt(4, building);
+
+            ps.executeUpdate();
+            if (ps.getUpdateCount() != 1) {
+                throw new DAOException("Coverage '" + coverage + "' wasn't created");
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error while trying to create coverage '" + coverage + "'", e);
+        }
     }
 }
