@@ -18,14 +18,22 @@
 <body>
 <c:import url="parts/header.jsp"/>
 <div class="container">
-    <div id="map">
+    <div id="map" style="float:left">
         <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
                 height="480"></iframe>
     </div>
 
     <c:if test="${sessionScope.user=='admin'}">
-        <a href="#" class="btn btn-default">ADD NEW LOCATION</a>
-        <a href="controller?command&generate_csv" class="btn btn-default">Generate csv</a>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-6">
+                    <a href="#" class="btn btn-default">ADD NEW LOCATION</a>
+                </div>
+                <div class="col-md6">
+                    <a href="/controller?command=generate_csv" class="btn btn-default">Generate csv</a>
+                </div>
+            </div>
+        </div>
     </c:if>
 </div>
 <c:import url="parts/footer.jsp"/>

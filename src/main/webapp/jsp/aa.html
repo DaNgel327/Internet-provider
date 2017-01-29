@@ -22,113 +22,93 @@
 </head>
 <body>
 
+<style>
 
-<a href="#" data-toggle="modal" data-target="#changePassword-modal">LOGIN</a>
+    .floating-box {
+        float: left;
+        width: 640px;
+        height: 480px;
+        margin: 10px;
+    }
 
-<div class="modal fade" id="changePassword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true"
-     style="display: none;">
-    <div class="modal-dialog">
+    .floating-form {
+         width: 400px;
+         height: 400px;
+         margin: 10px;
+        display: inline-block;
+     }
+    .floating-left-button{
+        float: left;
+        width: 45%;
+        margin: 2% 5% 10% 0;
+    }
+    .floating-right-button{
+        float: left;
+        width: 45%;
+        margin: 2% 0 10% 5%;
+    }
 
-        <div class="modalWindow-container">
 
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
+    @media only screen and (max-width: 1300px) {
+        /* For mobile phones: */
 
-            <div class="alert alert-warning alert-dismissable" id="alert" hidden>
-                <p>Something goes wrong</p>
-            </div>
+        .floating-box {
+            float: none;
+            width: 640px;
+            display: table;
+            margin: 0 auto;
+        }
+        .floating-form {
 
-            <h1>Login to Your Account</h1><br>
-            <form action="/controller" method="post">
-                <input name="command" type="hidden" value="change_password">
-                <input type="password" name="currentPassword" placeholder="Current password">
-                <input type="password" name="newPassword" placeholder="New password">
-                <input type="password" name="confirm" placeholder="Confirm new password">
-                <input type="submit" onclick="return checkPassword(this.form)" class="modalWindow-submit"
-                       value="Change">
-            </form>
+            width: 640px;
+            display: table;
+            margin: 0 auto;
+        }
+    }
+</style>
+
+
+<div class="container">
+
+    <div class="floating-box">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1z8cSqA6mNGS0ejSEeBPLtL6curc" width="640"
+                height="480"></iframe>
+    </div>
+    <div class="floating-form">
+        <div class="floating-left-button">
+            <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
         </div>
+        <div class="floating-right-button">
+            <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
+        </div>
+        <form>
+            <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Input"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Input"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Input"/>
+                </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="Input"/>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-
-<div id="backstage" class="modal-backdrop fade in" hidden></div>
-
-<script type="text/javascript">
-
-    $(window).on('load', function () {
-        $('#changePassword-modal').modal('show');
-    });
-
-    document.getElementById("alert").hidden = false;
-
-    $(".close").click(function () {
-
-        document.getElementById("alert").hidden = true;
-    });
-
-</script>
-
-
-<script>
-
-    function showError(inputNumber, errorMessage) {
-        var input = document.getElementsByTagName('input')[inputNumber];
-        if (input.value != "") {
-            input.value = "";
-        }
-        input.setAttribute('placeholder', errorMessage);
-    }
-
-    function checkPassword(form) {
-
-        var currentPassword = form.elements.currentPassword.value;
-        var newPassword = form.elements.newPassword.value;
-        var confirm = form.elements.confirm.value;
-
-        if (currentPassword.length < 8) {
-            showError(1, 'Too small');
-            return false;
-        }
-        if (currentPassword.length >16) {
-            showError(1, 'Too big');
-            return false;
-        }
-        if (newPassword.length < 8) {
-            showError(2, 'Too small');
-            return false;
-        }
-        if (newPassword.length > 16) {
-            showError(2, 'Too big');
-            return false;
-        }
-        if (newPassword != confirm) {
-            showError(3, 'Dont mathes');
-            return false;
-        }
-
-        var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d_-]{8,16}$/;
-
-        if (!newPassword.test(re)) {
-
-            if (!newPassword.search(/[a-z]+/)) {
-                showError(2, 'At least 1 lowercase');
-                return false;
-            }
-            if (!newPassword.search(/[A-Z]+/)) {
-                showError(2, 'At least 1 upperrcase');
-                return false;
-            }
-            if (!newPassword.search(/[0-9]+/)) {
-                showError(2, 'At least 1 number');
-                return false;
-            }
-            showError(2, 'Bad password');
-            return false;
-        }
-        return true;
-    }
-</script>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

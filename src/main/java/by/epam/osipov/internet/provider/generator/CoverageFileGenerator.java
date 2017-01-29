@@ -49,7 +49,7 @@ public class CoverageFileGenerator {
     public static void createFile(List<String> lines) {
         //List<String> lines = Arrays.asList("The first line", "The second line");
 
-        Path file = Paths.get("the-file-name.csv");
+        Path file = Paths.get("C:\\Users\\Lenovo\\InternetProvider\\src\\main\\webapp\\resource\\csv\\the-file-name.csv");
 
         try {
             Files.write(file, lines, Charset.forName("UTF-8"));
@@ -94,7 +94,6 @@ public class CoverageFileGenerator {
         }
         return textValue.toString().trim();
     }
-
 
 
     public static String getLatLongPositions(String address) throws IOException, ParserConfigurationException, SAXException {

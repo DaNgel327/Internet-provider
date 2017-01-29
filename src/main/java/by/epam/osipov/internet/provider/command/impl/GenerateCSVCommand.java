@@ -35,15 +35,6 @@ public class GenerateCSVCommand implements Command {
 
     private String tryExecute(RequestContent content) throws ConnectionPoolException, DAOException, ParserConfigurationException, SAXException, IOException {
 
-
-
-
-
-
-
-
-
-
         List<String> addresses = null;
 
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
@@ -68,6 +59,6 @@ public class GenerateCSVCommand implements Command {
 
         CoverageFileGenerator.createFile(lines);
 
-        return null;
+        return "/";
     }
 }
