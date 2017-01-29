@@ -59,6 +59,7 @@ public class GenerateCSVCommand implements Command {
 
         CoverageFileGenerator.createFile(lines);
 
-        return "/";
+        content.setAttribute("generated", true);
+        return "/jsp/coverage.jsp";
     }
 }

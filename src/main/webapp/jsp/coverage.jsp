@@ -34,6 +34,9 @@
 
 <style>
 
+    #spinner{
+        display: inline-block;
+    }
     .floating-box {
         float: left;
         width: 640px;
@@ -86,8 +89,13 @@
         margin: 0;
     }
 
+    #removed{
+        display: none;
+    }
+
 </style>
 
+<iframe id="my_iframe" style="display:none;"></iframe>
 
 <div class="container">
 
@@ -104,7 +112,10 @@
                     <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
                 </div>
                 <div class="floating-right-button">
-                    <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
+                    <a href="/controller?command=generate_csv" onclick="spin()" class="btn btn-default btn-block">
+                        Generate csv
+                        <i id="removed" class="fa fa-spinner fa-pulse fa fa-fw"></i>
+                    </a>
                 </div>
             </div>
             <form hidden id="locationForm" action="/controller" method="post">
@@ -149,6 +160,11 @@
 </div>
 
 <script>
+
+    function spin() {
+        document.getElementById("removed").removeAttribute("id");
+    }
+
     function viewForm() {
         var form = document.getElementById("locationForm");
         form.hidden = !form.hidden;
@@ -175,6 +191,11 @@
             </script>
         </c:otherwise>
     </c:choose>
+</c:if>
+<c:if test="${generated && generated!=null}">
+    <script>
+        document.getElementById('my_iframe').src = 'resource/csv/the-file-name.csv';
+    </script>
 </c:if>
 
 </body>

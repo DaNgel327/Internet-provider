@@ -76,6 +76,10 @@
         margin: 0;
     }
 
+    #removed{
+        display: none;
+    }
+
 </style>
 
 
@@ -90,9 +94,14 @@
             <div class="floating-left-button" onclick="viewForm()">
                 <a href="#" class="btn btn-default btn-block">ADD NEW LOCATION</a>
             </div>
+
             <div class="floating-right-button">
-                <a href="/controller?command=generate_csv" class="btn btn-default btn-block">Generate csv</a>
+                <a href="/controller?command=generate_csv" onclick="spin()" class="btn btn-default btn-block">
+                    Generate csv
+                    <i id="removed" class="fa fa-spinner fa-pulse fa fa-fw"></i>
+                </a>
             </div>
+
         </div>
         <form hidden id="locationForm"  action="/controller">
             <input hidden name="command" value="add_coverage"/>
@@ -132,6 +141,9 @@
 </div>
 
 <script>
+    function spin() {
+        document.getElementById("removed").removeAttribute("id");
+    }
     function viewForm() {
         var form = document.getElementById("locationForm");
         form.hidden = !form.hidden;
