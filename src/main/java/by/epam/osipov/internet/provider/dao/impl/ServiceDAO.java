@@ -19,7 +19,7 @@ public class ServiceDAO extends AbstractDAO {
 
     private final static String SELECT_ALL = "SELECT * FROM service";
     private final static String DELETE_BY_NAME = "DELETE FROM service " +
-            "WHERE BINARY name = ?";
+            "WHERE name = ?";
     private final static String INSERT_NEW = "INSERT INTO service (name, description, validity, cost) " +
             "VALUES (?, ?, ?, ?)";
 

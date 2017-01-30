@@ -20,6 +20,7 @@
 
     <c:import url="/jsp/modal/login.jsp"/>
     <c:import url="/jsp/modal/change-password.jsp"/>
+    <c:import url="/jsp/modal/login-change.jsp"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -90,7 +91,8 @@
 
                                         <li class="dropdown-header">Доступ</li>
                                         <li>
-                                            <a href="#">Сменить логин</a>
+                                            <a href="#" data-toggle="modal" data-target="#changeLogin-modal">Сменить
+                                                логин</a>
                                         </li>
                                     </c:otherwise>
                                 </c:choose>

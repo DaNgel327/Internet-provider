@@ -28,7 +28,7 @@ public class AccessDAO extends AbstractDAO {
             "role = ? " +
             "WHERE idAccess = ?";
 
-    private final static String SELECT_BY_LOGIN = "SELECT * FROM access WHERE BINARY login = ?";
+    private final static String SELECT_BY_LOGIN = "SELECT * FROM access WHERE login = ?";
 
     private final static String DELETE_BY_USER_ID = "DELETE FROM access\n" +
             "WHERE idAccess = (select idAccess FROM contract\n" +

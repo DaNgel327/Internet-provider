@@ -27,15 +27,19 @@
                 <p>Old password isn't correct</p>
             </div>
 
-            <h1>Login to Your Account</h1><br>
+            <h1>Change login</h1><br>
             <form onsubmit="return validate(this)" action="/controller" method="post">
                 <input name="command" type="hidden" value="change_login">
 
                 <input type="text" name="currentLogin" placeholder="Current login">
-                <input type="text" name="newLogin" placeholder="New login">
-                <input type="text" name="confirmLogin" placeholder="Confirm login">
+                <input type="text" name="newLogin" placeholder="New login" autocomplete="off">
+                <input type="text" name="confirmLogin" placeholder="Confirm login"
+                       readonly onfocus="this.removeAttribute('readonly')"
+                       autocomplete="off"
+                >
 
-                <input type="password" name="password" placeholder="Your password">
+                <input type="password" name="passwordForLogin" placeholder="Your password">
+
                 <input type="submit" class="modalWindow-submit"
                        value="Change">
             </form>
@@ -58,11 +62,34 @@
         input.setAttribute('placeholder', errorMessage);
     }
 
+    function resetError(form) {
+        var currentLogin = form.elements.currentLogin.value;
+        var newLogin = form.elements.newLogin.value;
+        var passwordForLogin = form.elements.passwordForLogin.value;
+        var confirmLogin = form.elements.confirmLogin.value;
+
+        if (currentLogin != "Current login") {
+            form.elements.currentLogin.setAttribute("placeholder", "Current login");
+        }
+        if (currentLogin != "New login") {
+            form.elements.currentLogin.setAttribute("placeholder", "New login");
+        }
+        if (currentLogin != "Confirm login") {
+            form.elements.currentLogin.setAttribute("placeholder", "Confirm login");
+        }
+        if (currentLogin != "Your password") {
+            form.elements.currentLogin.setAttribute("placeholder", "Your password");
+        }
+
+    }
+
     function validate(form) {
+
+        resetError(form);
 
         var currentLogin = form.elements.currentLogin.value;
         var newLogin = form.elements.newLogin.value;
-        var password = form.elements.password.value;
+        var passwordForLogin = form.elements.passwordForLogin.value;
         var confirmLogin = form.elements.confirmLogin.value;
 
         if (currentLogin.length < 8) {
@@ -74,9 +101,9 @@
             return false;
         }
 
-        var LOGIN_REGEXP = /[A-Za-z0-9-_]+/;
+        var LOGIN_REGEXP = /^[A-Za-z0-9-_]+$/;
 
-        if(LOGIN_REGEXP.test(currentLogin)){
+        if (!LOGIN_REGEXP.test(currentLogin)) {
             showError("currentLogin", 'Only letters, numbers, \'-\' and \'_\'');
             return false;
         }
@@ -89,8 +116,13 @@
             showError("newLogin", 'Too big');
             return false;
         }
-        if(LOGIN_REGEXP.test(currentLogin)){
+        if (!LOGIN_REGEXP.test(newLogin)) {
             showError("newLogin", 'Only letters, numbers, \'-\' and \'_\'');
+            return false;
+        }
+
+        if (newLogin == currentLogin) {
+            showError("newLogin", 'Must not Equals with current');
             return false;
         }
 
@@ -99,34 +131,20 @@
             showError("confirmLogin", 'Dont mathes');
             return false;
         }
-        if (password.length < 8) {
-            showError("password", 'Too small');
+
+
+        if (passwordForLogin.length < 8) {
+            showError("passwordForLogin", 'Too small');
             return false;
         }
-        if (password.length > 16) {
-            showError("password", 'Too big');
+        if (passwordForLogin.length > 16) {
+            showError("passwordForLogin", 'Too big');
             return false;
         }
 
         var PASSWORD_REGEXP = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d_-]{8,16}$/;
 
         if (!PASSWORD_REGEXP.test(newLogin)) {
-
-            if (newPassword.search(/[a-z]/) == -1) {
-                showError("newPassword", 'At least 1 lowercase');
-                showError("confirm", 'At least 1 lowercase');
-                return false;
-            }
-            if (newPassword.search(/[A-Z]/) == -1) {
-                showError("newPassword", 'At least 1 upperrcase');
-                showError("confirm", 'At least 1 upperrcase');
-                return false;
-            }
-            if (newPassword.search(/[0-9]/) == -1) {
-                showError("newPassword", 'At least 1 number');
-                showError("confirm", 'At least 1 number');
-                return false;
-            }
             showError("currentPassword", 'Only letters, numbers, \'-\' and \'_\'');
             return false;
         }
