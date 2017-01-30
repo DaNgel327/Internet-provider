@@ -23,17 +23,17 @@ public class UserDAO extends AbstractDAO {
     private final static String GET_EMAIL_BY_LOGIN = "SELECT email FROM user \n" +
             "JOIN contract ON user.idUser = contract.idUser\n" +
             "JOIN access ON access.idAccess = contract.idAccess\n" +
-            "WHERE login = ?";
+            "WHERE BINARY login = ?";
 
     private final static String SELECT_ID_BY_PASSPORT = "SELECT idUser FROM user\n" +
-            "WHERE passport = ?";
+            "WHERE BINARY passport = ?";
 
     private final static String INSERT_NEW =
             "INSERT INTO user (sName, name, pName, passport, phone, balance, email) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     private final static String DELETE_BY_ID = "DELETE FROM user\n" +
-            "WHERE passport = ?";
+            "WHERE BINARY passport = ?";
 
     public UserDAO(ConnectionProxy connection) {
         super(connection);

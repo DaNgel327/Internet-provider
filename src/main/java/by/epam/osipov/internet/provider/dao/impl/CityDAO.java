@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class CityDAO extends AbstractDAO {
 
-    private static final String GET_ID_BY_NAME = "SELECT idCity FROM city " + "WHERE name = ?";
+    private static final String GET_ID_BY_NAME = "SELECT idCity FROM city " + "WHERE BINARY name = ?";
     private static final String SELECT_ALL = "SELECT * FROM city";
     private static final String CREATE = "INSERT INTO city (name) VALUES(?)";
 

@@ -82,21 +82,18 @@
                                         <li>
                                             <a href="controller?command=show_users">Пользователи</a>
                                         </li>
-                                        <li>
-                                            <a href="#" data-toggle="modal" data-target="#changePassword-modal">Сменить
-                                                пароль</a>
-                                        </li>
                                     </c:when>
                                     <c:otherwise>
                                         <li>
                                             <a href="/jsp/profile.jsp">Профиль</a>
                                         </li>
+
+                                        <li class="dropdown-header">Доступ</li>
+                                        <li>
+                                            <a href="#">Сменить логин</a>
+                                        </li>
                                     </c:otherwise>
                                 </c:choose>
-                                <li class="dropdown-header">Доступ</li>
-                                <li>
-                                    <a href="#">Сменить логин</a>
-                                </li>
                                 <li>
                                     <a href="#" data-toggle="modal" data-target="#changePassword-modal">Сменить
                                         пароль</a>
