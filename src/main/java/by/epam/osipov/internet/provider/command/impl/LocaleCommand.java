@@ -19,7 +19,7 @@ public class LocaleCommand implements Command {
         String locale;
 
         locale = choosedLocale + "_" + choosedLocale.toUpperCase();
-        content.setAttribute("lang", locale);
+
         content.setSessionAttribute("lang", locale);
 
         return "/";

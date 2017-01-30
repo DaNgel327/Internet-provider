@@ -25,6 +25,7 @@
 </head>
 <body>
 
+<h1> verified: ${isVerified}</h1>
 <c:import url="jsp/parts/header.jsp"/>
 <div class="container">
     <div>

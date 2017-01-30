@@ -33,12 +33,12 @@
 
 <body>
 
-<h1>${lang==null? 'en_EN':lang}</h1>
+<h1>${sessionScope.lang==null? 'en_EN':sessionScope.lang}</h1>
 <h1>${sessionScope.user==null ? 'unknown' : sessionScope.user}</h1>
 
 <fmt:setLocale
-        value="${lang==null
-         ? 'en_EN' : lang}"
+        value="${sessionScope.lang==null
+         ? 'en_EN' : sessionScope.lang}"
         scope="session"/>
 
 

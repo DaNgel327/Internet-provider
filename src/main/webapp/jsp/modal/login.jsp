@@ -45,7 +45,7 @@
 <div id="backstage" class="modal-backdrop fade in" hidden></div>
 
 <c:choose>
-    <c:when test="${!sessionScope.isVerified && sessionScope.isVerified!=null}">
+    <c:when test="${!isVerified && isVerified!=null}">
         <script type="text/javascript">
 
             $(window).on('load', function(){

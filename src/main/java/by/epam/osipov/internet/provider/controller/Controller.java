@@ -34,7 +34,8 @@ public class Controller extends HttpServlet {
         }
 
         requestContent.insertValues(request);
-        response.sendRedirect(page);
+
+        getServletContext().getRequestDispatcher(page).forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

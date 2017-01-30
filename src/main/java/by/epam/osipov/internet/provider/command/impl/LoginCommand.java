@@ -35,7 +35,7 @@ public class LoginCommand implements Command {
                 content.setSessionAttribute("user", login);
                 content.setSessionAttribute("role", access.getRole());
             }
-            content.setSessionAttribute("isVerified", isVerified);
+            content.setAttribute("isVerified", isVerified);
         }
         return "/";
     }

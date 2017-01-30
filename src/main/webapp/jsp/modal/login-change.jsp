@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<h1>${passwordChanged}</h1>
 
 <div class="modal fade" id="changeLogin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true"

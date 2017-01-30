@@ -50,7 +50,7 @@
 <div id="backstage" class="modal-backdrop fade in" hidden></div>
 
 <c:choose>
-    <c:when test="${!sessionScope.done && sessionScope.done!=null}">
+    <c:when test="${!passwordChanged && passwordChanged!=null}">
         <script type="text/javascript">
 
             $(window).on('load', function () {
@@ -68,7 +68,7 @@
     </c:when>
 </c:choose>
 
-<c:if test="${sessionScope.done && sessionScope.done!=null}">
+<c:if test="${passwordChanged && passwordChanged!=null}">
     <script>
         document.getElementsByTagName("success-alert").hidden = false;
         $("#success-alert").fadeTo(5000, 500).slideUp(500, function () {
