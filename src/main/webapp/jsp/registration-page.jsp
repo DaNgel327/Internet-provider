@@ -30,52 +30,52 @@
 
         <h1>Register new user</h1><br>
 
-        <form onsubmit="return validate(this)" role="form" action="${pageContext.request.contextPath}/controller">
+        <form onsubmit="return validate(this)" role="form" action="${pageContext.request.contextPath}/controller" method="post">
             <input hidden name="command" value="register_user"/>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control input-sm" placeholder="Name" required>
+                        <input type="text" name="name" id="name" class="form-control input-sm" placeholder="Name" required>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" name="surname" class="form-control input-sm" placeholder="Surname" required>
+                        <input type="text" name="surname" id="surname" class="form-control input-sm" placeholder="Surname" required>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" name="patronymic" class="form-control input-sm" placeholder="Patronymic" required>
+                        <input type="text" name="patronymic" id="patronymic" class="form-control input-sm" placeholder="Patronymic" required>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" name="passport" class="form-control input-sm" placeholder="Passport"
+                        <input type="text" name="passport" id="passport" class="form-control input-sm" placeholder="Passport"
                                required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" name="phone" class="form-control input-sm" placeholder="Phone">
+                        <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" name="city" class="form-control input-sm" placeholder="City" required>
+                        <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City" required>
                     </div>
                 </div>
                 <div class="col-md-6">
 
                     <div class="form-group">
-                        <input type="text" name="street" class="form-control input-sm" placeholder="Street" required>
+                        <input type="text" name="street" id="street" class="form-control input-sm" placeholder="Street" required>
                     </div>
                 </div>
             </div>
@@ -83,18 +83,18 @@
 
                 <div class="col-md-2">
                     <div class="form-group">
-                        <input type="number" min="1" name="house" class="form-control input-sm" required placeholder="Hse">
+                        <input type="number" min="1" name="house" id="house" class="form-control input-sm" required placeholder="Hse">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
-                        <input type="number" min="1" name="apt" class="form-control input-sm" required
+                        <input type="number" min="1" name="apt" id="apt" class="form-control input-sm" required
                                placeholder="Apt.">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
-                        <input type="number" min="1" name="building" class="form-control input-sm" required
+                        <input type="number" min="1" name="building" id="building" class="form-control input-sm" required
                                placeholder="Building">
                     </div>
                 </div>
@@ -115,14 +115,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control input-sm" placeholder="Email" required>
+                        <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email" required>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="number" min="0" step="0.01" name="balance" class="form-control input-sm" placeholder="Balance">
+                        <input type="number" min="0" step="0.01" name="balance" id="balance" class="form-control input-sm" placeholder="Balance">
                     </div>
                 </div>
             </div>
@@ -132,18 +132,18 @@
 </div>
 <script type="text/javascript">
 
-    function showError(inputNumber, errorMessage) {
-        var input = document.getElementsByTagName('input')[inputNumber];
+    function showError(inputId, errorMessage) {
+        var input = document.getElementById(inputId);
         if (input.value != "") {
             input.value = "";
         }
         input.setAttribute('placeholder', errorMessage);
     }
 
-    function check(input, regex, message, inputNumber) {
+    function check(input, regex, message, inputId) {
 
         if (!regex.test(input)) {
-            showError(inputNumber, message);
+            showError(inputId, message);
             return false;
         }
 
@@ -168,31 +168,31 @@
         var STREET_ERROR = 'Street error';
         var EMAIL_ERROR = 'Email error';
 
-        if (!check(elems.name.value, DOUBLE_OR_SINGLE_WORD_REG, NAME_ERROR, 0)) {
+        if (!check(elems.name.value, DOUBLE_OR_SINGLE_WORD_REG, NAME_ERROR, 'name')) {
             errors++;
         }
 
-        if (!check(elems.surname.value, DOUBLE_OR_SINGLE_WORD_REG, SURNAME_ERROR, 1)) {
+        if (!check(elems.surname.value, DOUBLE_OR_SINGLE_WORD_REG, SURNAME_ERROR, 'surname')) {
             errors++;
         }
 
-        if (!check(elems.patronymic.value, DOUBLE_OR_SINGLE_WORD_REG, PATRONYMIC_ERROR, 2)) {
+        if (!check(elems.patronymic.value, DOUBLE_OR_SINGLE_WORD_REG, PATRONYMIC_ERROR, 'patronymic')) {
             errors++;
         }
 
-        if (!check(elems.passport.value, PASSPORT_REG, PASSPORT_ERROR, 3)) {
+        if (!check(elems.passport.value, PASSPORT_REG, PASSPORT_ERROR, 'passport')) {
             errors++;
         }
 
-        if (!check(elems.phone.value, PHONE_REG, PHONE_ERROR, 4)) {
+        if (!check(elems.phone.value, PHONE_REG, PHONE_ERROR, 'phone')) {
             errors++;
         }
 
-        if (!check(elems.city.value, DOUBLE_OR_SINGLE_WORD_REG, CITY_ERROR, 5)) {
+        if (!check(elems.city.value, DOUBLE_OR_SINGLE_WORD_REG, CITY_ERROR, 'city')) {
             errors++;
         }
 
-        if (!check(elems.street.value, DOUBLE_OR_SINGLE_WORD_REG, STREET_ERROR, 6)) {
+        if (!check(elems.street.value, DOUBLE_OR_SINGLE_WORD_REG, STREET_ERROR, 'street')) {
             errors++;
         }
 

@@ -23,7 +23,8 @@ public enum CommandType {
     GENERATE_CSV(new GenerateCSVCommand()),
     SHOW_REGISTRATION_PAGE(new ShowRegistrationPageCommand()),
     ADD_COVERAGE(new AddCoverageCommand()),
-    SHOW_USER_PROFILE(new ShowUserProfileCommand());
+    SHOW_USER_PROFILE(new ShowUserProfileCommand()),
+    SIGN_SERVICE(new SignServiceCommand());
 
     private Command command;
 

@@ -26,6 +26,14 @@ public class CoverageDAO extends AbstractDAO {
 
     private static final String CREATE = "INSERT INTO coverage (idCity, street, house, building)" +
             "VALUES (?, ?, ?, ?)";
+    private static final String SELECT_BY_USER_ID = "SELECT  coverage.idCoverage, coverage.idCity, coverage.street, coverage.houseNumber, coverage.building FROM\n" +
+            "    coverage\n" +
+            "        JOIN\n" +
+            "    contract ON coverage.idCoverage = contract.idCoverage\n" +
+            "        JOIN\n" +
+            "    user ON user.idUser = contract.idUser\n" +
+            "    where user.idUser = ?" +
+            " LIMIT 1";
 
     public CoverageDAO(ConnectionProxy connection) {
         super(connection);
@@ -121,5 +129,26 @@ public class CoverageDAO extends AbstractDAO {
         } catch (SQLException e) {
             throw new DAOException("Error while trying to create coverage", e);
         }
+    }
+
+    public Coverage getByUserId(int id) throws DAOException {
+
+        Coverage coverage = null;
+        try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_USER_ID);) {
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int coverageId = rs.getInt(1);
+                int cityId = rs.getInt(2);
+                String street = rs.getString(3);
+                int house = rs.getInt(4);
+                int building = rs.getInt(5);
+                coverage = new Coverage(coverageId, cityId, street, house, building);
+            }
+        } catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return coverage;
     }
 }

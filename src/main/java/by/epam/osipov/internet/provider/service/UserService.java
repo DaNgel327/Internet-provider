@@ -1,5 +1,6 @@
 package by.epam.osipov.internet.provider.service;
 
+import by.epam.osipov.internet.provider.content.RequestContent;
 import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.Ban;
 import by.epam.osipov.internet.provider.entity.impl.User;
@@ -132,6 +133,25 @@ public class UserService {
         users.removeAll(banned);
 
         return users;
+    }
+
+    public int addNewUser(String name, String surname, String patronymic, String passport,
+                           String phone, String email, String balance) throws ConnectionPoolException, DAOException, ServiceException {
+
+        UserService userService = new UserService();
+        if (userService.checkIsUserExist(passport)) {
+            //alert add
+            //throw new RegistrationException("Error while trying to register new user. User exist");
+        }
+
+
+
+        if (balance.equals("")) {
+            balance = "0.0";
+        }
+
+        return userService.registerNew(surname, name, patronymic, passport, phone,
+                Double.parseDouble(balance), email);
     }
 
 }

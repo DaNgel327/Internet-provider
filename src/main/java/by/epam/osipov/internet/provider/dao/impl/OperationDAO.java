@@ -18,7 +18,7 @@ public class OperationDAO extends AbstractDAO {
     private static final String SELECT_ALL = "SELECT * FROM operation";
     private static final String SELECT_LAST = "SELECT operation.idOperation, operation.type, operation.date, operation.sum, operation.idUser from operation\n" +
             "JOIN user ON operation.idUser = user.idUser\n" +
-            " WHERE date >= DATE_SUB(CURRENT_DATE, INTERVAL 2 MONTH) AND operation.idUser=?";
+            " WHERE operation.date >= DATE_SUB(CURRENT_DATE, INTERVAL 2 MONTH) AND operation.idUser=?";
 
     public OperationDAO(ConnectionProxy connection) {
         super(connection);

@@ -2,6 +2,7 @@ package by.epam.osipov.internet.provider.dao.impl;
 
 import by.epam.osipov.internet.provider.dao.AbstractDAO;
 import by.epam.osipov.internet.provider.entity.impl.Contract;
+import by.epam.osipov.internet.provider.entity.impl.Coverage;
 import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
@@ -19,13 +20,12 @@ public class ContractDAO extends AbstractDAO {
 
     private static final String SELECT_ALL = "SELECT * FROM contract";
 
-    private static final String SELECT_BY_ID = "SELECT * FROM contract WHERE user.id = ?";
+    private static final String SELECT_BY_USER_ID = "SELECT * FROM contract WHERE contract.idUser = ?";
 
     private static final String INSERT_NEW = "INSERT INTO contract (idUser, idCoverage, apartmentNumber, idService, " +
             "idAccess, serviceProvisionDate) " + "VALUES (?, ?, ?, ?, ?, ?)";
 
     private static final String DELETE_BY_ID_USER = "DELETE FROM contract\n" + "WHERE idUser = ?";
-
 
     public ContractDAO(ConnectionProxy connection) {
         super(connection);
@@ -139,6 +139,32 @@ public class ContractDAO extends AbstractDAO {
         } catch (SQLException e) {
             throw new DAOException("Error while trying insert contract '" + contract + "'", e);
         }
+    }
+
+    public List<Contract> getByUserId(int id) throws DAOException {
+
+       List<Contract> contracts = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_USER_ID);) {
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int contractId = rs.getInt(1);
+                int idUser = rs.getInt(2);
+                int idCoverage = rs.getInt(3);
+                int apt = rs.getInt(4);
+                int idService = rs.getInt(5);
+                int idAccess = rs.getInt(6);
+                java.sql.Timestamp serviceProvisionDate = rs.getTimestamp(7);
+
+                contracts.add(new Contract(contractId, idUser, idCoverage, apt,
+                        idService, idAccess, serviceProvisionDate));
+
+            }
+        } catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return contracts;
     }
 
 }

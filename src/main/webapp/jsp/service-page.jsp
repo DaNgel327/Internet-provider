@@ -85,7 +85,7 @@
                         <ul class="list-inline">
                             <li>
                                 <a class="btn btn-default" onclick="return confirmSign()"
-                                   href="controller?command=sign_service&name=${service.getName()}">SIGN</a>
+                                   href="controller?command=sign_service&service_name=${service.getName()}">SIGN</a>
                             </li>
                         </ul>
                     </td>

@@ -22,7 +22,43 @@
     <!-- Содержимое вкладок -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
+            <c:choose>
+                <c:when test="${services!=null}">
 
+                    <table class="table">
+                        <thead>
+                        <th>Название</th>
+                        <th>Описание</th>
+                        <th>Срок действия</th>
+                        <th>Стоимость</th>
+                        <th>Дата активации</th>
+                        </thead>
+                        <tbody>
+
+                        <c:forEach var="service" items="${services}">
+                            <tr>
+                                <td> ${service.key.getName()}</td>
+                                <td> ${service.key.getDescription()}</td>
+                                <td> ${service.key.getValidity()}</td>
+                                <td> ${service.key.getCost()}</td>
+                                <c:choose>
+                                    <c:when test="${service.value==null}">
+                                        <td> На рассмотрении</td>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <td> ${service.value}</td>
+                                    </c:otherwise>
+                                </c:choose>
+                            </tr>
+
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </c:when>
+                <c:otherwise>
+                    NOTHING
+                </c:otherwise>
+            </c:choose>
         </div>
         <div role="tabpanel" class="tab-pane" id="profile">
             <c:choose>
@@ -61,7 +97,6 @@
                         </c:forEach>
                         </tbody>
                     </table>
-
                 </c:when>
                 <c:otherwise>
                     <h1>NOTHING</h1>

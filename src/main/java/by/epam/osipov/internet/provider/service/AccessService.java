@@ -1,13 +1,16 @@
 package by.epam.osipov.internet.provider.service;
 
 import by.epam.osipov.internet.provider.dao.impl.AccessDAO;
+import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.Access;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;
 import by.epam.osipov.internet.provider.exception.ServiceException;
+import by.epam.osipov.internet.provider.mail.ssl.EmailSender;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 
+import javax.mail.MessagingException;
 import java.util.List;
 import java.util.Random;
 
@@ -175,5 +178,16 @@ public class AccessService {
         }
 
         return false;
+    }
+
+    public void sendAccessToUser(Access access) throws DAOException, ConnectionPoolException, MessagingException {
+        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
+            UserDAO userDAO = new UserDAO(connection);
+
+            String email = userDAO.getEmailByAccess(access);
+
+            EmailSender emailSender = new EmailSender();
+            emailSender.sendAccess(access, email);
+        }
     }
 }

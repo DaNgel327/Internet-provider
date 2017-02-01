@@ -33,6 +33,13 @@ public class AccessDAO extends AbstractDAO {
     private final static String DELETE_BY_USER_ID = "DELETE FROM access\n" +
             "WHERE idAccess = (select idAccess FROM contract\n" +
             "WHERE idUser = ?)";
+    private final static String SELECT_BY_USER_PASSPORT = "SELECT * FROM\n" +
+            "    access\n" +
+            "        JOIN\n" +
+            "    contract ON access.idAccess = contract.idAccess\n" +
+            "        JOIN\n" +
+            "    user ON user.idUser = contract.idUser\n" +
+            "    where user.passport = ?";
 
     public AccessDAO(ConnectionProxy connection) {
         super(connection);
@@ -146,4 +153,22 @@ public class AccessDAO extends AbstractDAO {
         }
     }
 
+    public Access getByUserPassport(String passport) throws DAOException {
+        Access access = null;
+        try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_USER_PASSPORT)) {
+            ps.setString(1, passport);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int accessId = rs.getInt(1);
+                String login = rs.getString(2);
+                String password = rs.getString(3);
+                byte role = rs.getByte(4);
+
+                access = new Access(accessId, login, password, role);
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Error while trying to find access by passport '" + passport + "'", e);
+        }
+        return access;
+    }
 }

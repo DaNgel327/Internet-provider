@@ -12,8 +12,11 @@ import by.epam.osipov.internet.provider.mail.ssl.EmailSender;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;
 import by.epam.osipov.internet.provider.service.AccessService;
+import by.epam.osipov.internet.provider.service.ContractService;
+import by.epam.osipov.internet.provider.service.CoverageService;
 import by.epam.osipov.internet.provider.service.UserService;
 
+import javax.jws.soap.SOAPBinding;
 import javax.mail.MessagingException;
 
 /**
@@ -32,19 +35,41 @@ public class RegisterCommand implements Command {
 
     private String tryExecute(RequestContent content) throws ConnectionPoolException, DAOException, ServiceException, MessagingException {
 
-        int idUser = addNewUser(content);
+
+        String name = content.getParameter("name");
+        String surname = content.getParameter("surname");
+        String patronymic = content.getParameter("patronymic");
+        String passport = content.getParameter("passport");
+        String phone = content.getParameter("phone");
+        String email = content.getParameter("email");
+        String balance = content.getParameter("balance");
+
+        UserService userService = new UserService();
+        int idUser = userService.addNewUser(name, surname, patronymic, passport,phone,email,balance);
+
         Access access = addNewAccess();
         int idAccess = access.getId();
-        int idCoverage = defineCoverage(content);
+
+
+        City city = new City(content.getParameter("city"));
+        String street = content.getParameter("street");
+        int houseNumber = Integer.parseInt(content.getParameter("house"));
+        int building = Integer.parseInt(content.getParameter("building"));
+
+        CoverageService coverageService = new CoverageService();
+
+        int idCoverage = coverageService.defineCoverage(city, street,houseNumber,building);
         int apt = Integer.parseInt(content.getParameter("apt"));
         //
         int idService = Integer.parseInt(content.getParameter("idService"));
 
         java.sql.Timestamp sqlTime = new java.sql.Timestamp(new java.util.Date().getTime());
 
-        addNewContract(idUser, idCoverage, apt, idService, idAccess, sqlTime);
+        ContractService contractService = new ContractService();
+        contractService.addNewContract(idUser, idCoverage, apt, idService, idAccess, sqlTime);
 
-        sendAccessToUser(access);
+        AccessService accessService = new AccessService();
+        accessService.sendAccessToUser(access);
 
         return "/";
     }
@@ -61,80 +86,5 @@ public class RegisterCommand implements Command {
         return access;
     }
 
-    private int addNewUser(RequestContent content) throws ConnectionPoolException, DAOException, ServiceException {
-        String name = content.getParameter("name");
-        String surname = content.getParameter("surname");
-        String patronymic = content.getParameter("patronymic");
-        String passport = content.getParameter("passport");
-
-        UserService userService = new UserService();
-        if (userService.checkIsUserExist(passport)) {
-            //alert add
-            //throw new RegistrationException("Error while trying to register new user. User exist");
-        }
-
-
-        String phone = content.getParameter("phone");
-        String email = content.getParameter("email");
-        String balance = content.getParameter("balance");
-
-        if (balance.equals("")) {
-            balance = "0.0";
-        }
-
-        return userService.registerNew(surname, name, patronymic, passport, phone,
-                Double.parseDouble(balance), email);
-    }
-
-    private void sendAccessToUser(Access access) throws DAOException, ConnectionPoolException, MessagingException {
-        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
-            UserDAO userDAO = new UserDAO(connection);
-
-            String email = userDAO.getEmailByAccess(access);
-
-            EmailSender emailSender = new EmailSender();
-            emailSender.sendAccess(access, email);
-        }
-    }
-
-    private int defineCoverage(RequestContent content) throws DAOException, ConnectionPoolException {
-
-        City city = new City(content.getParameter("city"));
-        int idCity = 0;
-        String street = content.getParameter("street");
-        int houseNumber = Integer.parseInt(content.getParameter("house"));
-
-        int idCoverage = -1;
-
-        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
-
-            CityDAO cityDAO = new CityDAO(connection);
-            idCity = cityDAO.getIdByKey(city.getName());
-
-
-            // CHAAANGE 1
-            Coverage coverage = new Coverage(idCity, street, houseNumber, 1);
-
-            CoverageDAO coverageDAO = new CoverageDAO(connection);
-
-            idCoverage = coverageDAO.getIdByParameters(coverage, city);
-        }
-
-        return idCoverage;
-    }
-
-    private boolean addNewContract(int idUser, int idCoverage, int apt, int idService, int idAccess,
-                                   java.sql.Timestamp serviceProvisionDate) throws DAOException, ConnectionPoolException {
-
-        Contract contract = new Contract(idUser, idCoverage, apt, idService, idAccess, serviceProvisionDate);
-
-        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection()) {
-            ContractDAO contractDAO = new ContractDAO(connection);
-
-            contractDAO.create(contract);
-
-        }
-        return true;
-    }
 
 }
