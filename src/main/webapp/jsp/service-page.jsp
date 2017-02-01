@@ -27,6 +27,7 @@
 
 
 
+<h1>role : ${role}</h1>
 <style>
     #add-button {
         margin-bottom: 20px !important;
@@ -41,7 +42,7 @@
 
 <div class="container">
 
-    <c:if test="${sessionScope.user=='admin'}">
+    <c:if test="${sessionScope.role==0}">
         <a class="btn btn-default" href="/jsp/service-add.jsp" role="button" id="add-button">
             <i class="fa fa-plus" aria-hidden="true"></i>
             Add new tariff
@@ -55,7 +56,7 @@
             <th>Description</th>
             <th>Validity</th>
             <th onclick="sortCost(tbody, 3, 1)">Cost</th>
-            <c:if test="${sessionScope.user=='admin'}">
+            <c:if test="${sessionScope.role!=null}">
                 <th id="sort-disabled">Options</th>
             </c:if>
         </tr>
@@ -68,12 +69,23 @@
                 <td>${service.getDescription()}</td>
                 <td>${service.getValidity()}</td>
                 <td>${service.getCost()}</td>
-                <c:if test="${sessionScope.user=='admin'}">
+
+                <c:if test="${sessionScope.role==0}">
                     <td>
                         <ul class="list-inline">
                             <li>
                                 <a class="btn btn-default" onclick="return confirmDelete()"
                                    href="controller?command=delete_service&name=${service.getName()}">DELETE</a>
+                            </li>
+                        </ul>
+                    </td>
+                </c:if>
+                <c:if test="${sessionScope.role==1}">
+                    <td>
+                        <ul class="list-inline">
+                            <li>
+                                <a class="btn btn-default" onclick="return confirmSign()"
+                                   href="controller?command=sign_service&name=${service.getName()}">SIGN</a>
                             </li>
                         </ul>
                     </td>
@@ -87,12 +99,13 @@
 <script>
 
 
+    function confirmSign() {
+       return confirm("Want to sign?");
+    }
+
+
     function confirmDelete() {
-        var result = confirm("Want to delete?");
-        if (result) {
-            //Logic to delete the item
-        }
-        return result;
+        return confirm("Want to delete?");
     }
 
     $(document).ready(function () {

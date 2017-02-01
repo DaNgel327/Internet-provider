@@ -194,9 +194,10 @@
 </c:if>
 <c:if test="${generated && generated!=null}">
     <script>
-        document.getElementById('my_iframe').src = 'resource/csv/coverage.csv';
+        document.getElementById('my_iframe').src = '../resource/csv/coverage.csv';
     </script>
 </c:if>
 
+<c:import url="parts/footer.jsp"/>
 </body>
 </html>

@@ -43,6 +43,7 @@ public class EmailSender {
      * @param email  receiver email
      */
     public void sendAccess(Access access, String email) throws MessagingException {
+
         String aboutAccess = "\nYour Login: " + access.getLogin() + "\n Password: " + access.getPassword();
 
         Session session = Session.getDefaultInstance(props, new Authenticator() {

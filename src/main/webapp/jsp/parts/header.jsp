@@ -20,7 +20,6 @@
 
     <c:import url="/jsp/modal/login.jsp"/>
     <c:import url="/jsp/modal/change-password.jsp"/>
-    <c:import url="/jsp/modal/login-change.jsp"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -34,7 +33,6 @@
 <body>
 
 <h1>${sessionScope.lang==null? 'en_EN':sessionScope.lang}</h1>
-<h1>${sessionScope.user==null ? 'unknown' : sessionScope.user}</h1>
 
 <fmt:setLocale
         value="${sessionScope.lang==null
@@ -66,7 +64,7 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <c:choose>
-                    <c:when test="${sessionScope.user==null}">
+                    <c:when test="${sessionScope.role==null}">
                         <li>
                             <a href="#" data-toggle="modal" data-target="#login-modal"><fmt:message key="nav.log-in"
                                                                                                     bundle="${ value }"/></a>
@@ -74,8 +72,10 @@
                     </c:when>
                     <c:otherwise>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, ${sessionScope.user}!<b
+
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello, ${SessionScope.role==0?"Admin":"User"}!<b
                                     class="caret"></b></a>
+
                             <ul class="dropdown-menu">
 
                                 <c:choose>
@@ -86,13 +86,7 @@
                                     </c:when>
                                     <c:otherwise>
                                         <li>
-                                            <a href="/jsp/profile.jsp">Профиль</a>
-                                        </li>
-
-                                        <li class="dropdown-header">Доступ</li>
-                                        <li>
-                                            <a href="#" data-toggle="modal" data-target="#changeLogin-modal">Сменить
-                                                логин</a>
+                                            <a href="/controller?command=show_user_profile">Профиль</a>
                                         </li>
                                     </c:otherwise>
                                 </c:choose>

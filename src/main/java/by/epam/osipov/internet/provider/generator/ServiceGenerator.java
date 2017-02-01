@@ -1,8 +1,6 @@
 package by.epam.osipov.internet.provider.generator;
 
-import by.epam.osipov.internet.provider.dao.impl.BanDAO;
 import by.epam.osipov.internet.provider.dao.impl.ServiceDAO;
-import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.Service;
 import by.epam.osipov.internet.provider.pool.ConnectionPool;
 import by.epam.osipov.internet.provider.pool.ConnectionProxy;

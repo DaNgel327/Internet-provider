@@ -20,10 +20,10 @@ public enum CommandType {
     DELETE_SERVICE(new DeleteServiceCommand()),
     ADD_SERVICE(new AddServiceCommand()),
     CHANGE_PASSWORD(new ChangePasswordCommand()),
-    SHOW_ACCOUNT(new ShowAccountCommand()),
     GENERATE_CSV(new GenerateCSVCommand()),
     SHOW_REGISTRATION_PAGE(new ShowRegistrationPageCommand()),
-    ADD_COVERAGE(new AddCoverageCommand());
+    ADD_COVERAGE(new AddCoverageCommand()),
+    SHOW_USER_PROFILE(new ShowUserProfileCommand());
 
     private Command command;
 

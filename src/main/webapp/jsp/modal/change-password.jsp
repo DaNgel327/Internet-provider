@@ -33,8 +33,11 @@
             <div class="alert alert-warning alert-dismissable" id="badPassword-alert" hidden>
                 <p>Old password isn't correct</p>
             </div>
+            <div class="alert alert-warning alert-dismissable" id="badInput-alert" hidden>
+                <p>Old password isn't correct</p>
+            </div>
 
-            <h1>Login to Your Account</h1><br>
+            <h1>Change Password</h1><br>
             <form onsubmit="return checkPassword(this)" action="/controller" method="post">
                 <input name="command" type="hidden" value="change_password">
                 <input type="password" name="currentPassword" placeholder="Current password">
@@ -77,6 +80,21 @@
     </script>
 </c:if>
 
+<c:if test="${inputError eq true}">
+    <script>
+        $(window).on('load', function () {
+            $('#changePassword-modal').modal('show');
+        });
+
+        document.getElementById("badInput-alert").hidden = false;
+
+        $(".close").click(function () {
+
+            document.getElementById("alert").hidden = true;
+        });
+    </script>
+</c:if>
+
 <script>
 
     function showError(inputName, errorMessage) {
@@ -94,6 +112,8 @@
         var currentPassword = form.elements.currentPassword.value;
         var newPassword = form.elements.newPassword.value;
         var confirm = form.elements.confirm.value;
+
+        //var LOGIN_REGEX = /^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/;
 
         if (currentPassword.length < 8) {
             showError("currentPassword", 'Too small');
@@ -116,6 +136,10 @@
         if (newPassword != confirm) {
             showError("newPassword", 'Dont mathes');
             showError("confirm", 'Dont mathes');
+            return false;
+        }
+        if (newPassword == currentPassword) {
+            showError("newPassword", 'Mustn\'t equals with current password');
             return false;
         }
 

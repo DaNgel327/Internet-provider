@@ -47,13 +47,10 @@ public class AccessService {
     }
 
     // совпадают ли pass1 и pass2 проверит js
-    public void changePassword(String login, String curPass, String newPass) throws ServiceException {
+    public void changePassword(String login, String newPass) throws ServiceException {
+
 
         try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
-
-            if (!isOldPassCorrect(login, curPass)) {
-                throw new ServiceException("Old password is incorrect");
-            }
 
             AccessDAO accessDAO = new AccessDAO(connection);
             Access access = accessDAO.findByLogin(login);
@@ -64,6 +61,21 @@ public class AccessService {
             throw new ServiceException("Error while trying to change password", e);
         }
 
+    }
+
+    public void changeLogin(String curLogin, String newLogin) throws ServiceException {
+
+        try (ConnectionProxy connection = ConnectionPool.getInstance().getConnection();) {
+
+            AccessDAO accessDAO = new AccessDAO(connection);
+            Access access = accessDAO.findByLogin(curLogin);
+
+            access.setLogin(newLogin);
+            accessDAO.update(access);
+
+        } catch (ConnectionPoolException | DAOException e) {
+            throw new ServiceException("Error while trying to change login", e);
+        }
     }
 
     public boolean isOldPassCorrect(String login, String password) throws ServiceException {
@@ -82,8 +94,8 @@ public class AccessService {
      * Generates Access object with random fields.
      */
     private Access generateAccess() {
-        StringBuilder login = generateSequence(LOGIN_SIZE);
-        StringBuilder password = generateSequence(PASSWORD_SIZE);
+        StringBuilder login = generateSequence(LOGIN_SIZE, true);
+        StringBuilder password = generateSequence(PASSWORD_SIZE, false);
 
         return new Access(login.toString(), password.toString(), USER_ROLE);
     }
@@ -95,10 +107,17 @@ public class AccessService {
      * @param length length of sequence
      * @return sequence of letters and numbers.
      */
-    private StringBuilder generateSequence(int length) {
+    private StringBuilder generateSequence(int length, boolean onlyNumbers) {
         StringBuilder sequence = new StringBuilder();
 
         Random random = new Random();
+
+        if (onlyNumbers) {
+            for (int i = 0; i < length; i++) {
+                sequence.append(random.nextInt(10));
+            }
+            return sequence;
+        }
 
         for (int i = 0; i < length; i++) {
             boolean letter = random.nextBoolean();
@@ -133,7 +152,7 @@ public class AccessService {
      * @param login login to check
      * @return true if login exist. Otherwise - false
      */
-    private boolean checkIsLoginExist(String login) throws ServiceException {
+    public boolean checkIsLoginExist(String login) throws ServiceException {
         try {
             return tryCheckIsLoginExist(login);
         } catch (ConnectionPoolException | DAOException e) {

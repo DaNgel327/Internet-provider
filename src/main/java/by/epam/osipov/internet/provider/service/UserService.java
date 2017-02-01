@@ -2,7 +2,6 @@ package by.epam.osipov.internet.provider.service;
 
 import by.epam.osipov.internet.provider.dao.impl.UserDAO;
 import by.epam.osipov.internet.provider.entity.impl.Ban;
-import by.epam.osipov.internet.provider.entity.impl.Service;
 import by.epam.osipov.internet.provider.entity.impl.User;
 import by.epam.osipov.internet.provider.exception.ConnectionPoolException;
 import by.epam.osipov.internet.provider.exception.DAOException;

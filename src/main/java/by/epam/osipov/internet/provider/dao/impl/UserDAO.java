@@ -35,6 +35,12 @@ public class UserDAO extends AbstractDAO {
     private final static String DELETE_BY_ID = "DELETE FROM user\n" +
             "WHERE passport = ?";
 
+    private static final String SELECT_BY_LOGIN = "SELECT user.idUser, user.sName, user.name, user.pName, user.passport, user.phone, user.balance, user.email\n" +
+            "FROM user\n" +
+            "JOIN contract ON user.idUser = contract.idUser\n" +
+            "JOIN access ON access.idAccess = contract.idAccess\n" +
+            "WHERE login = ?";
+
     public UserDAO(ConnectionProxy connection) {
         super(connection);
     }
@@ -158,5 +164,31 @@ public class UserDAO extends AbstractDAO {
             throw new DAOException("Eor while trying get email by user's access '" + access + "'", e);
         }
         return email;
+    }
+
+    public User getByLogin(String login) throws DAOException {
+
+        User user = null;
+
+        try (PreparedStatement ps = connection.prepareStatement(SELECT_BY_LOGIN)) {
+            ps.setString(1, login);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int idUser = rs.getInt(1);
+                String surname = rs.getString(2);
+                String name = rs.getString(3);
+                String patronymic = rs.getString(4);
+                String passport = rs.getString(5);
+                String phone = rs.getString(6);
+                double balance = rs.getDouble(7);
+                String email = rs.getString(8);
+
+                user = new User(idUser,surname,name,patronymic,passport,phone,balance,email);
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Eorror while trying get user by login '" + login + "'", e);
+        }
+        return user;
     }
 }
